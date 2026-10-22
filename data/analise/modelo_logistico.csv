@@ -1,0 +1,8 @@
+termo,coeficiente,razao_chances,ic95_inf,ic95_sup,erro_padrao_wald
+intercepto,1.7066,,,,0.4936
+agêntica (vs. self-healing),1.9928,7.3357,1.0934,143.3398,1.1239
+papel e rótulo (vs. self-healing),-3.8298,0.0217,0.0051,0.069,0.6495
+"nível, self-healing",-0.7421,0.4761,0.1839,1.0009,0.412
+"nível, agêntica",-0.0,1.0,0.0261,38.3699,0.9117
+"nível, papel e rótulo",-1.2759,0.2792,0.1215,0.5381,0.3717
+The Internet (vs. SauceDemo),1.3208,3.7463,1.3302,11.9688,0.5381

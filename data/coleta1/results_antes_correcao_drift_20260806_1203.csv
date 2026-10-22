@@ -1,0 +1,402 @@
+site,task,approach,drift_level,repetition,success,duration_s,n_steps,drift_type,error_type,error_message,tokens_input,tokens_output,cost_usd,heal_acionamentos,heal_curados,heal_desistencias,timestamp
+saucedemo,transacional_checkout,deterministic,0.0,0,True,3.646,15,cosmetico,,,0,0,0.0,0,0,0,2026-08-06T04:20:18.194040+00:00
+saucedemo,transacional_checkout,deterministic,0.0,1,True,0.636,15,cosmetico,,,0,0,0.0,0,0,0,2026-08-06T04:20:18.910868+00:00
+saucedemo,transacional_checkout,deterministic,0.0,2,True,0.631,15,cosmetico,,,0,0,0.0,0,0,0,2026-08-06T04:20:19.625456+00:00
+saucedemo,transacional_checkout,deterministic,0.0,3,True,0.643,15,cosmetico,,,0,0,0.0,0,0,0,2026-08-06T04:20:20.345322+00:00
+saucedemo,transacional_checkout,deterministic,0.0,4,True,0.644,15,cosmetico,,,0,0,0.0,0,0,0,2026-08-06T04:20:21.072443+00:00
+saucedemo,transacional_checkout,deterministic,0.0,5,True,0.637,15,cosmetico,,,0,0,0.0,0,0,0,2026-08-06T04:20:21.788842+00:00
+saucedemo,transacional_checkout,deterministic,0.0,6,True,0.675,15,cosmetico,,,0,0,0.0,0,0,0,2026-08-06T04:20:22.542706+00:00
+saucedemo,transacional_checkout,deterministic,0.0,7,True,0.672,15,cosmetico,,,0,0,0.0,0,0,0,2026-08-06T04:20:23.290632+00:00
+saucedemo,transacional_checkout,deterministic,0.25,0,False,10.541,8,cosmetico,timeout,"[apos 'add_to_cart'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("".shopping_cart_link"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, ",0,0,0.0,0,0,0,2026-08-06T04:20:33.894957+00:00
+saucedemo,transacional_checkout,deterministic,0.25,1,False,10.329,3,cosmetico,timeout,"[apos 'fill_username'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#password"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_typ",0,0,0.0,0,0,0,2026-08-06T04:20:44.308777+00:00
+saucedemo,transacional_checkout,deterministic,0.25,2,False,0.622,10,cosmetico,assertion_failed,[apos 'apply_drift'] Carrinho deveria conter exatamente 1 item,0,0,0.0,0,0,0,2026-08-06T04:20:45.003497+00:00
+saucedemo,transacional_checkout,deterministic,0.25,3,False,10.287,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:20:55.354909+00:00
+saucedemo,transacional_checkout,deterministic,0.25,4,False,10.692,11,cosmetico,timeout,"[apos 'assert_cart_count'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#checkout"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drif",0,0,0.0,0,0,0,2026-08-06T04:21:06.138784+00:00
+saucedemo,transacional_checkout,deterministic,0.25,5,False,10.293,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:21:16.504730+00:00
+saucedemo,transacional_checkout,deterministic,0.25,6,False,10.578,8,cosmetico,timeout,"[apos 'add_to_cart'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("".shopping_cart_link"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, ",0,0,0.0,0,0,0,2026-08-06T04:21:27.149093+00:00
+saucedemo,transacional_checkout,deterministic,0.25,7,False,0.624,10,cosmetico,assertion_failed,[apos 'apply_drift'] Carrinho deveria conter exatamente 1 item,0,0,0.0,0,0,0,2026-08-06T04:21:27.839423+00:00
+saucedemo,transacional_checkout,deterministic,0.5,0,False,10.336,4,cosmetico,timeout,"[apos 'fill_password'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#login-button"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drif",0,0,0.0,0,0,0,2026-08-06T04:21:38.252362+00:00
+saucedemo,transacional_checkout,deterministic,0.5,1,False,10.277,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:21:48.611172+00:00
+saucedemo,transacional_checkout,deterministic,0.5,2,False,10.283,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:21:58.960865+00:00
+saucedemo,transacional_checkout,deterministic,0.5,3,False,10.329,3,cosmetico,timeout,"[apos 'fill_username'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#password"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_typ",0,0,0.0,0,0,0,2026-08-06T04:22:09.365504+00:00
+saucedemo,transacional_checkout,deterministic,0.5,4,False,0.653,10,cosmetico,assertion_failed,[apos 'apply_drift'] Carrinho deveria conter exatamente 1 item,0,0,0.0,0,0,0,2026-08-06T04:22:10.085791+00:00
+saucedemo,transacional_checkout,deterministic,0.5,5,False,10.324,3,cosmetico,timeout,"[apos 'fill_username'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#password"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_typ",0,0,0.0,0,0,0,2026-08-06T04:22:20.475293+00:00
+saucedemo,transacional_checkout,deterministic,0.5,6,False,10.298,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:22:30.855519+00:00
+saucedemo,transacional_checkout,deterministic,0.5,7,False,10.29,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:22:41.229949+00:00
+saucedemo,transacional_checkout,deterministic,0.75,0,False,10.276,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:22:51.583185+00:00
+saucedemo,transacional_checkout,deterministic,0.75,1,False,10.289,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:23:01.942269+00:00
+saucedemo,transacional_checkout,deterministic,0.75,2,False,10.331,4,cosmetico,timeout,"[apos 'fill_password'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#login-button"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drif",0,0,0.0,0,0,0,2026-08-06T04:23:12.345691+00:00
+saucedemo,transacional_checkout,deterministic,0.75,3,False,10.287,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:23:22.710470+00:00
+saucedemo,transacional_checkout,deterministic,0.75,4,False,10.307,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:23:33.097259+00:00
+saucedemo,transacional_checkout,deterministic,0.75,5,False,10.283,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:23:43.444092+00:00
+saucedemo,transacional_checkout,deterministic,0.75,6,False,10.289,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:23:53.830475+00:00
+saucedemo,transacional_checkout,deterministic,0.75,7,False,10.292,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:24:04.209035+00:00
+saucedemo,transacional_checkout,deterministic,1.0,0,False,10.29,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:24:14.577900+00:00
+saucedemo,transacional_checkout,deterministic,1.0,1,False,10.301,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:24:24.964810+00:00
+saucedemo,transacional_checkout,deterministic,1.0,2,False,10.305,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:24:35.345884+00:00
+saucedemo,transacional_checkout,deterministic,1.0,3,False,10.288,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:24:45.726857+00:00
+saucedemo,transacional_checkout,deterministic,1.0,4,False,10.294,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:24:56.107204+00:00
+saucedemo,transacional_checkout,deterministic,1.0,5,False,10.289,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:25:06.466428+00:00
+saucedemo,transacional_checkout,deterministic,1.0,6,False,10.277,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:25:16.812678+00:00
+saucedemo,transacional_checkout,deterministic,1.0,7,False,10.332,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:25:27.235635+00:00
+saucedemo,transacional_checkout,deterministic,0.0,0,True,0.635,15,estrutural,,,0,0,0.0,0,0,0,2026-08-06T04:25:27.962760+00:00
+saucedemo,transacional_checkout,deterministic,0.0,1,True,0.644,15,estrutural,,,0,0,0.0,0,0,0,2026-08-06T04:25:28.681537+00:00
+saucedemo,transacional_checkout,deterministic,0.0,2,True,0.653,15,estrutural,,,0,0,0.0,0,0,0,2026-08-06T04:25:29.411629+00:00
+saucedemo,transacional_checkout,deterministic,0.0,3,True,0.625,15,estrutural,,,0,0,0.0,0,0,0,2026-08-06T04:25:30.112975+00:00
+saucedemo,transacional_checkout,deterministic,0.0,4,True,0.66,15,estrutural,,,0,0,0.0,0,0,0,2026-08-06T04:25:30.836695+00:00
+saucedemo,transacional_checkout,deterministic,0.0,5,True,0.639,15,estrutural,,,0,0,0.0,0,0,0,2026-08-06T04:25:31.549593+00:00
+saucedemo,transacional_checkout,deterministic,0.0,6,True,0.65,15,estrutural,,,0,0,0.0,0,0,0,2026-08-06T04:25:32.279270+00:00
+saucedemo,transacional_checkout,deterministic,0.0,7,True,0.657,15,estrutural,,,0,0,0.0,0,0,0,2026-08-06T04:25:33.012492+00:00
+saucedemo,transacional_checkout,deterministic,0.25,0,False,10.567,8,estrutural,timeout,"[apos 'add_to_cart'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("".shopping_cart_link"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, ",0,0,0.0,0,0,0,2026-08-06T04:25:43.642042+00:00
+saucedemo,transacional_checkout,deterministic,0.25,1,False,10.325,3,estrutural,timeout,"[apos 'fill_username'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#password"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_typ",0,0,0.0,0,0,0,2026-08-06T04:25:54.029064+00:00
+saucedemo,transacional_checkout,deterministic,0.25,2,False,0.604,10,estrutural,assertion_failed,[apos 'apply_drift'] Carrinho deveria conter exatamente 1 item,0,0,0.0,0,0,0,2026-08-06T04:25:54.697483+00:00
+saucedemo,transacional_checkout,deterministic,0.25,3,False,10.297,2,estrutural,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:26:05.069987+00:00
+saucedemo,transacional_checkout,deterministic,0.25,4,False,10.696,11,estrutural,timeout,"[apos 'assert_cart_count'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#checkout"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drif",0,0,0.0,0,0,0,2026-08-06T04:26:15.839867+00:00
+saucedemo,transacional_checkout,deterministic,0.25,5,False,10.274,2,estrutural,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:26:26.177574+00:00
+saucedemo,transacional_checkout,deterministic,0.25,6,False,10.569,8,estrutural,timeout,"[apos 'add_to_cart'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("".shopping_cart_link"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, ",0,0,0.0,0,0,0,2026-08-06T04:26:36.892872+00:00
+saucedemo,transacional_checkout,deterministic,0.25,7,False,0.659,10,estrutural,assertion_failed,[apos 'apply_drift'] Carrinho deveria conter exatamente 1 item,0,0,0.0,0,0,0,2026-08-06T04:26:37.643545+00:00
+saucedemo,transacional_checkout,deterministic,0.5,0,False,10.328,4,estrutural,timeout,"[apos 'fill_password'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#login-button"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drif",0,0,0.0,0,0,0,2026-08-06T04:26:48.043019+00:00
+saucedemo,transacional_checkout,deterministic,0.5,1,False,10.285,2,estrutural,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:26:58.412099+00:00
+saucedemo,transacional_checkout,deterministic,0.5,2,False,10.329,2,estrutural,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 122, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 112, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, seed=repetition, drift_type",0,0,0.0,0,0,0,2026-08-06T04:27:08.818766+00:00

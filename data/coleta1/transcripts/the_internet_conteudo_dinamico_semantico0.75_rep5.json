@@ -1,0 +1,308 @@
+{
+ "n_steps": 41,
+ "tokens_input": 855751,
+ "tokens_output": 11661,
+ "tokens_cache_write": 26069,
+ "tokens_cache_read": 829602,
+ "cost_usd": 0.581176,
+ "model": "claude-sonnet-5",
+ "preco_input_usd_por_mtok": 2.0,
+ "preco_output_usd_por_mtok": 10.0,
+ "stopped_reason": "max_steps",
+ "error_message": "Exception: Claude Code returned an error result: Reached maximum number of turns (40)",
+ "transcript": [
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "playwright browser snapshot click type navigate",
+    "max_results": 15
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_fill_form",
+   "input": {
+    "fields": [
+     {
+      "name": "Username",
+      "target": "e17",
+      "type": "textbox",
+      "value": "tomsmith"
+     },
+     {
+      "name": "Password",
+      "target": "e21",
+      "type": "textbox",
+      "value": "SuperSecretPassword!"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "e22",
+    "element": "Login button"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "text": "secure area"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f1e19",
+    "element": "Username field",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f1e23",
+    "element": "Password field",
+    "text": "SuperSecretPassword!",
+    "slowly": true
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f1e24",
+    "element": "Login button"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure area|invalid/i"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f2e19",
+    "element": "Username field",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f2e23",
+    "element": "Password field",
+    "text": "SuperSecretPassword!"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f2e24",
+    "element": "Login button"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure area!|invalid/i"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_navigate",
+   "input": {
+    "url": "https://the-internet.herokuapp.com/login"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f4e16",
+    "element": "Username field",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f4e20",
+    "element": "Password field",
+    "text": "SuperSecretPassword!",
+    "submit": true
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure|invalid/i"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f5e19",
+    "element": "Username field",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f5e23",
+    "element": "Password field",
+    "text": "SuperSecretPassword!",
+    "slowly": true
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f5e24",
+    "element": "Login button"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure|invalid/i"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_navigate",
+   "input": {
+    "url": "https://the-internet.herokuapp.com/login"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "textbox[name=\"Username\"]",
+    "element": "Username field",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "input#username",
+    "element": "Username field",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f7e16",
+    "element": "Username field",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f7e20",
+    "element": "Password field",
+    "text": "SuperSecretPassword!"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f7e29",
+    "element": "Login button"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure|invalid/i"
+   }
+  },
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "evaluate execute javascript in page",
+    "max_results": 5
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f8e19",
+    "element": "Username field",
+    "text": "tomsmith",
+    "slowly": true
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f8e23",
+    "element": "Password field",
+    "text": "SuperSecretPassword!",
+    "slowly": true
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f8e24",
+    "element": "Login button"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure|invalid|Logout/i"
+   }
+  },
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "select:mcp__playwright__browser_press_key,mcp__playwright__browser_evaluate",
+    "max_results": 3
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f9e19",
+    "element": "Username field",
+    "text": "tomsmith"
+   }
+  }
+ ]
+}

@@ -1,0 +1,752 @@
+
+==============================================================================
+0. Conferência do ambiente   [20/09 15:47]
+==============================================================================
+Impressão do instrumento: 6c6c5aba5b39 (registrada: 6c6c5aba5b39)
+Execuções já gravadas na coleta 2: 1200 de 1200
+
+1. Autotestes das análises: já feito em 2026-09-17T00:28:00, pulando.
+
+2. Matriz de validação do instrumento: já feito em 2026-09-17T00:32:08, pulando.
+
+3. Validação funcional (192 combinações): já feito em 2026-09-17T00:38:17, pulando.
+
+4. Conferência do limiar do self-healing: já feito em 2026-09-17T00:39:23, pulando.
+
+5. Teste do agente com o oráculo novo: já feito em 2026-09-17T00:42:16, pulando.
+
+6. Matriz de validação de novo, antes do bloco agêntico: já feito em 2026-09-19T14:56:32, pulando.
+
+7. Coleta intercalada (1.200 execuções): já feito em 2026-09-20T06:24:44, pulando.
+
+==============================================================================
+8. Auditoria dos dados   [20/09 15:47]
+==============================================================================
+
+$ python auditoria.py
+==============================================================================
+AUDITORIA DO CONJUNTO DE DADOS
+==============================================================================
+
+Arquivo: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Execuções: 1200
+
+
+ALERTA
+------------------------------------------------------------------------------
+  Distribuição das durações             semantic/the_internet/sucesso: 1 de 98 fora do padrão (mediana 2.47s, extremos 4.85–4.85s)
+
+OK
+------------------------------------------------------------------------------
+  Cabeçalho do CSV                      28 colunas na ordem esperada
+  Completude do desenho                 150 células, todas com o n previsto (8 sem API, 8 agênticas) — total 1200
+  Duplicatas                            1200 chaves únicas, nenhuma repetida
+  Numeração das repetições              todas as células têm repetições 0..n-1
+  Linha de base (drift 0)               240/240 sucesso — o instrumento não introduz falha própria
+  Coerência entre colunas               sucesso/erro consistentes; drift_type e error_type dentro do domínio
+  Custo e tokens por braço              braços sem API com custo zero; 240 agênticas todas com custo e tokens > 0
+  Contadores do self-healing            exclusivos do braço healing e internamente coerentes (169 de 192 execuções acionaram)
+  Assinatura de erro de infraestrutura  as 1 falhas agênticas consumiram passos e custo — são falhas reais
+  Colapso de página                     nenhuma falha com a assinatura de página vazia
+  Efetividade do drift                  cosmético renomeia sem inserir; estrutural insere 3740 iscas; semântico altera 4303 textos — as três condições se distinguem nos dados
+  Rótulo do tipo de erro                nenhuma falha genérica esconde causa específica na mensagem
+  Falhas de navegação                   nenhuma; todas as páginas carregaram
+  Site fora do ar durante a coleta      nenhuma execução descartada pela guarda
+  Monotonicidade do drift               nenhuma abordagem melhora quando a degradação aumenta
+  Transcrições do braço agêntico        240 execuções com ações registradas
+  Janela de coleta                      todas as 1200 linhas vieram da versão 6c6c5aba5b39 do instrumento (coleta 2), a mesma do código atual
+  Pareamento entre braços               todos os braços cobrem as mesmas sementes em todas as células — comparação pareada válida
+  Rastreabilidade da limpeza            89 linha(s) removida(s): 0 com assinatura de recusa do provedor e 89 duplicada(s) cuja condição continua no conjunto (custo de API descartado US$ 15.60); 89/89 condições presentes; backup preservado
+
+==============================================================================
+VEREDITO: nenhum erro. 1 alerta(s) a explicar no texto,
+mas os dados sustentam a análise.
+==============================================================================
+
+
+-> Auditoria dos dados: OK (sem erro, 1 alerta(s))
+
+==============================================================================
+9. Análises, modelos e figuras   [20/09 15:47]
+==============================================================================
+
+$ python analise.py
+1200 execuções carregadas de C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+  braços: ID/CSS, XPath, agêntica, papel e rótulo, self-healing
+  sites: saucedemo, the_internet
+
+  ATENÇÃO: 1 execução(ões) contornaram a interface
+  (miraram atributos que o drift não altera). Ficam FORA das taxas
+  de sucesso e são reportadas à parte, na seção 10.
+
+==============================================================================
+1. HIPÓTESE PRIMÁRIA (McNemar exato, pares pela semente)
+==============================================================================
+Recorte fixado antes da coleta: degradação semântica, intensidades
+0,50 a 1,0, as duas aplicações; comparador fixo: self-healing.
+
+  PRINCIPAL — duas aplicações
+    pares: 48   (descartados por contorno: 0; sem par: 0)
+    agêntica 48/48 (100.0%)   self-healing 41/48 (85.4%)
+    pares discordantes: só a agêntica acerta = 7; só o self-healing acerta = 0
+    McNemar exato p = 0.015625
+    diferença pareada = 14.6 pontos (IC 95% Agresti-Min 3.6 a 24.4)
+    razão de chances condicional = inf (IC 95% exato 1.44 a inf)
+
+  POR APLICAÇÃO — saucedemo
+    pares: 24   (descartados por contorno: 0; sem par: 0)
+    agêntica 24/24 (100.0%)   self-healing 17/24 (70.8%)
+    pares discordantes: só a agêntica acerta = 7; só o self-healing acerta = 0
+    McNemar exato p = 0.015625
+    diferença pareada = 29.2 pontos (IC 95% Agresti-Min 8.3 a 45.6)
+    razão de chances condicional = inf (IC 95% exato 1.44 a inf)
+
+  POR APLICAÇÃO — the_internet
+    pares: 24   (descartados por contorno: 0; sem par: 0)
+    agêntica 24/24 (100.0%)   self-healing 24/24 (100.0%)
+    pares discordantes: só a agêntica acerta = 0; só o self-healing acerta = 0
+    McNemar exato p = 1
+    diferença pareada = 0.0 pontos (IC 95% Agresti-Min -7.5 a 7.5)
+    razão de chances condicional = nan (IC 95% exato nan a nan)
+
+  SENSIBILIDADE — contorno contado como falha
+    pares: 48   (descartados por contorno: 0; sem par: 0)
+    agêntica 48/48 (100.0%)   self-healing 41/48 (85.4%)
+    pares discordantes: só a agêntica acerta = 7; só o self-healing acerta = 0
+    McNemar exato p = 0.015625
+    diferença pareada = 14.6 pontos (IC 95% Agresti-Min 3.6 a 24.4)
+    razão de chances condicional = inf (IC 95% exato 1.44 a inf)
+
+  REFERÊNCIA NÃO PAREADA (forma da coleta 1): Fisher p = 0.0123547; diferença 14.6 pontos (IC 95% Newcombe 4.2 a 27.2)
+
+==============================================================================
+2. TAXA DE SUCESSO POR BRAÇO, TIPO E NÍVEL DE DEGRADAÇÃO
+==============================================================================
+(entre colchetes: intervalo de confiança de Wilson a 95%)
+
+
+drift cosmetico
+  braço                        0.0              0.25               0.5              0.75               1.0
+  ID/CSS           100% [ 81,100]    25% [ 10, 49]    19% [  7, 43]     0% [  0, 19]     0% [  0, 19]
+  XPath            100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+  papel e rótulo   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+  self-healing     100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+  agêntica         100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 80,100]   100% [ 81,100]
+
+drift estrutural
+  braço                        0.0              0.25               0.5              0.75               1.0
+  ID/CSS           100% [ 81,100]    31% [ 14, 56]    19% [  7, 43]     0% [  0, 19]     0% [  0, 19]
+  XPath            100% [ 81,100]    19% [  7, 43]     6% [  1, 28]     0% [  0, 19]     0% [  0, 19]
+  papel e rótulo   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+  self-healing     100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+  agêntica         100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+
+drift semantico
+  braço                        0.0              0.25               0.5              0.75               1.0
+  ID/CSS           100% [ 81,100]    31% [ 14, 56]    19% [  7, 43]     0% [  0, 19]     0% [  0, 19]
+  XPath            100% [ 81,100]    19% [  7, 43]     6% [  1, 28]     0% [  0, 19]     0% [  0, 19]
+  papel e rótulo   100% [ 81,100]    62% [ 39, 82]    25% [ 10, 49]    19% [  7, 43]     0% [  0, 19]
+  self-healing     100% [ 81,100]   100% [ 81,100]    88% [ 64, 97]    94% [ 72, 99]    75% [ 51, 90]
+  agêntica         100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+
+==============================================================================
+3. TENDÊNCIA AO LONGO DA INTENSIDADE (Cochran-Armitage, Holm)
+==============================================================================
+H0: a taxa de sucesso não muda conforme a intensidade aumenta.
+Holm corrige os testes calculáveis. Quando o braço acerta (ou erra)
+tudo em todos os níveis, a variância é zero e o teste NÃO é
+calculável; na coleta 1 esses casos foram chamados de 'nulos'.
+
+  braço           tipo        taxas por nível (%)             z         p    p Holm
+  ---------------------------------------------------------------------------------
+  ID/CSS          cosmetico   100/25/19/0/0               -6.29    0.0000    0.0000
+  ID/CSS          estrutural  100/31/19/0/0               -6.38    0.0000    0.0000
+  ID/CSS          semantico   100/31/19/0/0               -6.38    0.0000    0.0000
+  XPath           cosmetico   100/100/100/100/100                    não calculável
+  XPath           estrutural  100/19/6/0/0                -6.39    0.0000    0.0000
+  XPath           semantico   100/19/6/0/0                -6.39    0.0000    0.0000
+  papel e rótulo  cosmetico   100/100/100/100/100                    não calculável
+  papel e rótulo  estrutural  100/100/100/100/100                    não calculável
+  papel e rótulo  semantico   100/62/25/19/0              -6.26    0.0000    0.0000
+  self-healing    cosmetico   100/100/100/100/100                    não calculável
+  self-healing    estrutural  100/100/100/100/100                    não calculável
+  self-healing    semantico   100/100/88/94/75            -2.52    0.0118    0.0118
+  agêntica        cosmetico   100/100/100/100/100                    não calculável
+  agêntica        estrutural  100/100/100/100/100                    não calculável
+  agêntica        semantico   100/100/100/100/100                    não calculável
+
+==============================================================================
+4. COMPARAÇÕES EXPLORATÓRIAS ENTRE BRAÇOS (McNemar exato, Holm)
+==============================================================================
+Pares pela mesma semente. Só condições COM degradação; resultado
+EXPLORATÓRIO, secundário à hipótese primária da seção 1.
+
+  55 de 120 comparações significativas (p ajustado < 0,05):
+
+  tipo         nível  braço A         braço B           só A  só B  pares    p Holm
+  --------------------------------------------------------------------------------
+  cosmetico     0.25  ID/CSS          XPath                0    12     16   0.03613
+  cosmetico     0.25  ID/CSS          papel e rótulo       0    12     16   0.03613
+  cosmetico     0.25  ID/CSS          self-healing         0    12     16   0.03613
+  cosmetico     0.25  ID/CSS          agêntica             0    12     16   0.03613
+  cosmetico      0.5  ID/CSS          XPath                0    13     16   0.02173
+  cosmetico      0.5  ID/CSS          papel e rótulo       0    13     16   0.02173
+  cosmetico      0.5  ID/CSS          self-healing         0    13     16   0.02173
+  cosmetico      0.5  ID/CSS          agêntica             0    13     16   0.02173
+  cosmetico     0.75  ID/CSS          XPath                0    16     16   0.00366
+  cosmetico     0.75  ID/CSS          papel e rótulo       0    16     16   0.00366
+  cosmetico     0.75  ID/CSS          self-healing         0    16     16   0.00366
+  cosmetico     0.75  ID/CSS          agêntica             0    15     15   0.00586
+  cosmetico      1.0  ID/CSS          XPath                0    16     16   0.00366
+  cosmetico      1.0  ID/CSS          papel e rótulo       0    16     16   0.00366
+  cosmetico      1.0  ID/CSS          self-healing         0    16     16   0.00366
+  cosmetico      1.0  ID/CSS          agêntica             0    16     16   0.00366
+  estrutural    0.25  XPath           papel e rótulo       0    13     16   0.02173
+  estrutural    0.25  XPath           self-healing         0    13     16   0.02173
+  estrutural    0.25  XPath           agêntica             0    13     16   0.02173
+  estrutural     0.5  ID/CSS          papel e rótulo       0    13     16   0.02173
+  estrutural     0.5  ID/CSS          self-healing         0    13     16   0.02173
+  estrutural     0.5  ID/CSS          agêntica             0    13     16   0.02173
+  estrutural     0.5  XPath           papel e rótulo       0    15     16   0.00586
+  estrutural     0.5  XPath           self-healing         0    15     16   0.00586
+  estrutural     0.5  XPath           agêntica             0    15     16   0.00586
+  estrutural    0.75  ID/CSS          papel e rótulo       0    16     16   0.00366
+  estrutural    0.75  ID/CSS          self-healing         0    16     16   0.00366
+  estrutural    0.75  ID/CSS          agêntica             0    16     16   0.00366
+  estrutural    0.75  XPath           papel e rótulo       0    16     16   0.00366
+  estrutural    0.75  XPath           self-healing         0    16     16   0.00366
+  estrutural    0.75  XPath           agêntica             0    16     16   0.00366
+  estrutural     1.0  ID/CSS          papel e rótulo       0    16     16   0.00366
+  estrutural     1.0  ID/CSS          self-healing         0    16     16   0.00366
+  estrutural     1.0  ID/CSS          agêntica             0    16     16   0.00366
+  estrutural     1.0  XPath           papel e rótulo       0    16     16   0.00366
+  estrutural     1.0  XPath           self-healing         0    16     16   0.00366
+  estrutural     1.0  XPath           agêntica             0    16     16   0.00366
+  semantico     0.25  XPath           self-healing         0    13     16   0.02173
+  semantico     0.25  XPath           agêntica             0    13     16   0.02173
+  semantico      0.5  ID/CSS          agêntica             0    13     16   0.02173
+  semantico      0.5  XPath           self-healing         0    13     16   0.02173
+  semantico      0.5  XPath           agêntica             0    15     16   0.00586
+  semantico      0.5  papel e rótulo  agêntica             0    12     16   0.03613
+  semantico     0.75  ID/CSS          self-healing         0    15     16   0.00586
+  semantico     0.75  ID/CSS          agêntica             0    16     16   0.00366
+  semantico     0.75  XPath           self-healing         0    15     16   0.00586
+  semantico     0.75  XPath           agêntica             0    16     16   0.00366
+  semantico     0.75  papel e rótulo  self-healing         0    12     16   0.03613
+  semantico     0.75  papel e rótulo  agêntica             0    13     16   0.02173
+  semantico      1.0  ID/CSS          self-healing         0    12     16   0.03613
+  semantico      1.0  ID/CSS          agêntica             0    16     16   0.00366
+  semantico      1.0  XPath           self-healing         0    12     16   0.03613
+  semantico      1.0  XPath           agêntica             0    16     16   0.00366
+  semantico      1.0  papel e rótulo  self-healing         0    12     16   0.03613
+  semantico      1.0  papel e rótulo  agêntica             0    16     16   0.00366
+
+==============================================================================
+5. CUSTO E TEMPO
+==============================================================================
+  Tempo mediano SÓ das execuções bem-sucedidas. Na coleta 1 a tabela
+  usava todas as execuções, e a mediana dos braços que falham na
+  maioria das vezes era o tempo limite do localizador (10 s).
+
+  braço               n  sucessos   tempo med. (sucessos)   US$/exec  US$/sucesso
+  -------------------------------------------------------------------------------
+  ID/CSS            192        23                  2.39 snão se aplicanão se aplica
+  XPath             192        72                  2.31 snão se aplicanão se aplica
+  papel e rótulo    192       145                  2.34 snão se aplicanão se aplica
+  self-healing      192       185                  8.64 snão se aplicanão se aplica
+  agêntica          191       191                 36.70 s     0.1794       0.1794
+
+  Os braços determinísticos não têm custo de API por execução, mas não
+  são gratuitos (máquina, desenvolvimento e manutenção); por isso a
+  coluna registra 'não se aplica', e não zero.
+
+  Tempo das execuções bem-sucedidas — agêntica contra cada braço (Mann-Whitney):
+    agêntica vs ID/CSS            15.3 vezes o tempo mediano   p = 4.88e-15   (n = 191 e 23)
+    agêntica vs XPath             15.9 vezes o tempo mediano   p < 1e-15   (n = 191 e 72)
+    agêntica vs papel e rótulo    15.7 vezes o tempo mediano   p < 1e-15   (n = 191 e 145)
+    agêntica vs self-healing       4.2 vezes o tempo mediano   p < 1e-15   (n = 191 e 185)
+
+  Agêntico — passos por execução: mediana 16, mínimo 12, máximo 28
+  Custo total do braço agêntico no experimento: US$ 42.94 (239 execuções)
+
+==============================================================================
+6. SELF-HEALING: ACIONAMENTO, CURA E ACERTO DA CURA
+==============================================================================
+Acionamento = o seletor original falhou e o mecanismo tentou recuperar.
+Cura = escolheu um substituto acima do limiar e da margem.
+Correta/errada = o substituto era ou não o alvo verdadeiro, medido pela
+identidade que o degradador preserva, depois da escolha.
+
+  tipo         nível  acion.  curas  desist.  corretas  erradas  sem ref.   sucesso
+  ---------------------------------------------------------------------------------
+  cosmetico     0.25      25     25        0        25        0         0     16/16
+  cosmetico      0.5      37     37        0        37        0         0     16/16
+  cosmetico     0.75      50     50        0        50        0         0     16/16
+  cosmetico      1.0      78     78        0        78        0         0     16/16
+  estrutural    0.25      26     26        0        26        0         0     16/16
+  estrutural     0.5      42     42        0        42        0         0     16/16
+  estrutural    0.75      57     57        0        57        0         0     16/16
+  estrutural     1.0      76     76        0        76        0         0     16/16
+  semantico     0.25      21     21        0        21        0         0     16/16
+  semantico      0.5      33     31        2        31        0         0     14/16
+  semantico     0.75      55     54        1        54        0         0     15/16
+  semantico      1.0      54     50        4        50        0         0     12/16
+
+  Causas registradas das falhas do self-healing sob degradação:
+    semantico   saucedemo        7  self-healing desistiu (margem)
+
+==============================================================================
+7. NATUREZA DAS FALHAS
+==============================================================================
+Distingue incapacidade real de limite artificial do experimento.
+
+  ID/CSS — 169 falhas
+      timeout                 169  (100%)
+        causa: elemento não encontrado (tempo limite)          169
+  XPath — 120 falhas
+      timeout                 120  (100%)
+        causa: elemento não encontrado (tempo limite)          120
+  papel e rótulo — 47 falhas
+      timeout                  47  (100%)
+        causa: elemento não encontrado (tempo limite)           44
+        causa: carrinho diferente do esperado                    3
+  self-healing — 7 falhas
+      assertion_failed          7  (100%)
+        causa: self-healing desistiu (margem)                    7
+  agêntica — 1 falhas
+      contornou                 1  (100%)
+        causa: contornou                                         1
+
+==============================================================================
+8. DIVERGÊNCIA ENTRE AS DUAS APLICAÇÕES (Fisher, Holm)
+==============================================================================
+Recorte: degradação semântica, intensidades 0,5 a 1,0. As duas
+aplicações têm páginas diferentes, então aqui as amostras SÃO
+independentes e o Fisher é o teste adequado. Aplicação e tarefa
+variam juntas: uma diferença aqui não se atribui a nenhuma das duas.
+
+  braço              saucedemo   the_internet     p (Holm)
+  --------------------------------------------------------
+  ID/CSS              1/24          2/24         1.000000   diferença   -4.2 pontos [-22.0; 13.0]
+  XPath               0/24          1/24         1.000000   diferença   -4.2 pontos [-20.2; 10.1]
+  papel e rótulo      3/24          4/24         1.000000   diferença   -4.2 pontos [-25.0; 16.9]
+  self-healing       17/24         24/24         0.047006 *   diferença  -29.2 pontos [-49.2; -9.3]
+  agêntica           24/24         24/24         1.000000   diferença    0.0 pontos [-13.8; 13.8]
+
+  * diferença significativa entre os sites após correção de Holm.
+  Para esses braços, o número agregado dos dois sites não representa
+  o comportamento em nenhum deles, e deve ser reportado separado.
+
+==============================================================================
+9. O CUSTO DAS EXECUÇÕES CONCLUÍDAS VARIA COM A INTENSIDADE? (Kruskal-Wallis)
+==============================================================================
+Apenas execuções bem-sucedidas: as interrompidas pelo teto de custo
+tornariam o teste circular.
+
+    nível     n   custo mediano   passos    tempo
+  -----------------------------------------------
+      0.0    48   US$    0.1817       16      35s
+     0.25    48   US$    0.1789       16      35s
+      0.5    48   US$    0.1732       16      36s
+     0.75    47   US$    0.1545       15      36s
+      1.0    48   US$    0.1735       16      40s
+
+  Kruskal-Wallis:  H = 1.6954   gl = 4   p = 0.7916
+  -> não se detectou variação de custo entre os níveis.
+
+  CUIDADO DE REDAÇÃO: isto não prova que o custo é constante. Prova
+  que estes dados não distinguem os níveis. Escreva 'não se detectou
+  variação', nunca 'o custo é constante'.
+
+==============================================================================
+10. TAXA DE CONTORNO DA INTERFACE (braço agêntico)
+==============================================================================
+Execuções em que o agente mirou atributos imunes ao drift.
+
+  drift          nível   contornos   total     taxa
+  --------------------------------------------------
+  cosmetico        0.0           0      16       0%
+  cosmetico       0.25           0      16       0%
+  cosmetico        0.5           0      16       0%
+  cosmetico       0.75           1      16       6%
+  cosmetico        1.0           0      16       0%
+  estrutural       0.0           0      16       0%
+  estrutural      0.25           0      16       0%
+  estrutural       0.5           0      16       0%
+  estrutural      0.75           0      16       0%
+  estrutural       1.0           0      16       0%
+  semantico        0.0           0      16       0%
+  semantico       0.25           0      16       0%
+  semantico        0.5           0      16       0%
+  semantico       0.75           0      16       0%
+  semantico        1.0           0      16       0%
+
+  Total: 1 de 240 execuções agênticas (0%).
+
+==============================================================================
+11. CUSTO AGÊNTICO: ESTIMATIVA DO SDK E RECÁLCULO PELOS TOKENS
+==============================================================================
+  240 execuções agênticas com transcrição (0 sem arquivo)
+
+  base de cálculo                               total US$  mediana US$
+  --------------------------------------------------------------------
+  estimativa gravada pelo SDK                       43.19       0.1780
+  preço público, escrita de cache a 1,25x           23.75       0.0965
+  preço público, escrita de cache a 2x              28.65       0.1182
+
+  O teto de US$ 0,60 é aplicado sobre a estimativa do SDK. A execução
+  agêntica usou a cota de uma assinatura: nenhum dos valores é despesa.
+
+==============================================================================
+ARQUIVOS GERADOS
+==============================================================================
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\hipotese_primaria.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\tabela_sucesso.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\tendencia.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\comparacoes_pareadas.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\resumo_custo_tempo.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\self_healing.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\divergencia_sites.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\custo_tokens.csv
+
+Figuras salvas em C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise
+
+
+$ python modelo_logistico.py
+==============================================================================
+REGRESSÃO LOGÍSTICA COM PENALIZAÇÃO DE FIRTH — degradação semântica
+==============================================================================
+192 execuções, 138 sucessos, braços: self-healing, agêntica, papel e rótulo
+
+  termo                                  coef.       RC      IC 95% (perfilado)
+  -----------------------------------------------------------------------------
+  intercepto                             1.707        —                       —
+  agêntica (vs. self-healing)            1.993     7.34           1.09 a 143.34
+  papel e rótulo (vs. self-healing)     -3.830     0.02             0.01 a 0.07
+  nível, self-healing                   -0.742     0.48             0.18 a 1.00
+  nível, agêntica                       -0.000     1.00            0.03 a 38.37
+  nível, papel e rótulo                 -1.276     0.28             0.12 a 0.54
+  The Internet (vs. SauceDemo)           1.321     3.75            1.33 a 11.97
+
+  Leitura: RC da agêntica é a razão de chances contra o self-healing na
+  intensidade média (0,625), ajustada pela aplicação. As linhas 'nível'
+  dão a razão de chances associada a subir um nível (0,25) em cada braço.
+
+  Tabela exportada para C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\modelo_logistico.csv
+
+$ python modelo_economico.py
+Medidas extraídas de C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Custo agêntico: preço público, recalculado pelos tokens das transcrições
+
+==============================================================================
+1. PARÂMETROS
+==============================================================================
+  MEDIDOS neste experimento (execuções que contornaram a interface ficam fora):
+  abordagem        quebra cosm.  estrut.  semânt.  US$ exec. OK  US$ exec. falha
+  ------------------------------------------------------------------------------
+  ID/CSS                  89.1%    87.5%    87.5%        0.0000           0.0000
+  XPath                    0.0%    93.8%    93.8%        0.0000           0.0000
+  papel e rótulo           0.0%     0.0%    73.4%        0.0000           0.0000
+  self-healing             0.0%     0.0%    10.9%        0.0000           0.0000
+  agêntica                 0.0%     0.0%     0.0%        0.1121           0.0000
+
+  O teto de US$ 0,60 por execução incide sobre a estimativa do SDK: é o limite
+  escolhido, não uma propriedade do agente. Pelo preço público, a execução
+  interrompida no teto custa menos que US$ 0,60.
+
+  PREMISSAS declaradas:
+    tempo de intervenção após uma quebra       0.50 h
+    valor da hora de manutenção                R$ 250.00
+    custo de uma intervenção                   R$ 125.00
+    câmbio                                     R$ 5.19 / US$ (20/08/2026)
+    latência até detectar a quebra             1.0 dia(s) útil(eis)
+    custo de parada contabilizado              sim
+    custo de intervenção igual para todas as abordagens (não medido)
+
+==============================================================================
+2. CUSTO ANUAL POR CENÁRIO — MUDANÇAS DO TIPO COSMÉTICA
+==============================================================================
+Valores em reais por ano.
+
+  BAIXO VOLUME — 252 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         223            0         1          224
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica                147           0            0         0          147
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 147 por ano)
+
+  BAIXO VOLUME — 252 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.336            0         6        1.342
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica                147           0            0         0          147
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 147 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         223            0        21          243
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica              2.933           0            0         0        2.933
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 243 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.336            0       124        1.460
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica              2.933           0            0         0        2.933
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 1.460 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         223            0       207          430
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica             29.334           0            0         0       29.334
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 430 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.336            0     1.244        2.580
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica             29.334           0            0         0       29.334
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 2.580 por ano)
+
+
+==============================================================================
+2. CUSTO ANUAL POR CENÁRIO — MUDANÇAS DO TIPO ESTRUTURAL
+==============================================================================
+Valores em reais por ano.
+
+  BAIXO VOLUME — 252 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0         1          220
+  XPath                     0         234            0         1          235
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica                147           0            0         0          147
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 147 por ano)
+
+  BAIXO VOLUME — 252 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0         6        1.319
+  XPath                     0       1.406            0         7        1.413
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica                147           0            0         0          147
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 147 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0        20          239
+  XPath                     0         234            0        22          256
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica              2.933           0            0         0        2.933
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 239 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0       122        1.435
+  XPath                     0       1.406            0       131        1.537
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica              2.933           0            0         0        2.933
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 1.435 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0       204          422
+  XPath                     0         234            0       218          453
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica             29.334           0            0         0       29.334
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 422 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0     1.222        2.535
+  XPath                     0       1.406            0     1.310        2.716
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica             29.334           0            0         0       29.334
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 2.535 por ano)
+
+
+==============================================================================
+2. CUSTO ANUAL POR CENÁRIO — MUDANÇAS DO TIPO SEMÂNTICA
+==============================================================================
+Valores em reais por ano.
+
+  BAIXO VOLUME — 252 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0         1          220
+  XPath                     0         234            0         1          235
+  papel e rótulo            0         184            0         1          184
+  self-healing              0          27            0         0           27
+  agêntica                147           0            0         0          147
+  -> mais barata(s): SELF-HEALING (diferença para a próxima: R$ 119 por ano)
+
+  BAIXO VOLUME — 252 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0         6        1.319
+  XPath                     0       1.406            0         7        1.413
+  papel e rótulo            0       1.102            0         5        1.107
+  self-healing              0         164            0         1          165
+  agêntica                147           0            0         0          147
+  -> mais barata(s): AGÊNTICA (diferença para a próxima: R$ 18 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0        20          239
+  XPath                     0         234            0        22          256
+  papel e rótulo            0         184            0        17          201
+  self-healing              0          27            0         3           30
+  agêntica              2.933           0            0         0        2.933
+  -> mais barata(s): SELF-HEALING (diferença para a próxima: R$ 171 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0       122        1.435
+  XPath                     0       1.406            0       131        1.537
+  papel e rótulo            0       1.102            0       103        1.204
+  self-healing              0         164            0        15          179
+  agêntica              2.933           0            0         0        2.933
+  -> mais barata(s): SELF-HEALING (diferença para a próxima: R$ 1.025 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0       204          422
+  XPath                     0         234            0       218          453
+  papel e rótulo            0         184            0       171          355
+  self-healing              0          27            0        25           53
+  agêntica             29.334           0            0         0       29.334
+  -> mais barata(s): SELF-HEALING (diferença para a próxima: R$ 302 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0     1.222        2.535
+  XPath                     0       1.406            0     1.310        2.716
+  papel e rótulo            0       1.102            0     1.026        2.127
+  self-healing              0         164            0       153          317
+  agêntica             29.334           0            0         0       29.334
+  -> mais barata(s): SELF-HEALING (diferença para a próxima: R$ 1.811 por ano)
+
+
+==============================================================================
+3. PONTO DE EQUILÍBRIO CONTRA O SELF-HEALING, POR TIPO DE MUDANÇA
+==============================================================================
+Mudanças por ano a partir das quais a agêntica passa a custar menos.
+
+  volume anual               cosmética    estrutural     semântica
+  ----------------------------------------------------------------
+  1 vez ao dia                   nunca         nunca      10.7/ano
+  20 vezes ao dia                nunca         nunca     202.8/ano
+  200 vezes ao dia               nunca         nunca         nunca
+
+  'nunca' = o self-healing custa menos mesmo com uma mudança por dia útil.
+
+==============================================================================
+4. SENSIBILIDADE — mudanças semânticas, volume de 1 execução por dia
+==============================================================================
+  hora R$   100   câmbio R$ 4.67   ->  equilíbrio: 23.9 mudanças/ano
+  hora R$   100   câmbio R$ 5.19   ->  equilíbrio: 26.5 mudanças/ano
+  hora R$   100   câmbio R$ 5.71   ->  equilíbrio: 29.1 mudanças/ano
+  hora R$   200   câmbio R$ 4.67   ->  equilíbrio: 12.0 mudanças/ano
+  hora R$   200   câmbio R$ 5.19   ->  equilíbrio: 13.3 mudanças/ano
+  hora R$   200   câmbio R$ 5.71   ->  equilíbrio: 14.7 mudanças/ano
+  hora R$   300   câmbio R$ 4.67   ->  equilíbrio: 8.0 mudanças/ano
+  hora R$   300   câmbio R$ 5.19   ->  equilíbrio: 8.9 mudanças/ano
+  hora R$   300   câmbio R$ 5.71   ->  equilíbrio: 9.8 mudanças/ano
+
+
+Tabela exportada para: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\modelo_economico.csv
+
+$ python figuras.py
+1200 execuções carregadas de C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+  gravada: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\fig1_robustez.png
+  gravada: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\fig2_custo_confiabilidade.png
+  gravada: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\fig5_equilibrio.png
+  gravada: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\legendas_figuras.txt
+
+  A tabela do modelo logístico vem de modelo_logistico.py.
+
+  Confira a legibilidade impressa antes de fechar o artigo:
+      python figuras.py --cinza
+
+-> Análises, modelos e figuras: OK (saídas em data/analise/)
+
+==============================================================================
+10. Registro no git   [20/09 15:47]
+==============================================================================
+[master 3c2092d] Coleta 2 concluÃ­da
+ 23 files changed, 1011 insertions(+), 13 deletions(-)
+ create mode 100644 data/analise/comparacoes_pareadas.csv
+ create mode 100644 data/analise/custo_tokens.csv
+ create mode 100644 data/analise/divergencia_sites.csv
+ create mode 100644 data/analise/fig1_robustez.png
+ create mode 100644 data/analise/fig2_custo_confiabilidade.png
+ create mode 100644 data/analise/fig2_custo_tempo.png
+ create mode 100644 data/analise/fig5_equilibrio.png
+ create mode 100644 data/analise/hipotese_primaria.csv
+ create mode 100644 data/analise/legendas_figuras.txt
+ create mode 100644 data/analise/modelo_economico.csv
+ create mode 100644 data/analise/modelo_logistico.csv
+ create mode 100644 data/analise/resumo_custo_tempo.csv
+ create mode 100644 data/analise/saida_analise.txt
+ create mode 100644 data/analise/saida_figuras.txt
+ create mode 100644 data/analise/saida_modelo_economico.txt
+ create mode 100644 data/analise/saida_modelo_logistico.txt
+ create mode 100644 data/analise/self_healing.csv
+ create mode 100644 data/analise/tabela_sucesso.csv
+ create mode 100644 data/analise/tendencia.csv
+ create mode 100644 data/logs/coleta2.trava
+ create mode 100644 data/logs/coleta2_20260920-154738.log
+
+
+-> Registro no git: OK (commit 3c2092d, tag coleta-2)
+
+==============================================================================
+COLETA 2 CONCLUÍDA   [20/09 15:47]
+==============================================================================
+  Autotestes das análises                       3 de 3
+  Matriz de validação do instrumento            sem divergência
+  Validação funcional (192 combinações)         192 de referência, nenhuma falha
+  Conferência do limiar do self-healing         limiar 0,62 e margem 0,10: VP 300, FP 0, FN 0, precisão 1.000
+  Teste do agente com o oráculo novo            sem degradação: sucesso nas duas; semântica 1,0: saucedemo sucesso, the_internet sucesso
+  Matriz de validação de novo, antes do bloco agêntico sem divergência
+  Coleta intercalada (1.200 execuções)          1289 execuções
+  Auditoria dos dados                           sem erro, 1 alerta(s)
+  Análises, modelos e figuras                   saídas em data/analise/
+  Registro no git                               commit 3c2092d, tag coleta-2
+
+Tempo desta execução: 0.0 h. Log completo: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\logs\coleta2_20260920-154738.log
+Próximo passo: me avise que terminou, para eu preencher o artigo.

@@ -1,0 +1,211 @@
+{
+ "campo_usuario": {
+  "nome": "campo_usuario",
+  "seletor_original": "#user-name",
+  "id_elemento": "user-name",
+  "tag": "input",
+  "classes": "input_error form_input",
+  "texto": "",
+  "atributos": {
+   "name": "user-name",
+   "placeholder": "Username",
+   "type": "text",
+   "aria_label": "Username",
+   "data_test": "username",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.5,
+  "y": 0.24097222222222223
+ },
+ "campo_senha": {
+  "nome": "campo_senha",
+  "seletor_original": "#password",
+  "id_elemento": "password",
+  "tag": "input",
+  "classes": "input_error form_input",
+  "texto": "",
+  "atributos": {
+   "name": "password",
+   "placeholder": "Password",
+   "type": "password",
+   "aria_label": "Password",
+   "data_test": "password",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.5,
+  "y": 0.3159722222222222
+ },
+ "botao_login": {
+  "nome": "botao_login",
+  "seletor_original": "#login-button",
+  "id_elemento": "login-button",
+  "tag": "input",
+  "classes": "submit-button btn_action",
+  "texto": "",
+  "atributos": {
+   "name": "login-button",
+   "placeholder": "",
+   "type": "submit",
+   "aria_label": "",
+   "data_test": "login-button",
+   "role": "",
+   "value": "Login"
+  },
+  "x": 0.5,
+  "y": 0.4534722222222222
+ },
+ "botao_add_carrinho": {
+  "nome": "botao_add_carrinho",
+  "seletor_original": "button[id^=\"add-to-cart\"]",
+  "id_elemento": "add-to-cart-sauce-labs-backpack",
+  "tag": "button",
+  "classes": "btn btn_primary btn_small btn_inventory ",
+  "texto": "Add to cart",
+  "atributos": {
+   "name": "add-to-cart-sauce-labs-backpack",
+   "placeholder": "",
+   "type": "",
+   "aria_label": "",
+   "data_test": "add-to-cart-sauce-labs-backpack",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.390625,
+  "y": 0.49444444444444446
+ },
+ "link_carrinho": {
+  "nome": "link_carrinho",
+  "seletor_original": ".shopping_cart_link",
+  "id_elemento": "",
+  "tag": "a",
+  "classes": "shopping_cart_link",
+  "texto": "1",
+  "atributos": {
+   "name": "",
+   "placeholder": "",
+   "type": "",
+   "aria_label": "Cart, 1 items",
+   "data_test": "shopping-cart-link",
+   "role": "button",
+   "value": ""
+  },
+  "x": 0.96875,
+  "y": 0.041666666666666664
+ },
+ "botao_checkout": {
+  "nome": "botao_checkout",
+  "seletor_original": "#checkout",
+  "id_elemento": "checkout",
+  "tag": "button",
+  "classes": "btn btn_action btn_medium checkout_button ",
+  "texto": "Checkout",
+  "atributos": {
+   "name": "checkout",
+   "placeholder": "",
+   "type": "",
+   "aria_label": "",
+   "data_test": "checkout",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.90234375,
+  "y": 0.5958333333333333
+ },
+ "campo_nome": {
+  "nome": "campo_nome",
+  "seletor_original": "#first-name",
+  "id_elemento": "first-name",
+  "tag": "input",
+  "classes": "input_error form_input",
+  "texto": "",
+  "atributos": {
+   "name": "firstName",
+   "placeholder": "First Name",
+   "type": "text",
+   "aria_label": "First Name",
+   "data_test": "firstName",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.5,
+  "y": 0.38125
+ },
+ "campo_sobrenome": {
+  "nome": "campo_sobrenome",
+  "seletor_original": "#last-name",
+  "id_elemento": "last-name",
+  "tag": "input",
+  "classes": "input_error form_input",
+  "texto": "",
+  "atributos": {
+   "name": "lastName",
+   "placeholder": "Last Name",
+   "type": "text",
+   "aria_label": "Last Name",
+   "data_test": "lastName",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.5,
+  "y": 0.45625
+ },
+ "campo_cep": {
+  "nome": "campo_cep",
+  "seletor_original": "#postal-code",
+  "id_elemento": "postal-code",
+  "tag": "input",
+  "classes": "input_error form_input",
+  "texto": "",
+  "atributos": {
+   "name": "postalCode",
+   "placeholder": "Zip/Postal Code",
+   "type": "text",
+   "aria_label": "Zip/Postal Code",
+   "data_test": "postalCode",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.5,
+  "y": 0.53125
+ },
+ "botao_continuar": {
+  "nome": "botao_continuar",
+  "seletor_original": "#continue",
+  "id_elemento": "continue",
+  "tag": "input",
+  "classes": "submit-button btn btn_primary cart_button btn_action",
+  "texto": "",
+  "atributos": {
+   "name": "continue",
+   "placeholder": "",
+   "type": "submit",
+   "aria_label": "",
+   "data_test": "continue",
+   "role": "",
+   "value": "Continue"
+  },
+  "x": 0.90234375,
+  "y": 0.8604166666666667
+ },
+ "botao_finalizar": {
+  "nome": "botao_finalizar",
+  "seletor_original": "#finish",
+  "id_elemento": "finish",
+  "tag": "button",
+  "classes": "btn btn_action btn_medium cart_button",
+  "texto": "Finish",
+  "atributos": {
+   "name": "finish",
+   "placeholder": "",
+   "type": "",
+   "aria_label": "",
+   "data_test": "finish",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.90234375,
+  "y": 0.9708333333333333
+ }
+}

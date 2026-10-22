@@ -1,0 +1,13 @@
+tipo,nivel,acionamentos,curas,desistencias,curas_corretas,curas_erradas,curas_sem_referencia,sucessos,execucoes
+cosmetico,0.25,25,25,0,25,0,0,16,16
+cosmetico,0.5,37,37,0,37,0,0,16,16
+cosmetico,0.75,50,50,0,50,0,0,16,16
+cosmetico,1.0,78,78,0,78,0,0,16,16
+estrutural,0.25,26,26,0,26,0,0,16,16
+estrutural,0.5,42,42,0,42,0,0,16,16
+estrutural,0.75,57,57,0,57,0,0,16,16
+estrutural,1.0,76,76,0,76,0,0,16,16
+semantico,0.25,21,21,0,21,0,0,16,16
+semantico,0.5,33,31,2,31,0,0,14,16
+semantico,0.75,55,54,1,54,0,0,15,16
+semantico,1.0,54,50,4,50,0,0,12,16

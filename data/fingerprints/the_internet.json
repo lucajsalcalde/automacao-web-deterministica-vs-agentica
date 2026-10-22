@@ -1,0 +1,78 @@
+{
+ "campo_usuario": {
+  "nome": "campo_usuario",
+  "seletor_original": "#username",
+  "id_elemento": "username",
+  "tag": "input",
+  "classes": "",
+  "texto": "",
+  "atributos": {
+   "name": "username",
+   "placeholder": "",
+   "type": "text",
+   "aria_label": "",
+   "data_test": "",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.3046875,
+  "y": 0.3480034722222222
+ },
+ "campo_senha": {
+  "nome": "campo_senha",
+  "seletor_original": "#password",
+  "id_elemento": "password",
+  "tag": "input",
+  "classes": "",
+  "texto": "",
+  "atributos": {
+   "name": "password",
+   "placeholder": "",
+   "type": "password",
+   "aria_label": "",
+   "data_test": "",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.3046875,
+  "y": 0.43550347222222224
+ },
+ "botao_login": {
+  "nome": "botao_login",
+  "seletor_original": "button[type=\"submit\"]",
+  "id_elemento": "",
+  "tag": "button",
+  "classes": "radius",
+  "texto": "Login",
+  "atributos": {
+   "name": "",
+   "placeholder": "",
+   "type": "submit",
+   "aria_label": "",
+   "data_test": "",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.183331298828125,
+  "y": 0.5184027777777778
+ },
+ "botao_adicionar": {
+  "nome": "botao_adicionar",
+  "seletor_original": "button[onclick=\"addElement()\"]",
+  "id_elemento": "",
+  "tag": "button",
+  "classes": "",
+  "texto": "Add Element",
+  "atributos": {
+   "name": "",
+   "placeholder": "",
+   "type": "",
+   "aria_label": "",
+   "data_test": "",
+   "role": "",
+   "value": ""
+  },
+  "x": 0.178826904296875,
+  "y": 0.17664930555555555
+ }
+}

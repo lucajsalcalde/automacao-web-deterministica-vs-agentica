@@ -1,0 +1,22 @@
+# Versões usadas na coleta 2 (17 a 20 de setembro de 2026), fixadas para
+# reprodução. São as que o artigo declara.
+playwright==1.61.0
+pandas==3.0.5
+numpy==2.5.1
+matplotlib==3.11.1
+
+# Braço agêntico (Playwright MCP + Claude).
+# Exige também Node.js instalado — o servidor MCP roda via npx, na versão
+# @playwright/mcp@0.0.81.
+#
+# Backend "sdk" (usado na coleta): Claude Agent SDK pela assinatura.
+claude-agent-sdk==0.2.128
+# Backend "api": loop próprio + chave de API, cobrado por token.
+anthropic==0.120.2
+mcp==1.29.0
+
+# Os testes estatísticos de analise.py, modelo_logistico.py e
+# modelo_economico.py são implementados à mão (ver o modo --autoteste de cada
+# um). scikit-learn é usado apenas por diagnosticos/coleta1_modelo_falha.py,
+# da coleta descartada, e não é necessário para reproduzir a coleta 2.
+scikit-learn==1.9.0

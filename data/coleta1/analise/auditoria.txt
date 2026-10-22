@@ -1,0 +1,38 @@
+==============================================================================
+AUDITORIA DO CONJUNTO DE DADOS
+==============================================================================
+
+Arquivo: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Execuções: 1200
+
+
+ALERTA
+------------------------------------------------------------------------------
+  Distribuição das durações             agentic/saucedemo/sucesso: 3 de 114 fora do padrão (mediana 44.21s, extremos 63.22–73.54s); agentic/the_internet/sucesso: 3 de 111 fora do padrão (mediana 36.26s, extremos 65.79–145.24s); deterministic/saucedemo/sucesso: 1 de 24 fora do padrão (mediana 0.76s, extremos 3.89–3.89s)
+
+OK
+------------------------------------------------------------------------------
+  Cabeçalho do CSV                      23 colunas na ordem esperada
+  Completude do desenho                 150 células, todas com o n previsto (8 sem API, 8 agênticas) — total 1200
+  Duplicatas                            1200 chaves únicas, nenhuma repetida
+  Numeração das repetições              todas as células têm repetições 0..n-1
+  Linha de base (drift 0)               240/240 sucesso — o instrumento não introduz falha própria
+  Coerência entre colunas               sucesso/erro consistentes; drift_type e error_type dentro do domínio
+  Custo e tokens por braço              braços sem API com custo zero; 240 agênticas todas com custo e tokens > 0
+  Contadores do self-healing            exclusivos do braço healing e internamente coerentes (174 de 192 execuções acionaram)
+  Assinatura de erro de infraestrutura  as 15 falhas agênticas consumiram passos e custo — são falhas reais
+  Colapso de página                     nenhuma falha com a assinatura de página vazia
+  Efetividade do drift                  cosmético renomeia sem inserir; estrutural insere 3833 iscas; semântico altera 4367 textos — as três condições se distinguem nos dados
+  Rótulo do tipo de erro                nenhuma falha genérica esconde causa específica na mensagem
+  Falhas de navegação                   nenhuma; todas as páginas carregaram
+  Monotonicidade do drift               nenhuma abordagem melhora quando a degradação aumenta
+  Transcrições do braço agêntico        240 execuções com ações registradas
+  Janela de coleta                      as 12 impressões digitais do instrumento conferem com o registro — os dados vieram deste código
+  Pareamento entre braços               as repetições agênticas são subconjunto das demais — comparação pareada válida nos níveis 0, 0,5 e 1,0
+  Rastreabilidade da limpeza            o conjunto atual não descende de results_antes_limpeza.csv (0 de 768 linhas em comum): houve recoleta completa, não limpeza pontual — nada a auditar aqui
+
+==============================================================================
+VEREDITO: nenhum erro. 1 alerta(s) a explicar no texto,
+mas os dados sustentam a análise.
+==============================================================================
+

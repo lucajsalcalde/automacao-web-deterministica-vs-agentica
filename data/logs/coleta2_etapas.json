@@ -1,0 +1,47 @@
+{
+  "impressao": "6c6c5aba5b39",
+  "autotestes": {
+    "quando": "2026-09-17T00:28:00",
+    "detalhe": "3 de 3"
+  },
+  "validar_instrumento": {
+    "quando": "2026-09-17T00:32:08",
+    "detalhe": "sem divergência"
+  },
+  "validar_funcional": {
+    "quando": "2026-09-17T00:38:17",
+    "detalhe": "192 de referência, nenhuma falha"
+  },
+  "calibrar_limiar": {
+    "quando": "2026-09-17T00:39:23",
+    "detalhe": "limiar 0,62 e margem 0,10: VP 300, FP 0, FN 0, precisão 1.000"
+  },
+  "teste_agentico": {
+    "quando": "2026-09-17T00:42:16",
+    "detalhe": "sem degradação: sucesso nas duas; semântica 1,0: saucedemo sucesso, the_internet sucesso"
+  },
+  "coleta_sem_api": {
+    "quando": "2026-09-19T14:24:52",
+    "detalhe": "960 execuções"
+  },
+  "revalidacao_bloco_agentico": {
+    "quando": "2026-09-19T14:56:32",
+    "detalhe": "sem divergência"
+  },
+  "coleta": {
+    "quando": "2026-09-20T06:24:44",
+    "detalhe": "1289 execuções"
+  },
+  "auditoria": {
+    "quando": "2026-09-20T15:47:43",
+    "detalhe": "sem erro, 1 alerta(s)"
+  },
+  "analises": {
+    "quando": "2026-09-20T15:47:48",
+    "detalhe": "saídas em data/analise/"
+  },
+  "registro": {
+    "quando": "2026-09-20T15:47:49",
+    "detalhe": "commit 3c2092d, tag coleta-2"
+  }
+}

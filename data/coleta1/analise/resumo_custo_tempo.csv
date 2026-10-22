@@ -1,0 +1,6 @@
+braco,n,sucessos,taxa_sucesso,duracao_media_s,duracao_mediana_s,custo_medio_usd,custo_por_sucesso_usd
+frágil,192,17,0.0885,10.359,10.432,0.0,0.0
+xpath,192,68,0.3542,8.082,10.395,0.0,0.0
+semântico,192,139,0.724,4.756,2.798,0.0,0.0
+self-healing,192,159,0.8281,4.134,2.598,0.0,0.0
+agêntico,186,177,0.9516,51.685,42.037,0.156637,0.164602

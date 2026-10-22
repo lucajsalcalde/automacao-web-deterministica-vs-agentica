@@ -1,0 +1,14 @@
+{
+ "n_steps": 0,
+ "tokens_input": 0,
+ "tokens_output": 0,
+ "tokens_cache_write": 0,
+ "tokens_cache_read": 0,
+ "cost_usd": 0.0,
+ "model": "claude-sonnet-5",
+ "preco_input_usd_por_mtok": 2.0,
+ "preco_output_usd_por_mtok": 10.0,
+ "stopped_reason": "error",
+ "error_message": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)\n  ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)\n    AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdYnhFbF66M3rR4bQ17Ng'}",
+ "transcript": []
+}

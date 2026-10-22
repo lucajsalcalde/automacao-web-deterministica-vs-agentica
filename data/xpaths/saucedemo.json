@@ -1,0 +1,13 @@
+{
+ "campo_usuario": "/html/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/input[1]",
+ "campo_senha": "/html/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/input[1]",
+ "botao_login": "/html/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/input[1]",
+ "botao_add_carrinho": "/html/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]",
+ "link_carrinho": "/html/body[1]/div[1]/div[1]/div[1]/header[1]/div[1]/div[3]/a[1]",
+ "botao_checkout": "/html/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[2]",
+ "campo_nome": "/html/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]",
+ "campo_sobrenome": "/html/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]",
+ "campo_cep": "/html/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[3]/input[1]",
+ "botao_continuar": "/html/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/input[1]",
+ "botao_finalizar": "/html/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[9]/button[2]"
+}

@@ -1,0 +1,16 @@
+braco,tipo,taxas_por_nivel,z,p,p_holm
+ID/CSS,cosmetico,100/25/19/0/0,-6.2883,0.000000,0.000000
+ID/CSS,estrutural,100/31/19/0/0,-6.3831,0.000000,0.000000
+ID/CSS,semantico,100/31/19/0/0,-6.3831,0.000000,0.000000
+XPath,cosmetico,100/100/100/100/100,,,
+XPath,estrutural,100/19/6/0/0,-6.3901,0.000000,0.000000
+XPath,semantico,100/19/6/0/0,-6.3901,0.000000,0.000000
+papel e rótulo,cosmetico,100/100/100/100/100,,,
+papel e rótulo,estrutural,100/100/100/100/100,,,
+papel e rótulo,semantico,100/62/25/19/0,-6.2631,0.000000,0.000000
+self-healing,cosmetico,100/100/100/100/100,,,
+self-healing,estrutural,100/100/100/100/100,,,
+self-healing,semantico,100/100/88/94/75,-2.518,0.011801,0.011801
+agêntica,cosmetico,100/100/100/100/100,,,
+agêntica,estrutural,100/100/100/100/100,,,
+agêntica,semantico,100/100/100/100/100,,,

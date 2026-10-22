@@ -1,0 +1,303 @@
+1200 execuções carregadas de C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+  braços: agêntico, frágil, self-healing, semântico, xpath
+  sites: saucedemo, the_internet
+
+  ATENÇÃO: 6 execução(ões) contornaram a interface
+  (miraram atributos que o drift não altera). Ficam FORA das taxas
+  de sucesso e são reportadas à parte, na seção 7.
+
+==============================================================================
+1. TAXA DE SUCESSO POR BRAÇO, TIPO E NÍVEL DE DRIFT
+==============================================================================
+(entre colchetes: intervalo de confiança de Wilson a 95%)
+
+
+drift cosmetico
+  braço                        0.0              0.25               0.5              0.75               1.0
+  frágil           100% [ 81,100]    25% [ 10, 49]    12% [  3, 36]     0% [  0, 19]     0% [  0, 19]
+  xpath            100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+  semântico        100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+  self-healing     100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+  agêntico         100% [ 81,100]   100% [ 81,100]   100% [ 80,100]   100% [ 80,100]   100% [ 81,100]
+
+drift estrutural
+  braço                        0.0              0.25               0.5              0.75               1.0
+  frágil           100% [ 81,100]    25% [ 10, 49]    12% [  3, 36]     0% [  0, 19]     0% [  0, 19]
+  xpath            100% [ 81,100]    12% [  3, 36]     6% [  1, 28]     0% [  0, 19]     0% [  0, 19]
+  semântico        100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+  self-healing     100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]   100% [ 81,100]
+  agêntico         100% [ 81,100]   100% [ 80,100]   100% [ 81,100]   100% [ 80,100]   100% [ 80,100]
+
+drift semantico
+  braço                        0.0              0.25               0.5              0.75               1.0
+  frágil           100% [ 81,100]    25% [ 10, 49]     6% [  1, 28]     0% [  0, 19]     0% [  0, 19]
+  xpath            100% [ 81,100]     6% [  1, 28]     0% [  0, 19]     0% [  0, 19]     0% [  0, 19]
+  semântico        100% [ 81,100]    62% [ 39, 82]     6% [  1, 28]     0% [  0, 19]     0% [  0, 19]
+  self-healing     100% [ 81,100]    81% [ 57, 93]    38% [ 18, 61]    31% [ 14, 56]    44% [ 23, 67]
+  agêntico         100% [ 81,100]   100% [ 80,100]    81% [ 57, 93]    75% [ 51, 90]    88% [ 64, 97]
+
+==============================================================================
+2. TENDÊNCIA AO LONGO DA INTENSIDADE DO DRIFT (Cochran-Armitage)
+==============================================================================
+H0: a taxa de sucesso não muda conforme o drift aumenta.
+
+  braço         drift               z           p   interpretação
+  --------------------------------------------------------------------------
+  frágil        cosmetico       -6.37     0.00000   degrada com o drift
+  frágil        estrutural      -6.37     0.00000   degrada com o drift
+  frágil        semantico       -6.47     0.00000   degrada com o drift
+  xpath         cosmetico        0.00     1.00000   sem tendência detectável
+  xpath         estrutural      -6.32     0.00000   degrada com o drift
+  xpath         semantico       -6.38     0.00000   degrada com o drift
+  semântico     cosmetico        0.00     1.00000   sem tendência detectável
+  semântico     estrutural       0.00     1.00000   sem tendência detectável
+  semântico     semantico       -7.02     0.00000   degrada com o drift
+  self-healing  cosmetico        0.00     1.00000   sem tendência detectável
+  self-healing  estrutural       0.00     1.00000   sem tendência detectável
+  self-healing  semantico       -4.18     0.00003   degrada com o drift
+  agêntico      cosmetico        0.00     1.00000   sem tendência detectável
+  agêntico      estrutural       0.00     1.00000   sem tendência detectável
+  agêntico      semantico       -1.97     0.04901   degrada com o drift
+
+==============================================================================
+3. COMPARAÇÃO ENTRE BRAÇOS (Fisher exato, p ajustado por Holm)
+==============================================================================
+Apenas condições COM drift: sem drift todos os braços acertam tudo
+e a comparação não informa nada.
+
+  52 de 120 comparações significativas (p ajustado < 0,05):
+
+  drift        nível  braço A       braço B              A       B     p aj.
+  --------------------------------------------------------------------------
+  cosmetico     0.25  frágil        xpath         4/16    16/16       0.00132
+  cosmetico     0.25  frágil        semântico     4/16    16/16       0.00132
+  cosmetico     0.25  frágil        self-healing  4/16    16/16       0.00132
+  cosmetico     0.25  frágil        agêntico      4/16    16/16       0.00132
+  cosmetico      0.5  frágil        xpath         2/16    16/16       0.00005
+  cosmetico      0.5  frágil        semântico     2/16    16/16       0.00005
+  cosmetico      0.5  frágil        self-healing  2/16    16/16       0.00005
+  cosmetico      0.5  frágil        agêntico      2/16    15/15       0.00005
+  cosmetico     0.75  frágil        xpath         0/16    16/16       0.00000
+  cosmetico     0.75  frágil        semântico     0/16    16/16       0.00000
+  cosmetico     0.75  frágil        self-healing  0/16    16/16       0.00000
+  cosmetico     0.75  frágil        agêntico      0/16    15/15       0.00000
+  cosmetico      1.0  frágil        xpath         0/16    16/16       0.00000
+  cosmetico      1.0  frágil        semântico     0/16    16/16       0.00000
+  cosmetico      1.0  frágil        self-healing  0/16    16/16       0.00000
+  cosmetico      1.0  frágil        agêntico      0/16    16/16       0.00000
+  estrutural    0.25  frágil        semântico     4/16    16/16       0.00132
+  estrutural    0.25  frágil        self-healing  4/16    16/16       0.00132
+  estrutural    0.25  frágil        agêntico      4/16    15/15       0.00132
+  estrutural    0.25  xpath         semântico     2/16    16/16       0.00005
+  estrutural    0.25  xpath         self-healing  2/16    16/16       0.00005
+  estrutural    0.25  xpath         agêntico      2/16    15/15       0.00005
+  estrutural     0.5  frágil        semântico     2/16    16/16       0.00005
+  estrutural     0.5  frágil        self-healing  2/16    16/16       0.00005
+  estrutural     0.5  frágil        agêntico      2/16    16/16       0.00005
+  estrutural     0.5  xpath         semântico     1/16    16/16       0.00001
+  estrutural     0.5  xpath         self-healing  1/16    16/16       0.00001
+  estrutural     0.5  xpath         agêntico      1/16    16/16       0.00001
+  estrutural    0.75  frágil        semântico     0/16    16/16       0.00000
+  estrutural    0.75  frágil        self-healing  0/16    16/16       0.00000
+  estrutural    0.75  frágil        agêntico      0/16    15/15       0.00000
+  estrutural    0.75  xpath         semântico     0/16    16/16       0.00000
+  estrutural    0.75  xpath         self-healing  0/16    16/16       0.00000
+  estrutural    0.75  xpath         agêntico      0/16    15/15       0.00000
+  estrutural     1.0  frágil        semântico     0/16    16/16       0.00000
+  estrutural     1.0  frágil        self-healing  0/16    16/16       0.00000
+  estrutural     1.0  frágil        agêntico      0/16    15/15       0.00000
+  estrutural     1.0  xpath         semântico     0/16    16/16       0.00000
+  estrutural     1.0  xpath         self-healing  0/16    16/16       0.00000
+  estrutural     1.0  xpath         agêntico      0/16    15/15       0.00000
+  semantico     0.25  frágil        agêntico      4/16    15/15       0.00132
+  semantico     0.25  xpath         self-healing  1/16    13/16       0.00273
+  semantico     0.25  xpath         agêntico      1/16    15/15       0.00001
+  semantico      0.5  frágil        agêntico      1/16    13/16       0.00273
+  semantico      0.5  xpath         agêntico      0/16    13/16       0.00027
+  semantico      0.5  semântico     agêntico      1/16    13/16       0.00273
+  semantico     0.75  frágil        agêntico      0/16    12/16       0.00132
+  semantico     0.75  xpath         agêntico      0/16    12/16       0.00132
+  semantico     0.75  semântico     agêntico      0/16    12/16       0.00132
+  semantico      1.0  frágil        agêntico      0/16    14/16       0.00005
+  semantico      1.0  xpath         agêntico      0/16    14/16       0.00005
+  semantico      1.0  semântico     agêntico      0/16    14/16       0.00005
+
+==============================================================================
+4. CUSTO, TEMPO E EFICIÊNCIA
+==============================================================================
+
+  braço             n  sucesso  tempo méd.  tempo med.   US$/exec  US$/sucesso
+  ----------------------------------------------------------------------------
+  frágil          192       9%      10.36s      10.43s     0.0000       0.0000
+  xpath           192      35%       8.08s      10.39s     0.0000       0.0000
+  semântico       192      72%       4.76s       2.80s     0.0000       0.0000
+  self-healing    192      83%       4.13s       2.60s     0.0000       0.0000
+  agêntico        186      95%      51.68s      42.04s     0.1566       0.1646
+
+  Custo por execução BEM-SUCEDIDA é a métrica honesta: um braço
+  gratuito que falha quase sempre não é barato, é inútil. É o que
+  permite comparar o preço do agente contra o custo de reescrever
+  um seletor quebrado.
+
+  Tempo — agêntico contra cada braço determinístico (Mann-Whitney):
+    agêntico vs frágil           4.0x mais lento (mediana)   p < 1e-15
+    agêntico vs xpath            4.0x mais lento (mediana)   p < 1e-15
+    agêntico vs semântico       15.0x mais lento (mediana)   p < 1e-15
+    agêntico vs self-healing    16.2x mais lento (mediana)   p < 1e-15
+
+  Agêntico — passos por execução: mediana 15, mínimo 12, máximo 45
+  Custo total do braço agêntico no experimento: US$ 35.79 (234 execuções)
+
+==============================================================================
+5. DIAGNÓSTICO DO SELF-HEALING
+==============================================================================
+Acionamento = o seletor original falhou e o mecanismo tentou recuperar.
+Cura = encontrou um substituto acima do limiar de similaridade.
+
+  drift          nível   acion.   curas  desist.   taxa de cura
+  --------------------------------------------------------------
+  cosmetico       0.25       26      26        0           100%
+  cosmetico        0.5       51      51        0           100%
+  cosmetico       0.75       77      77        0           100%
+  cosmetico        1.0       96      96        0           100%
+  estrutural      0.25       26      26        0           100%
+  estrutural       0.5       51      51        0           100%
+  estrutural      0.75       78      78        0           100%
+  estrutural       1.0       96      96        0           100%
+  semantico       0.25       24      22        2            92%
+  semantico        0.5       46      43        3            93%
+  semantico       0.75       69      66        3            96%
+  semantico        1.0       92      91        1            99%
+
+  Atenção ao ler esta tabela junto com a taxa de sucesso: uma taxa de
+  cura alta com sucesso baixo significa que o mecanismo encontrou um
+  substituto ERRADO com confiança — falha mais perigosa que desistir,
+  porque a automação segue adiante agindo no elemento errado.
+
+==============================================================================
+6. NATUREZA DAS FALHAS
+==============================================================================
+Distingue incapacidade real de limite artificial do experimento.
+
+  frágil — 175 falhas
+      timeout                 175  (100%)
+  xpath — 124 falhas
+      timeout                 124  (100%)
+  semântico — 53 falhas
+      timeout                  53  (100%)
+  self-healing — 33 falhas
+      timeout                  24  (73%)
+      assertion_failed          9  (27%)
+  agêntico — 15 falhas
+      max_budget                7  (47%)
+      contornou                 6  (40%)
+      max_steps                 2  (13%)
+
+==============================================================================
+7. TAXA DE CONTORNO DA INTERFACE (braço agêntico)
+==============================================================================
+Execuções em que o agente mirou atributos imunes ao drift.
+
+  drift          nível   contornos   total     taxa
+  --------------------------------------------------
+  cosmetico        0.0           0      16       0%
+  cosmetico       0.25           0      16       0%
+  cosmetico        0.5           1      16       6%
+  cosmetico       0.75           1      16       6%
+  cosmetico        1.0           0      16       0%
+  estrutural       0.0           0      16       0%
+  estrutural      0.25           1      16       6%
+  estrutural       0.5           0      16       0%
+  estrutural      0.75           1      16       6%
+  estrutural       1.0           1      16       6%
+  semantico        0.0           0      16       0%
+  semantico       0.25           1      16       6%
+  semantico        0.5           0      16       0%
+  semantico       0.75           0      16       0%
+  semantico        1.0           0      16       0%
+
+  Total: 6 de 240 execuções agênticas (2%).
+
+==============================================================================
+8. HIPÓTESE PRIMÁRIA E TAMANHO DE EFEITO
+==============================================================================
+Recorte declarado a priori: degradação semântica, intensidades 0,5 a 1,0.
+
+  frágil          1/48   =   2%   [  0,  11]
+  xpath           0/48   =   0%   [  0,   7]
+  semântico       1/48   =   2%   [  0,  11]
+  self-healing   18/48   =  38%   [ 25,  52]
+  agêntico       39/48   =  81%   [ 68,  90]
+
+  Comparador: self-healing — a melhor abordagem determinística NESTE recorte.
+  (comparar contra a mais fraca inflaria artificialmente o efeito)
+
+  Fisher exato                 p = 0.00002341
+  Diferença de risco             43.8 pontos   IC95% [26.2, 61.3]
+  Razão de chances               7.22          IC95% [2.85, 18.32]
+  NNT                             2.3 execuções por sucesso adicional
+
+  O valor de p diz que a diferença dificilmente é acaso. O tamanho de
+  efeito diz o quanto ela importa — e é o que falta na maioria dos
+  trabalhos que reportam apenas significância. O intervalo da razão de
+  chances não conter 1 é a leitura equivalente ao teste, em escala
+  interpretável.
+
+==============================================================================
+9. DIVERGÊNCIA ENTRE OS DOIS SITES
+==============================================================================
+Recorte: degradação semântica, intensidades 0,5 a 1,0 — a condição
+em que os braços se separam.
+
+  braço            saucedemo   the_internet   p (Fisher)
+  ------------------------------------------------------
+  frágil            0/24          1/24         1.000000
+  xpath             0/24          0/24         1.000000
+  semântico         1/24          0/24         1.000000
+  self-healing     17/24          1/24         0.000012 *
+  agêntico         24/24         15/24         0.006237 *
+
+  * diferença significativa entre os sites após correção de Holm.
+  Para esses braços, o número agregado dos dois sites não representa
+  o comportamento em nenhum deles, e deve ser reportado separado.
+
+==============================================================================
+10. O CUSTO CRESCE COM A DEGRADAÇÃO? (Kruskal-Wallis)
+==============================================================================
+Apenas execuções bem-sucedidas: as interrompidas pelo teto de custo
+tornariam o teste circular.
+
+    nível     n   custo mediano   passos    tempo
+  -----------------------------------------------
+      0.0    48   US$    0.1324       15      43s
+     0.25    46   US$    0.1160       14      40s
+      0.5    44   US$    0.1288       15      42s
+     0.75    42   US$    0.1380       15      42s
+      1.0    45   US$    0.1287       15      42s
+
+  Kruskal-Wallis:  H = 5.6889   gl = 4   p = 0.2236
+  -> não se detectou variação de custo entre os níveis.
+
+  CUIDADO DE REDAÇÃO: isto não prova que o custo é constante. Prova
+  que estes dados não distinguem os níveis. Escreva 'não se detectou
+  variação', nunca 'o custo é constante'.
+
+  Para contraste, o custo de NÃO concluir:
+    execuções bem-sucedidas   US$ 0.1284   15 passos
+    execuções interrompidas   US$ 0.6097   42 passos
+
+  Falhar custa 4.7x mais que dar certo. O comportamento é
+  binário: ou resolve ao custo normal, ou não resolve e o custo
+  explode. Não há faixa intermediária.
+
+==============================================================================
+ARQUIVOS GERADOS
+==============================================================================
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\tabela_sucesso.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\comparacoes_fisher.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\resumo_custo_tempo.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\hipotese_primaria.csv
+  C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\divergencia_sites.csv
+
+Figuras salvas em C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise
+

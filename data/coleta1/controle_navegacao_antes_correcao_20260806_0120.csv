@@ -1,0 +1,9 @@
+condicao,site,drift_type,drift_level,repetition,success,duration_s,n_turnos,n_acoes,usou_navigate,cost_usd,error_type,error_message
+tratamento,saucedemo,semantico,1.0,200,True,55.178,19,18,True,0.243185,,
+tratamento,saucedemo,semantico,1.0,201,True,45.98,22,21,True,0.243702,,
+tratamento,saucedemo,semantico,1.0,202,True,50.231,24,23,False,0.196783,,
+tratamento,saucedemo,semantico,1.0,203,True,56.292,24,23,True,0.253094,,
+controle,saucedemo,semantico,1.0,200,True,55.597,21,20,False,0.246687,,
+controle,saucedemo,semantico,1.0,201,True,47.368,21,20,False,0.261398,,
+controle,saucedemo,semantico,1.0,202,True,68.514,25,24,False,0.322578,,
+controle,saucedemo,semantico,1.0,203,True,79.27,28,27,False,0.325056,,

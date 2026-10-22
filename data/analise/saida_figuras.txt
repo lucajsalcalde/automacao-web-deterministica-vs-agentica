@@ -1,0 +1,10 @@
+1200 execuções carregadas de C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+  gravada: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\fig1_robustez.png
+  gravada: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\fig2_custo_confiabilidade.png
+  gravada: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\fig5_equilibrio.png
+  gravada: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\legendas_figuras.txt
+
+  A tabela do modelo logístico vem de modelo_logistico.py.
+
+  Confira a legibilidade impressa antes de fechar o artigo:
+      python figuras.py --cinza

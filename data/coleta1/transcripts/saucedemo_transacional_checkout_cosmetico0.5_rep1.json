@@ -1,0 +1,130 @@
+{
+ "n_steps": 19,
+ "tokens_input": 204850,
+ "tokens_output": 1454,
+ "tokens_cache_write": 11604,
+ "tokens_cache_read": 193214,
+ "cost_usd": 0.150232,
+ "model": "claude-sonnet-5",
+ "preco_input_usd_por_mtok": 2.0,
+ "preco_output_usd_por_mtok": 10.0,
+ "stopped_reason": "finished",
+ "error_message": "",
+ "transcript": [
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "select:mcp__playwright__browser_snapshot,mcp__playwright__browser_navigate,mcp__playwright__browser_click,mcp__playwright__browser_type",
+    "max_results": 10
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Username field",
+    "target": "e11",
+    "text": "standard_user"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Password field",
+    "target": "e13",
+    "text": "secret_sauce"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "element": "Login button",
+    "target": "e15"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "element": "Add to cart Backpack",
+    "target": "e64"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_navigate",
+   "input": {
+    "url": "https://www.saucedemo.com/cart.html"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "element": "Checkout button",
+    "target": "f2e44"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "First Name",
+    "target": "f2e73",
+    "text": "Luca"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Last Name",
+    "target": "f2e75",
+    "text": "Salcalde"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Zip/Postal Code",
+    "target": "f2e77",
+    "text": "01000-000"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "element": "Continue button",
+    "target": "f2e82"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "element": "Finish button",
+    "target": "f2e131"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "texto": "CONCLUIDO"
+  }
+ ]
+}

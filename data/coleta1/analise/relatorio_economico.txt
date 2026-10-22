@@ -1,0 +1,156 @@
+Medidas extraídas de C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+
+==============================================================================
+1. PARÂMETROS
+==============================================================================
+  MEDIDOS neste experimento:
+  abordagem        P(quebra)   R$ exec. OK  R$ exec. falha      n
+  -----------------------------------------------------------------
+  frágil               91.1%        0.0000          0.0000    192
+  xpath                64.6%        0.0000          0.0000    192
+  semântico            27.6%        0.0000          0.0000    192
+  self-healing         17.2%        0.0000          0.0000    192
+  agêntico              4.8%        0.6663          3.1645    186
+
+  Repare na última coluna: no braço agêntico, FALHAR custa mais que
+  dar certo. Um timeout determinístico não consome nada; o agente
+  insiste até bater no teto. Automação agêntica quebrada é ativamente
+  cara; automação determinística quebrada é apenas inútil.
+
+  PREMISSAS declaradas:
+    tempo de conserto de um seletor quebrado   0.50 h
+    valor da hora de manutenção                R$ 250.00
+    custo de um conserto                       R$ 125.00
+    câmbio                                     R$ 5.19 / US$
+    custo de parada contabilizado              sim
+
+  PREMISSA IMPORTANTE, declarada por não ter sido medida:
+  o custo de intervir é o MESMO para todos os braços. No determinístico
+  é reescrever um seletor; no agêntico é ajustar a instrução, revalidar
+  a tarefa ou tratar a exceção. Nada indica que um seja sistematicamente
+  mais barato que o outro, e assumir zero para o agêntico — como fazia a
+  primeira versão deste modelo — favorecia indevidamente essa abordagem.
+
+==============================================================================
+2. CUSTO ANUAL POR CENÁRIO
+==============================================================================
+Execuções/ano x mudanças de interface/ano. Valores em reais.
+
+  BAIXO VOLUME. INTERFACE ESTÁVEL  —  252 execuções/ano. 2 mudanças/ano
+  abordagem        operação  manutenção  desperdício    parada        TOTAL
+  -------------------------------------------------------------------------
+  frágil                  0         228            0        77          304
+  xpath                   0         161            0        54          216
+  semântico               0          69            0        23           92
+  self-healing            0          43            0        14           57
+  agêntico              164          12           19         4          199
+  -> mais barato: SELF-HEALING
+
+  BAIXO VOLUME. INTERFACE ATIVA  —  252 execuções/ano. 12 mudanças/ano
+  abordagem        operação  manutenção  desperdício    parada        TOTAL
+  -------------------------------------------------------------------------
+  frágil                  0       1.367            0        77        1.444
+  xpath                   0         969            0        54        1.023
+  semântico               0         414            0        23          437
+  self-healing            0         258            0        14          272
+  agêntico              164          73           19         4          260
+  -> mais barato: AGÊNTICO
+
+  VOLUME MÉDIO. INTERFACE ESTÁVEL  —  5.040 execuções/ano. 2 mudanças/ano
+  abordagem        operação  manutenção  desperdício    parada        TOTAL
+  -------------------------------------------------------------------------
+  frágil                  0         228            0     1.530        1.758
+  xpath                   0         161            0     1.084        1.246
+  semântico               0          69            0       464          533
+  self-healing            0          43            0       289          332
+  agêntico            3.277          12          386        81        3.756
+  -> mais barato: SELF-HEALING
+
+  VOLUME MÉDIO. INTERFACE ATIVA  —  5.040 execuções/ano. 12 mudanças/ano
+  abordagem        operação  manutenção  desperdício    parada        TOTAL
+  -------------------------------------------------------------------------
+  frágil                  0       1.367            0     1.530        2.898
+  xpath                   0         969            0     1.084        2.053
+  semântico               0         414            0       464          878
+  self-healing            0         258            0       289          546
+  agêntico            3.277          73          386        81        3.817
+  -> mais barato: SELF-HEALING
+
+  ALTO VOLUME. INTERFACE ESTÁVEL  —  50.400 execuções/ano. 2 mudanças/ano
+  abordagem        operação  manutenção  desperdício    parada        TOTAL
+  -------------------------------------------------------------------------
+  frágil                  0         228            0    15.304       15.532
+  xpath                   0         161            0    10.844       11.006
+  semântico               0          69            0     4.635        4.704
+  self-healing            0          43            0     2.886        2.929
+  agêntico           32.770          12        3.859       812       37.453
+  -> mais barato: SELF-HEALING
+
+  ALTO VOLUME. INTERFACE ATIVA  —  50.400 execuções/ano. 12 mudanças/ano
+  abordagem        operação  manutenção  desperdício    parada        TOTAL
+  -------------------------------------------------------------------------
+  frágil                  0       1.367            0    15.304       16.672
+  xpath                   0         969            0    10.844       11.813
+  semântico               0         414            0     4.635        5.049
+  self-healing            0         258            0     2.886        3.144
+  agêntico           32.770          73        3.859       812       37.513
+  -> mais barato: SELF-HEALING
+
+
+==============================================================================
+3. PONTO DE EQUILÍBRIO
+==============================================================================
+Quantas mudanças de interface por ano tornam o agêntico mais barato
+que cada abordagem determinística.
+
+  volume anual                  frágil         xpath     semântico  self-healing
+  ------------------------------------------------------------------------------
+  1 vez ao dia                 1.0/ano       1.8/ano       5.8/ano      11.2/ano
+  20 vezes ao dia             20.5/ano      35.6/ano     115.3/ano     223.9/ano
+  200 vezes ao dia           205.2/ano     356.1/ano         nunca         nunca
+  1.000 vezes ao dia             nunca         nunca         nunca         nunca
+
+  'sempre' = o agêntico já custa menos mesmo sem nenhuma mudança.
+  'nunca'  = o determinístico custa menos mesmo com mudança diária.
+
+==============================================================================
+4. CRITÉRIO DE DECISÃO
+==============================================================================
+Leitura prática do modelo, para quem precisa escolher.
+
+  Contra o braço frágil, a volume médio:        20.5 mudanças/ano
+  Contra o self-healing, a volume médio:        223.9 mudanças/ano
+
+  ESCOLHA DETERMINÍSTICA quando o volume for alto. O custo por
+  execução domina tudo, e ele é zero. Nenhuma taxa de quebra
+  compensa pagar por cada execução em escala.
+
+  ESCOLHA AGÊNTICA quando o volume for baixo E a interface, volátil.
+  São as duas condições juntas: o agêntico quebra bem menos, mas
+  cobra por execução, então precisa de volume baixo para o preço não
+  dominar, e de instabilidade alta para a menor taxa de quebra valer.
+
+  O QUE O MODELO NÃO CAPTURA — e pesa dos dois lados:
+
+  Contra o determinístico: exige alguém disponível para consertar.
+  Em equipe pequena, a indisponibilidade custa mais que o conserto.
+
+  Contra o agêntico: a falha não se anuncia. Um seletor quebrado gera
+  exceção; um agente perdido gasta quatro minutos e desiste, o que se
+  parece com lentidão. Sem monitoramento explícito e teto de custo, a
+  degradação pode passar despercebida por muito tempo — e cobrando.
+
+  Contra o agêntico: há custo recorrente não medido aqui em ajuste de
+  instrução, revalidação a cada troca de versão do modelo e
+  dependência de um fornecedor externo, com seu preço e sua política.
+
+
+Tabela exportada para: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\analise\modelo_economico.csv
+
+
+SENSIBILIDADE — o mesmo modelo com a hora a R$ 200 e a R$ 300:
+  hora a R$ 200  ->  equilíbrio contra o self-healing: 279.8 mudanças/ano
+  hora a R$ 300  ->  equilíbrio contra o self-healing: 186.5 mudanças/ano
+
+  A faixa é estreita, o que é bom: a conclusão não depende de
+  acertar o valor da hora com precisão.

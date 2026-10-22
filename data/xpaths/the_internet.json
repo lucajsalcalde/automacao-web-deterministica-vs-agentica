@@ -1,0 +1,7 @@
+{
+ "campo_usuario": "/html/body[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]",
+ "campo_senha": "/html/body[1]/div[2]/div[1]/div[1]/form[1]/div[2]/div[1]/input[1]",
+ "botao_login": "/html/body[1]/div[2]/div[1]/div[1]/form[1]/button[1]",
+ "botao_adicionar": "/html/body[1]/div[2]/div[1]/div[1]/button[1]",
+ "botao_remover": "/html/body[1]/div[2]/div[1]/div[1]/div[1]/button[1]"
+}

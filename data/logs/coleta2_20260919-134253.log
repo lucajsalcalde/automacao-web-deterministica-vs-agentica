@@ -1,0 +1,430 @@
+
+==============================================================================
+0. Conferência do ambiente   [19/09 13:42]
+==============================================================================
+Impressão do instrumento: 6c6c5aba5b39 (registrada: 6c6c5aba5b39)
+Execuções já gravadas na coleta 2: 582 de 1200
+Modo sem agente: nenhuma chamada ao Claude nesta execução.
+
+1. Autotestes das análises: já feito em 2026-09-17T00:28:00, pulando.
+
+2. Matriz de validação do instrumento: já feito em 2026-09-17T00:32:08, pulando.
+
+3. Validação funcional (192 combinações): já feito em 2026-09-17T00:38:17, pulando.
+
+4. Conferência do limiar do self-healing: já feito em 2026-09-17T00:39:23, pulando.
+
+==============================================================================
+5. Coleta dos braços sem API (960 execuções)   [19/09 13:42]
+==============================================================================
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 580 de 960
+
+$ python coleta_com_guarda.py --approach sem-api --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Modo retomada: 582 execuções já registradas no CSV serão puladas.
+
+[1/960] the_internet (xpath) | estrutural 0.5 | rep=6 | FALHA (timeout) | 12.196s
+[2/960] the_internet (determinístico) | estrutural 0.5 | rep=6 | FALHA (timeout) | 16.161s
+[3/960] the_internet (self-healing) | estrutural 0.5 | rep=6 | OK | 5.372s
+[4/960] the_internet (semântico) | estrutural 0.5 | rep=6 | OK | 2.455s
+[5/960] the_internet (semântico) | cosmetico 0.0 | rep=0 | OK | 2.369s
+[6/960] the_internet (xpath) | cosmetico 0.0 | rep=0 | OK | 2.27s
+[7/960] the_internet (determinístico) | cosmetico 0.0 | rep=0 | OK | 2.263s
+[8/960] the_internet (self-healing) | cosmetico 0.0 | rep=0 | OK | 2.301s
+[9/960] saucedemo (xpath) | semantico 0.75 | rep=5 | FALHA (timeout) | 10.488s
+[10/960] saucedemo (determinístico) | semantico 0.75 | rep=5 | FALHA (timeout) | 10.3s
+[11/960] saucedemo (semântico) | semantico 0.75 | rep=5 | FALHA (timeout) | 10.285s
+[12/960] saucedemo (self-healing) | semantico 0.75 | rep=5 | OK | 7.24s
+[13/960] the_internet (self-healing) | semantico 1.0 | rep=1 | OK | 8.535s
+[14/960] the_internet (determinístico) | semantico 1.0 | rep=1 | FALHA (timeout) | 11.648s
+[15/960] the_internet (xpath) | semantico 1.0 | rep=1 | FALHA (timeout) | 11.652s
+[16/960] the_internet (semântico) | semantico 1.0 | rep=1 | FALHA (timeout) | 11.688s
+[17/960] the_internet (semântico) | cosmetico 0.25 | rep=5 | OK | 2.358s
+[18/960] the_internet (determinístico) | cosmetico 0.25 | rep=5 | OK | 2.367s
+[19/960] the_internet (self-healing) | cosmetico 0.25 | rep=5 | OK | 2.37s
+[20/960] the_internet (xpath) | cosmetico 0.25 | rep=5 | OK | 2.504s
+[21/960] saucedemo (determinístico) | cosmetico 0.25 | rep=4 | FALHA (timeout) | 10.583s
+[22/960] saucedemo (xpath) | cosmetico 0.25 | rep=4 | OK | 0.923s
+[23/960] saucedemo (semântico) | cosmetico 0.25 | rep=4 | OK | 1.005s
+[24/960] saucedemo (self-healing) | cosmetico 0.25 | rep=4 | OK | 3.879s
+[25/960] saucedemo (semântico) | cosmetico 1.0 | rep=1 | OK | 0.966s
+[26/960] saucedemo (self-healing) | cosmetico 1.0 | rep=1 | OK | 12.894s
+[27/960] saucedemo (xpath) | cosmetico 1.0 | rep=1 | OK | 0.873s
+[28/960] saucedemo (determinístico) | cosmetico 1.0 | rep=1 | FALHA (timeout) | 10.281s
+[29/960] the_internet (self-healing) | semantico 0.75 | rep=7 | OK | 8.605s
+[30/960] the_internet (xpath) | semantico 0.75 | rep=7 | FALHA (timeout) | 11.657s
+[31/960] the_internet (semântico) | semantico 0.75 | rep=7 | FALHA (timeout) | 11.672s
+[32/960] the_internet (determinístico) | semantico 0.75 | rep=7 | FALHA (timeout) | 11.649s
+[33/960] the_internet (self-healing) | estrutural 0.5 | rep=3 | OK | 8.572s
+[34/960] the_internet (xpath) | estrutural 0.5 | rep=3 | OK | 2.391s
+[35/960] the_internet (determinístico) | estrutural 0.5 | rep=3 | FALHA (timeout) | 11.641s
+[36/960] the_internet (semântico) | estrutural 0.5 | rep=3 | OK | 2.435s
+[37/960] the_internet (xpath) | estrutural 0.5 | rep=1 | FALHA (timeout) | 11.786s
+[38/960] the_internet (determinístico) | estrutural 0.5 | rep=1 | FALHA (timeout) | 11.647s
+[39/960] the_internet (semântico) | estrutural 0.5 | rep=1 | OK | 2.438s
+[40/960] the_internet (self-healing) | estrutural 0.5 | rep=1 | OK | 5.389s
+[41/960] the_internet (self-healing) | cosmetico 0.25 | rep=4 | OK | 5.565s
+[42/960] the_internet (determinístico) | cosmetico 0.25 | rep=4 | FALHA (timeout) | 11.666s
+[43/960] the_internet (semântico) | cosmetico 0.25 | rep=4 | OK | 2.423s
+[44/960] the_internet (xpath) | cosmetico 0.25 | rep=4 | OK | 2.37s
+[45/960] the_internet (self-healing) | estrutural 1.0 | rep=1 | OK | 8.598s
+[46/960] the_internet (determinístico) | estrutural 1.0 | rep=1 | FALHA (timeout) | 11.625s
+[47/960] the_internet (semântico) | estrutural 1.0 | rep=1 | OK | 2.415s
+[48/960] the_internet (xpath) | estrutural 1.0 | rep=1 | FALHA (timeout) | 11.662s
+[49/960] the_internet (semântico) | cosmetico 0.0 | rep=2 | OK | 2.491s
+[50/960] the_internet (determinístico) | cosmetico 0.0 | rep=2 | OK | 2.355s
+[51/960] the_internet (xpath) | cosmetico 0.0 | rep=2 | OK | 2.361s
+[52/960] the_internet (self-healing) | cosmetico 0.0 | rep=2 | OK | 2.405s
+[53/960] the_internet (semântico) | cosmetico 0.75 | rep=0 | OK | 2.623s
+[54/960] the_internet (determinístico) | cosmetico 0.75 | rep=0 | FALHA (timeout) | 11.657s
+[55/960] the_internet (xpath) | cosmetico 0.75 | rep=0 | OK | 2.367s
+[56/960] the_internet (self-healing) | cosmetico 0.75 | rep=0 | OK | 8.467s
+[57/960] the_internet (semântico) | semantico 1.0 | rep=0 | FALHA (timeout) | 11.817s
+[58/960] the_internet (self-healing) | semantico 1.0 | rep=0 | OK | 8.502s
+[59/960] the_internet (xpath) | semantico 1.0 | rep=0 | FALHA (timeout) | 11.655s
+[60/960] the_internet (determinístico) | semantico 1.0 | rep=0 | FALHA (timeout) | 12.786s
+[61/960] saucedemo (self-healing) | estrutural 0.75 | rep=2 | OK | 10.303s
+[62/960] saucedemo (xpath) | estrutural 0.75 | rep=2 | FALHA (timeout) | 10.493s
+[63/960] saucedemo (determinístico) | estrutural 0.75 | rep=2 | FALHA (timeout) | 10.268s
+[64/960] saucedemo (semântico) | estrutural 0.75 | rep=2 | OK | 0.79s
+[65/960] the_internet (xpath) | cosmetico 0.25 | rep=6 | OK | 2.677s
+[66/960] the_internet (semântico) | cosmetico 0.25 | rep=6 | OK | 2.373s
+[67/960] the_internet (self-healing) | cosmetico 0.25 | rep=6 | OK | 2.422s
+[68/960] the_internet (determinístico) | cosmetico 0.25 | rep=6 | OK | 2.343s
+[69/960] the_internet (self-healing) | estrutural 1.0 | rep=7 | OK | 8.594s
+[70/960] the_internet (semântico) | estrutural 1.0 | rep=7 | OK | 2.385s
+[71/960] the_internet (xpath) | estrutural 1.0 | rep=7 | FALHA (timeout) | 11.63s
+[72/960] the_internet (determinístico) | estrutural 1.0 | rep=7 | FALHA (timeout) | 11.654s
+[73/960] the_internet (semântico) | semantico 0.0 | rep=3 | OK | 2.441s
+[74/960] the_internet (xpath) | semantico 0.0 | rep=3 | OK | 2.345s
+[75/960] the_internet (self-healing) | semantico 0.0 | rep=3 | OK | 2.246s
+[76/960] the_internet (determinístico) | semantico 0.0 | rep=3 | OK | 2.375s
+[77/960] the_internet (xpath) | semantico 0.75 | rep=6 | FALHA (timeout) | 11.803s
+[78/960] the_internet (semântico) | semantico 0.75 | rep=6 | FALHA (timeout) | 11.681s
+[79/960] the_internet (self-healing) | semantico 0.75 | rep=6 | OK | 8.451s
+[80/960] the_internet (determinístico) | semantico 0.75 | rep=6 | FALHA (timeout) | 11.647s
+[81/960] the_internet (semântico) | cosmetico 0.25 | rep=1 | OK | 2.537s
+[82/960] the_internet (self-healing) | cosmetico 0.25 | rep=1 | OK | 5.441s
+[83/960] the_internet (xpath) | cosmetico 0.25 | rep=1 | OK | 2.375s
+[84/960] the_internet (determinístico) | cosmetico 0.25 | rep=1 | FALHA (timeout) | 11.658s
+[85/960] the_internet (xpath) | semantico 0.0 | rep=2 | OK | 2.556s
+[86/960] the_internet (self-healing) | semantico 0.0 | rep=2 | OK | 2.326s
+[87/960] the_internet (determinístico) | semantico 0.0 | rep=2 | OK | 2.303s
+[88/960] the_internet (semântico) | semantico 0.0 | rep=2 | OK | 2.378s
+[89/960] saucedemo (semântico) | cosmetico 0.75 | rep=5 | OK | 0.996s
+[90/960] saucedemo (determinístico) | cosmetico 0.75 | rep=5 | FALHA (timeout) | 10.341s
+[91/960] saucedemo (self-healing) | cosmetico 0.75 | rep=5 | OK | 6.912s
+[92/960] saucedemo (xpath) | cosmetico 0.75 | rep=5 | OK | 0.98s
+[93/960] the_internet (determinístico) | cosmetico 0.0 | rep=7 | OK | 2.488s
+[94/960] the_internet (self-healing) | cosmetico 0.0 | rep=7 | OK | 2.372s
+[95/960] the_internet (semântico) | cosmetico 0.0 | rep=7 | OK | 2.371s
+[96/960] the_internet (xpath) | cosmetico 0.0 | rep=7 | OK | 2.304s
+[97/960] the_internet (self-healing) | cosmetico 0.5 | rep=5 | OK | 2.556s
+[98/960] the_internet (semântico) | cosmetico 0.5 | rep=5 | OK | 2.404s
+[99/960] the_internet (determinístico) | cosmetico 0.5 | rep=5 | OK | 2.488s
+[100/960] the_internet (xpath) | cosmetico 0.5 | rep=5 | OK | 2.402s
+[101/960] the_internet (semântico) | cosmetico 0.75 | rep=5 | OK | 2.521s
+[102/960] the_internet (self-healing) | cosmetico 0.75 | rep=5 | OK | 5.387s
+[103/960] the_internet (xpath) | cosmetico 0.75 | rep=5 | OK | 2.391s
+[104/960] the_internet (determinístico) | cosmetico 0.75 | rep=5 | FALHA (timeout) | 11.63s
+[105/960] saucedemo (self-healing) | semantico 0.5 | rep=6 | OK | 4.088s
+[106/960] saucedemo (determinístico) | semantico 0.5 | rep=6 | FALHA (timeout) | 10.289s
+[107/960] saucedemo (semântico) | semantico 0.5 | rep=6 | FALHA (timeout) | 10.616s
+[108/960] saucedemo (xpath) | semantico 0.5 | rep=6 | FALHA (timeout) | 10.295s
+[109/960] saucedemo (determinístico) | cosmetico 0.5 | rep=7 | FALHA (timeout) | 10.45s
+[110/960] saucedemo (self-healing) | cosmetico 0.5 | rep=7 | OK | 6.996s
+[111/960] saucedemo (xpath) | cosmetico 0.5 | rep=7 | OK | 0.794s
+[112/960] saucedemo (semântico) | cosmetico 0.5 | rep=7 | OK | 0.772s
+[113/960] saucedemo (semântico) | semantico 0.75 | rep=4 | FALHA (timeout) | 10.398s
+[114/960] saucedemo (determinístico) | semantico 0.75 | rep=4 | FALHA (timeout) | 10.281s
+[115/960] saucedemo (self-healing) | semantico 0.75 | rep=4 | OK | 13.075s
+[116/960] saucedemo (xpath) | semantico 0.75 | rep=4 | FALHA (timeout) | 10.288s
+[117/960] saucedemo (xpath) | semantico 1.0 | rep=6 | FALHA (timeout) | 10.415s
+[118/960] saucedemo (self-healing) | semantico 1.0 | rep=6 | OK | 10.105s
+[119/960] saucedemo (semântico) | semantico 1.0 | rep=6 | FALHA (timeout) | 10.289s
+[120/960] saucedemo (determinístico) | semantico 1.0 | rep=6 | FALHA (timeout) | 10.719s
+[121/960] saucedemo (semântico) | semantico 0.25 | rep=5 | FALHA (timeout) | 10.559s
+[122/960] saucedemo (determinístico) | semantico 0.25 | rep=5 | OK | 0.9s
+[123/960] saucedemo (self-healing) | semantico 0.25 | rep=5 | OK | 0.934s
+[124/960] saucedemo (xpath) | semantico 0.25 | rep=5 | FALHA (timeout) | 10.285s
+[125/960] saucedemo (self-healing) | semantico 0.25 | rep=6 | OK | 4.059s
+[126/960] saucedemo (xpath) | semantico 0.25 | rep=6 | OK | 0.86s
+[127/960] saucedemo (determinístico) | semantico 0.25 | rep=6 | FALHA (timeout) | 10.292s
+[128/960] saucedemo (semântico) | semantico 0.25 | rep=6 | OK | 0.981s
+[129/960] saucedemo (semântico) | cosmetico 0.0 | rep=6 | OK | 0.855s
+[130/960] saucedemo (self-healing) | cosmetico 0.0 | rep=6 | OK | 0.748s
+[131/960] saucedemo (determinístico) | cosmetico 0.0 | rep=6 | OK | 0.663s
+[132/960] saucedemo (xpath) | cosmetico 0.0 | rep=6 | OK | 0.666s
+[133/960] saucedemo (determinístico) | estrutural 1.0 | rep=7 | FALHA (timeout) | 10.404s
+[134/960] saucedemo (xpath) | estrutural 1.0 | rep=7 | FALHA (timeout) | 10.3s
+[135/960] saucedemo (semântico) | estrutural 1.0 | rep=7 | OK | 0.8s
+[136/960] saucedemo (self-healing) | estrutural 1.0 | rep=7 | OK | 9.927s
+[137/960] the_internet (determinístico) | cosmetico 0.75 | rep=3 | FALHA (timeout) | 11.794s
+[138/960] the_internet (xpath) | cosmetico 0.75 | rep=3 | OK | 2.352s
+[139/960] the_internet (self-healing) | cosmetico 0.75 | rep=3 | OK | 8.396s
+[140/960] the_internet (semântico) | cosmetico 0.75 | rep=3 | OK | 2.36s
+[141/960] the_internet (self-healing) | estrutural 0.5 | rep=4 | OK | 5.531s
+[142/960] the_internet (xpath) | estrutural 0.5 | rep=4 | FALHA (timeout) | 11.639s
+[143/960] the_internet (semântico) | estrutural 0.5 | rep=4 | OK | 2.311s
+[144/960] the_internet (determinístico) | estrutural 0.5 | rep=4 | FALHA (timeout) | 11.653s
+[145/960] the_internet (semântico) | semantico 1.0 | rep=3 | FALHA (timeout) | 11.669s
+[146/960] the_internet (xpath) | semantico 1.0 | rep=3 | FALHA (timeout) | 11.64s
+[147/960] the_internet (determinístico) | semantico 1.0 | rep=3 | FALHA (timeout) | 11.639s
+[148/960] the_internet (self-healing) | semantico 1.0 | rep=3 | OK | 8.621s
+[149/960] saucedemo (semântico) | cosmetico 1.0 | rep=4 | OK | 1.011s
+[150/960] saucedemo (determinístico) | cosmetico 1.0 | rep=4 | FALHA (timeout) | 10.281s
+[151/960] saucedemo (self-healing) | cosmetico 1.0 | rep=4 | OK | 9.935s
+[152/960] saucedemo (xpath) | cosmetico 1.0 | rep=4 | OK | 0.938s
+[153/960] saucedemo (xpath) | semantico 1.0 | rep=5 | FALHA (timeout) | 10.429s
+[154/960] saucedemo (determinístico) | semantico 1.0 | rep=5 | FALHA (timeout) | 10.288s
+[155/960] saucedemo (self-healing) | semantico 1.0 | rep=5 | OK | 13.119s
+[156/960] saucedemo (semântico) | semantico 1.0 | rep=5 | FALHA (timeout) | 10.302s
+[157/960] the_internet (semântico) | semantico 0.25 | rep=0 | FALHA (timeout) | 11.777s
+[158/960] the_internet (xpath) | semantico 0.25 | rep=0 | FALHA (timeout) | 12.247s
+[159/960] the_internet (self-healing) | semantico 0.25 | rep=0 | OK | 2.366s
+[160/960] the_internet (determinístico) | semantico 0.25 | rep=0 | OK | 2.392s
+[161/960] saucedemo (determinístico) | estrutural 1.0 | rep=2 | FALHA (timeout) | 10.435s
+[162/960] saucedemo (self-healing) | estrutural 1.0 | rep=2 | OK | 13.079s
+[163/960] saucedemo (semântico) | estrutural 1.0 | rep=2 | OK | 0.945s
+[164/960] saucedemo (xpath) | estrutural 1.0 | rep=2 | FALHA (timeout) | 10.388s
+[165/960] the_internet (semântico) | cosmetico 0.5 | rep=1 | OK | 2.512s
+[166/960] the_internet (self-healing) | cosmetico 0.5 | rep=1 | OK | 5.255s
+[167/960] the_internet (determinístico) | cosmetico 0.5 | rep=1 | FALHA (timeout) | 11.64s
+[168/960] the_internet (xpath) | cosmetico 0.5 | rep=1 | OK | 2.21s
+[169/960] the_internet (self-healing) | semantico 0.75 | rep=3 | OK | 8.676s
+[170/960] the_internet (xpath) | semantico 0.75 | rep=3 | FALHA (timeout) | 11.659s
+[171/960] the_internet (determinístico) | semantico 0.75 | rep=3 | FALHA (timeout) | 11.673s
+[172/960] the_internet (semântico) | semantico 0.75 | rep=3 | OK | 2.371s
+[173/960] saucedemo (semântico) | cosmetico 0.5 | rep=6 | OK | 1.109s
+[174/960] saucedemo (determinístico) | cosmetico 0.5 | rep=6 | FALHA (timeout) | 10.302s
+[175/960] saucedemo (self-healing) | cosmetico 0.5 | rep=6 | OK | 3.932s
+[176/960] saucedemo (xpath) | cosmetico 0.5 | rep=6 | OK | 0.921s
+[177/960] saucedemo (xpath) | semantico 0.0 | rep=7 | OK | 0.79s
+[178/960] saucedemo (semântico) | semantico 0.0 | rep=7 | OK | 0.756s
+[179/960] saucedemo (self-healing) | semantico 0.0 | rep=7 | OK | 0.73s
+[180/960] saucedemo (determinístico) | semantico 0.0 | rep=7 | OK | 0.668s
+[181/960] the_internet (semântico) | estrutural 0.75 | rep=1 | OK | 2.495s
+[182/960] the_internet (xpath) | estrutural 0.75 | rep=1 | FALHA (timeout) | 11.654s
+[183/960] the_internet (determinístico) | estrutural 0.75 | rep=1 | FALHA (timeout) | 11.575s
+[184/960] the_internet (self-healing) | estrutural 0.75 | rep=1 | OK | 5.539s
+[185/960] saucedemo (determinístico) | cosmetico 0.5 | rep=3 | FALHA (timeout) | 10.427s
+[186/960] saucedemo (semântico) | cosmetico 0.5 | rep=3 | OK | 0.905s
+[187/960] saucedemo (xpath) | cosmetico 0.5 | rep=3 | OK | 0.893s
+[188/960] saucedemo (self-healing) | cosmetico 0.5 | rep=3 | OK | 3.892s
+[189/960] the_internet (determinístico) | estrutural 0.0 | rep=3 | OK | 2.426s
+[190/960] the_internet (semântico) | estrutural 0.0 | rep=3 | OK | 2.325s
+[191/960] the_internet (xpath) | estrutural 0.0 | rep=3 | OK | 2.456s
+[192/960] the_internet (self-healing) | estrutural 0.0 | rep=3 | OK | 2.367s
+[193/960] the_internet (self-healing) | semantico 1.0 | rep=4 | OK | 8.595s
+[194/960] the_internet (semântico) | semantico 1.0 | rep=4 | FALHA (timeout) | 11.671s
+[195/960] the_internet (determinístico) | semantico 1.0 | rep=4 | FALHA (timeout) | 11.647s
+[196/960] the_internet (xpath) | semantico 1.0 | rep=4 | FALHA (timeout) | 11.645s
+[197/960] the_internet (determinístico) | estrutural 0.75 | rep=6 | FALHA (timeout) | 11.769s
+[198/960] the_internet (xpath) | estrutural 0.75 | rep=6 | FALHA (timeout) | 11.644s
+[199/960] the_internet (self-healing) | estrutural 0.75 | rep=6 | OK | 8.49s
+[200/960] the_internet (semântico) | estrutural 0.75 | rep=6 | OK | 2.36s
+[201/960] saucedemo (xpath) | semantico 0.5 | rep=0 | FALHA (timeout) | 10.454s
+[202/960] saucedemo (self-healing) | semantico 0.5 | rep=0 | OK | 3.975s
+[203/960] saucedemo (determinístico) | semantico 0.5 | rep=0 | FALHA (timeout) | 10.327s
+[204/960] saucedemo (semântico) | semantico 0.5 | rep=0 | OK | 0.883s
+[205/960] saucedemo (determinístico) | semantico 0.25 | rep=3 | FALHA (timeout) | 10.412s
+[206/960] saucedemo (self-healing) | semantico 0.25 | rep=3 | OK | 6.988s
+[207/960] saucedemo (semântico) | semantico 0.25 | rep=3 | OK | 0.882s
+[208/960] saucedemo (xpath) | semantico 0.25 | rep=3 | FALHA (timeout) | 10.31s
+[209/960] saucedemo (semântico) | semantico 0.25 | rep=1 | OK | 0.936s
+[210/960] saucedemo (xpath) | semantico 0.25 | rep=1 | FALHA (timeout) | 8.578s
+[211/960] saucedemo (determinístico) | semantico 0.25 | rep=1 | FALHA (timeout) | 10.314s
+[212/960] saucedemo (self-healing) | semantico 0.25 | rep=1 | OK | 3.898s
+[213/960] saucedemo (determinístico) | estrutural 0.75 | rep=0 | FALHA (timeout) | 10.43s
+[214/960] saucedemo (xpath) | estrutural 0.75 | rep=0 | FALHA (timeout) | 10.278s
+[215/960] saucedemo (semântico) | estrutural 0.75 | rep=0 | OK | 0.99s
+[216/960] saucedemo (self-healing) | estrutural 0.75 | rep=0 | OK | 6.845s
+[217/960] saucedemo (xpath) | semantico 0.5 | rep=5 | FALHA (timeout) | 10.416s
+[218/960] saucedemo (semântico) | semantico 0.5 | rep=5 | FALHA (timeout) | 10.429s
+[219/960] saucedemo (determinístico) | semantico 0.5 | rep=5 | OK | 0.959s
+[220/960] saucedemo (self-healing) | semantico 0.5 | rep=5 | OK | 0.852s
+[221/960] saucedemo (xpath) | estrutural 0.25 | rep=5 | FALHA (timeout) | 10.437s
+[222/960] saucedemo (self-healing) | estrutural 0.25 | rep=5 | OK | 3.908s
+[223/960] saucedemo (semântico) | estrutural 0.25 | rep=5 | OK | 0.762s
+[224/960] saucedemo (determinístico) | estrutural 0.25 | rep=5 | OK | 0.843s
+[225/960] saucedemo (xpath) | semantico 0.0 | rep=0 | OK | 0.814s
+[226/960] saucedemo (determinístico) | semantico 0.0 | rep=0 | OK | 0.702s
+[227/960] saucedemo (semântico) | semantico 0.0 | rep=0 | OK | 0.726s
+[228/960] saucedemo (self-healing) | semantico 0.0 | rep=0 | OK | 0.715s
+[229/960] the_internet (determinístico) | estrutural 0.25 | rep=5 | OK | 2.524s
+[230/960] the_internet (xpath) | estrutural 0.25 | rep=5 | FALHA (timeout) | 11.654s
+[231/960] the_internet (semântico) | estrutural 0.25 | rep=5 | OK | 2.416s
+[232/960] the_internet (self-healing) | estrutural 0.25 | rep=5 | OK | 2.272s
+[233/960] the_internet (xpath) | semantico 0.5 | rep=2 | FALHA (timeout) | 11.796s
+[234/960] the_internet (determinístico) | semantico 0.5 | rep=2 | OK | 2.377s
+[235/960] the_internet (self-healing) | semantico 0.5 | rep=2 | OK | 2.446s
+[236/960] the_internet (semântico) | semantico 0.5 | rep=2 | FALHA (timeout) | 11.666s
+[237/960] the_internet (determinístico) | estrutural 0.25 | rep=7 | FALHA (timeout) | 11.763s
+[238/960] the_internet (xpath) | estrutural 0.25 | rep=7 | FALHA (timeout) | 11.792s
+[239/960] the_internet (self-healing) | estrutural 0.25 | rep=7 | OK | 8.451s
+[240/960] the_internet (semântico) | estrutural 0.25 | rep=7 | OK | 2.401s
+[241/960] saucedemo (determinístico) | cosmetico 0.0 | rep=2 | OK | 0.803s
+[242/960] saucedemo (self-healing) | cosmetico 0.0 | rep=2 | OK | 0.745s
+[243/960] saucedemo (semântico) | cosmetico 0.0 | rep=2 | OK | 0.72s
+[244/960] saucedemo (xpath) | cosmetico 0.0 | rep=2 | OK | 0.668s
+[245/960] saucedemo (determinístico) | semantico 1.0 | rep=3 | FALHA (timeout) | 10.414s
+[246/960] saucedemo (self-healing) | semantico 1.0 | rep=3 | OK | 12.938s
+[247/960] saucedemo (xpath) | semantico 1.0 | rep=3 | FALHA (timeout) | 10.335s
+[248/960] saucedemo (semântico) | semantico 1.0 | rep=3 | FALHA (timeout) | 10.308s
+[249/960] saucedemo (self-healing) | cosmetico 0.75 | rep=1 | OK | 7.104s
+[250/960] saucedemo (semântico) | cosmetico 0.75 | rep=1 | OK | 0.81s
+[251/960] saucedemo (xpath) | cosmetico 0.75 | rep=1 | OK | 0.954s
+[252/960] saucedemo (determinístico) | cosmetico 0.75 | rep=1 | FALHA (timeout) | 10.325s
+[253/960] saucedemo (self-healing) | estrutural 1.0 | rep=1 | OK | 13.266s
+[254/960] saucedemo (xpath) | estrutural 1.0 | rep=1 | FALHA (timeout) | 10.299s
+[255/960] saucedemo (determinístico) | estrutural 1.0 | rep=1 | FALHA (timeout) | 10.278s
+[256/960] saucedemo (semântico) | estrutural 1.0 | rep=1 | OK | 0.842s
+[257/960] saucedemo (xpath) | cosmetico 0.75 | rep=4 | OK | 1.091s
+[258/960] saucedemo (semântico) | cosmetico 0.75 | rep=4 | OK | 0.817s
+[259/960] saucedemo (self-healing) | cosmetico 0.75 | rep=4 | OK | 9.977s
+[260/960] saucedemo (determinístico) | cosmetico 0.75 | rep=4 | FALHA (timeout) | 10.298s
+[261/960] saucedemo (determinístico) | cosmetico 0.5 | rep=4 | FALHA (timeout) | 10.426s
+[262/960] saucedemo (xpath) | cosmetico 0.5 | rep=4 | OK | 0.868s
+[263/960] saucedemo (semântico) | cosmetico 0.5 | rep=4 | OK | 0.778s
+[264/960] saucedemo (self-healing) | cosmetico 0.5 | rep=4 | OK | 9.95s
+[265/960] the_internet (semântico) | cosmetico 1.0 | rep=5 | OK | 2.628s
+[266/960] the_internet (determinístico) | cosmetico 1.0 | rep=5 | FALHA (timeout) | 11.649s
+[267/960] the_internet (self-healing) | cosmetico 1.0 | rep=5 | OK | 8.599s
+[268/960] the_internet (xpath) | cosmetico 1.0 | rep=5 | OK | 2.415s
+[269/960] saucedemo (xpath) | cosmetico 0.0 | rep=0 | OK | 0.83s
+[270/960] saucedemo (semântico) | cosmetico 0.0 | rep=0 | OK | 0.714s
+[271/960] saucedemo (self-healing) | cosmetico 0.0 | rep=0 | OK | 0.749s
+[272/960] saucedemo (determinístico) | cosmetico 0.0 | rep=0 | OK | 0.754s
+[273/960] saucedemo (self-healing) | estrutural 0.5 | rep=5 | OK | 4.355s
+[274/960] saucedemo (semântico) | estrutural 0.5 | rep=5 | OK | 0.886s
+[275/960] saucedemo (xpath) | estrutural 0.5 | rep=5 | FALHA (timeout) | 10.298s
+[276/960] saucedemo (determinístico) | estrutural 0.5 | rep=5 | OK | 0.974s
+[277/960] saucedemo (semântico) | semantico 1.0 | rep=0 | FALHA (timeout) | 10.426s
+[278/960] saucedemo (self-healing) | semantico 1.0 | rep=0 | OK | 9.962s
+[279/960] saucedemo (xpath) | semantico 1.0 | rep=0 | FALHA (timeout) | 10.276s
+[280/960] saucedemo (determinístico) | semantico 1.0 | rep=0 | FALHA (timeout) | 10.302s
+[281/960] the_internet (xpath) | cosmetico 0.75 | rep=6 | OK | 2.489s
+[282/960] the_internet (semântico) | cosmetico 0.75 | rep=6 | OK | 2.383s
+[283/960] the_internet (self-healing) | cosmetico 0.75 | rep=6 | OK | 8.446s
+[284/960] the_internet (determinístico) | cosmetico 0.75 | rep=6 | FALHA (timeout) | 11.637s
+[285/960] the_internet (determinístico) | estrutural 1.0 | rep=5 | FALHA (timeout) | 11.645s
+[286/960] the_internet (semântico) | estrutural 1.0 | rep=5 | OK | 2.412s
+[287/960] the_internet (self-healing) | estrutural 1.0 | rep=5 | OK | 8.462s
+[288/960] the_internet (xpath) | estrutural 1.0 | rep=5 | FALHA (timeout) | 11.669s
+[289/960] the_internet (semântico) | estrutural 1.0 | rep=0 | OK | 2.493s
+[290/960] the_internet (xpath) | estrutural 1.0 | rep=0 | FALHA (timeout) | 11.662s
+[291/960] the_internet (self-healing) | estrutural 1.0 | rep=0 | OK | 8.535s
+[292/960] the_internet (determinístico) | estrutural 1.0 | rep=0 | FALHA (timeout) | 11.651s
+[293/960] the_internet (self-healing) | cosmetico 0.0 | rep=5 | OK | 2.326s
+[294/960] the_internet (semântico) | cosmetico 0.0 | rep=5 | OK | 2.371s
+[295/960] the_internet (determinístico) | cosmetico 0.0 | rep=5 | OK | 2.359s
+[296/960] the_internet (xpath) | cosmetico 0.0 | rep=5 | OK | 2.374s
+[297/960] the_internet (determinístico) | estrutural 1.0 | rep=4 | FALHA (timeout) | 11.785s
+[298/960] the_internet (semântico) | estrutural 1.0 | rep=4 | OK | 2.412s
+[299/960] the_internet (self-healing) | estrutural 1.0 | rep=4 | OK | 8.406s
+[300/960] the_internet (xpath) | estrutural 1.0 | rep=4 | FALHA (timeout) | 11.646s
+[301/960] the_internet (self-healing) | estrutural 1.0 | rep=6 | OK | 8.645s
+[302/960] the_internet (xpath) | estrutural 1.0 | rep=6 | FALHA (timeout) | 11.652s
+[303/960] the_internet (semântico) | estrutural 1.0 | rep=6 | OK | 2.343s
+[304/960] the_internet (determinístico) | estrutural 1.0 | rep=6 | FALHA (timeout) | 11.637s
+[305/960] the_internet (self-healing) | estrutural 0.75 | rep=3 | OK | 8.44s
+[306/960] the_internet (semântico) | estrutural 0.75 | rep=3 | OK | 2.373s
+[307/960] the_internet (determinístico) | estrutural 0.75 | rep=3 | FALHA (timeout) | 11.53s
+[308/960] the_internet (xpath) | estrutural 0.75 | rep=3 | FALHA (timeout) | 11.667s
+[309/960] the_internet (semântico) | semantico 0.25 | rep=7 | OK | 2.511s
+[310/960] the_internet (xpath) | semantico 0.25 | rep=7 | FALHA (timeout) | 11.667s
+[311/960] the_internet (determinístico) | semantico 0.25 | rep=7 | FALHA (timeout) | 11.665s
+[312/960] the_internet (self-healing) | semantico 0.25 | rep=7 | OK | 8.454s
+[313/960] the_internet (determinístico) | cosmetico 0.5 | rep=4 | FALHA (timeout) | 11.748s
+[314/960] the_internet (semântico) | cosmetico 0.5 | rep=4 | OK | 2.41s
+[315/960] the_internet (xpath) | cosmetico 0.5 | rep=4 | OK | 2.382s
+[316/960] the_internet (self-healing) | cosmetico 0.5 | rep=4 | OK | 5.335s
+[317/960] the_internet (semântico) | cosmetico 0.75 | rep=2 | OK | 2.525s
+[318/960] the_internet (self-healing) | cosmetico 0.75 | rep=2 | OK | 8.418s
+[319/960] the_internet (xpath) | cosmetico 0.75 | rep=2 | OK | 2.383s
+[320/960] the_internet (determinístico) | cosmetico 0.75 | rep=2 | FALHA (timeout) | 11.665s
+[321/960] the_internet (semântico) | semantico 0.0 | rep=0 | OK | 2.465s
+[322/960] the_internet (self-healing) | semantico 0.0 | rep=0 | OK | 2.404s
+[323/960] the_internet (xpath) | semantico 0.0 | rep=0 | OK | 2.353s
+[324/960] the_internet (determinístico) | semantico 0.0 | rep=0 | OK | 2.371s
+[325/960] saucedemo (xpath) | semantico 0.75 | rep=3 | FALHA (timeout) | 10.614s
+[326/960] saucedemo (self-healing) | semantico 0.75 | rep=3 | OK | 10.087s
+[327/960] saucedemo (determinístico) | semantico 0.75 | rep=3 | FALHA (timeout) | 10.277s
+[328/960] saucedemo (semântico) | semantico 0.75 | rep=3 | OK | 0.824s
+[329/960] the_internet (determinístico) | cosmetico 0.5 | rep=6 | FALHA (timeout) | 11.776s
+[330/960] the_internet (self-healing) | cosmetico 0.5 | rep=6 | OK | 5.439s
+[331/960] the_internet (xpath) | cosmetico 0.5 | rep=6 | OK | 2.395s
+[332/960] the_internet (semântico) | cosmetico 0.5 | rep=6 | OK | 2.623s
+[333/960] the_internet (semântico) | cosmetico 1.0 | rep=7 | OK | 4.852s
+[334/960] the_internet (determinístico) | cosmetico 1.0 | rep=7 | FALHA (timeout) | 11.665s
+[335/960] the_internet (self-healing) | cosmetico 1.0 | rep=7 | OK | 10.161s
+[336/960] the_internet (xpath) | cosmetico 1.0 | rep=7 | OK | 2.401s
+[337/960] the_internet (self-healing) | cosmetico 1.0 | rep=1 | OK | 8.593s
+[338/960] the_internet (xpath) | cosmetico 1.0 | rep=1 | OK | 2.423s
+[339/960] the_internet (semântico) | cosmetico 1.0 | rep=1 | OK | 2.414s
+[340/960] the_internet (determinístico) | cosmetico 1.0 | rep=1 | FALHA (timeout) | 11.646s
+[341/960] the_internet (xpath) | semantico 0.75 | rep=5 | FALHA (timeout) | 11.785s
+[342/960] the_internet (self-healing) | semantico 0.75 | rep=5 | OK | 5.499s
+[343/960] the_internet (determinístico) | semantico 0.75 | rep=5 | FALHA (timeout) | 11.633s
+[344/960] the_internet (semântico) | semantico 0.75 | rep=5 | FALHA (timeout) | 11.68s
+[345/960] saucedemo (self-healing) | estrutural 0.5 | rep=1 | OK | 6.996s
+[346/960] saucedemo (xpath) | estrutural 0.5 | rep=1 | FALHA (timeout) | 8.591s
+[347/960] saucedemo (determinístico) | estrutural 0.5 | rep=1 | FALHA (timeout) | 10.303s
+[348/960] saucedemo (semântico) | estrutural 0.5 | rep=1 | OK | 0.848s
+[349/960] the_internet (determinístico) | semantico 0.75 | rep=2 | FALHA (timeout) | 11.749s
+[350/960] the_internet (self-healing) | semantico 0.75 | rep=2 | OK | 8.484s
+[351/960] the_internet (xpath) | semantico 0.75 | rep=2 | FALHA (timeout) | 11.643s
+[352/960] the_internet (semântico) | semantico 0.75 | rep=2 | FALHA (timeout) | 11.711s
+[353/960] saucedemo (semântico) | cosmetico 0.75 | rep=2 | OK | 1.023s
+[354/960] saucedemo (xpath) | cosmetico 0.75 | rep=2 | OK | 0.91s
+[355/960] saucedemo (determinístico) | cosmetico 0.75 | rep=2 | FALHA (timeout) | 10.296s
+[356/960] saucedemo (self-healing) | cosmetico 0.75 | rep=2 | OK | 10.043s
+[357/960] the_internet (determinístico) | semantico 0.5 | rep=4 | FALHA (timeout) | 11.76s
+[358/960] the_internet (self-healing) | semantico 0.5 | rep=4 | OK | 5.449s
+[359/960] the_internet (xpath) | semantico 0.5 | rep=4 | FALHA (timeout) | 11.648s
+[360/960] the_internet (semântico) | semantico 0.5 | rep=4 | OK | 2.347s
+[361/960] the_internet (self-healing) | estrutural 0.0 | rep=5 | OK | 2.495s
+[362/960] the_internet (semântico) | estrutural 0.0 | rep=5 | OK | 2.329s
+[363/960] the_internet (determinístico) | estrutural 0.0 | rep=5 | OK | 2.141s
+[364/960] the_internet (xpath) | estrutural 0.0 | rep=5 | OK | 2.336s
+[365/960] the_internet (determinístico) | cosmetico 0.25 | rep=3 | FALHA (timeout) | 11.749s
+[366/960] the_internet (xpath) | cosmetico 0.25 | rep=3 | OK | 2.26s
+[367/960] the_internet (self-healing) | cosmetico 0.25 | rep=3 | OK | 5.415s
+[368/960] the_internet (semântico) | cosmetico 0.25 | rep=3 | OK | 2.414s
+[369/960] the_internet (self-healing) | cosmetico 0.25 | rep=0 | OK | 2.568s
+[370/960] the_internet (xpath) | cosmetico 0.25 | rep=0 | OK | 2.389s
+[371/960] the_internet (semântico) | cosmetico 0.25 | rep=0 | OK | 2.544s
+[372/960] the_internet (determinístico) | cosmetico 0.25 | rep=0 | OK | 2.369s
+[373/960] saucedemo (determinístico) | semantico 0.0 | rep=1 | OK | 0.829s
+[374/960] saucedemo (xpath) | semantico 0.0 | rep=1 | OK | 0.669s
+[375/960] saucedemo (semântico) | semantico 0.0 | rep=1 | OK | 0.658s
+[376/960] saucedemo (self-healing) | semantico 0.0 | rep=1 | OK | 0.738s
+[377/960] saucedemo (self-healing) | cosmetico 0.75 | rep=6 | OK | 13.176s
+[378/960] saucedemo (semântico) | cosmetico 0.75 | rep=6 | OK | 0.788s
+[379/960] saucedemo (xpath) | cosmetico 0.75 | rep=6 | OK | 0.909s
+[380/960] saucedemo (determinístico) | cosmetico 0.75 | rep=6 | FALHA (timeout) | 10.305s
+
+Concluído. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+
+-> Coleta dos braços sem API (960 execuções): OK (960 execuções)
+
+==============================================================================
+BLOCO SEM API CONCLUÍDO   [19/09 14:24]
+==============================================================================
+  Autotestes das análises                       3 de 3
+  Matriz de validação do instrumento            sem divergência
+  Validação funcional (192 combinações)         192 de referência, nenhuma falha
+  Conferência do limiar do self-healing         limiar 0,62 e margem 0,10: VP 300, FP 0, FN 0, precisão 1.000
+  Coleta dos braços sem API (960 execuções)     960 execuções
+
+Tempo desta execução: 0.7 h. Log completo: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\logs\coleta2_20260919-134253.log
+Próximo passo: quando a cota do Claude voltar, dê dois cliques em executar_coleta2.bat.
+Ele refaz a matriz de validação (sem API) e roda só as 240 execuções agênticas que faltam.

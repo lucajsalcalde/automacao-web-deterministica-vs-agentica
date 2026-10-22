@@ -1,0 +1,14 @@
+{
+ "_DRIFT_JS": "09d225eaf2594a29",
+ "instalar_drift_persistente": "33672b200bb24adb",
+ "sites/saucedemo/task.py": "8cfe75b2e91d4722",
+ "sites/saucedemo/task_xpath.py": "a582a712f19ee068",
+ "sites/saucedemo/task_semantic.py": "8b359409c9595c54",
+ "sites/saucedemo/task_healing.py": "d48919246e6a3ac0",
+ "sites/the_internet/task.py": "3f645d2de595a5ee",
+ "sites/the_internet/task_xpath.py": "2ce59f3ea604d13f",
+ "sites/the_internet/task_semantic.py": "cd29fda1862357f9",
+ "sites/the_internet/task_healing.py": "dbcfeb285345291f",
+ "sites/saucedemo/task_agentic.py": "acc0625f546a6418",
+ "sites/the_internet/task_agentic.py": "9be16cdff363357c"
+}

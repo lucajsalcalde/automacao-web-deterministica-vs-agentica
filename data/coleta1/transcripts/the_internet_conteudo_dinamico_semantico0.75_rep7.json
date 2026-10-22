@@ -1,0 +1,320 @@
+{
+ "n_steps": 39,
+ "tokens_input": 655668,
+ "tokens_output": 14506,
+ "tokens_cache_write": 28530,
+ "tokens_cache_read": 627072,
+ "cost_usd": 0.623934,
+ "model": "claude-sonnet-5",
+ "preco_input_usd_por_mtok": 2.0,
+ "preco_output_usd_por_mtok": 10.0,
+ "stopped_reason": "max_budget",
+ "error_message": "teto de US$ 0.60 por execução atingido",
+ "transcript": [
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "playwright browser snapshot navigate click type",
+    "max_results": 15
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_fill_form",
+   "input": {
+    "fields": [
+     {
+      "target": "e16",
+      "name": "Username",
+      "type": "textbox",
+      "value": "tomsmith"
+     },
+     {
+      "target": "e20",
+      "name": "Password",
+      "type": "textbox",
+      "value": "SuperSecretPassword!"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "element": "Login button",
+    "target": "e21"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure|logout|invalid|logged/i"
+   }
+  },
+  {
+   "texto": "\"Username is invalid\" — the fields likely didn't submit correctly. Let me re-inspect and retry."
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Username field",
+    "target": "f1e18",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Password field",
+    "target": "f1e22",
+    "text": "SuperSecretPassword!"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "element": "Login button",
+    "target": "f1e23"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure|invalid|logged into/i"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Username field",
+    "target": "f2e18",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Password field",
+    "target": "f2e22",
+    "text": "SuperSecretPassword!",
+    "slowly": true
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "element": "Login button",
+    "target": "f2e23"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure|invalid|logged into/i"
+   }
+  },
+  {
+   "texto": "Login still failing on password. Let me reset by re-navigating and try a clean fill with submit."
+  },
+  {
+   "tool": "mcp__playwright__browser_navigate",
+   "input": {
+    "url": "https://the-internet.herokuapp.com/login"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Username field",
+    "target": "f4e16",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Password field",
+    "target": "f4e20",
+    "text": "SuperSecretPassword!",
+    "submit": true
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure|invalid|logged into/i"
+   }
+  },
+  {
+   "texto": "The results flip-flop oddly. Let me inspect the actual submitted form data via network requests."
+  },
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "select:mcp__playwright__browser_network_requests",
+    "max_results": 3
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_network_requests",
+   "input": {
+    "static": false,
+    "filter": "login|secure"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Username field",
+    "target": "f5e18",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Password field",
+    "target": "f5e22",
+    "text": "SuperSecretPassword!"
+   }
+  },
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "select:mcp__playwright__browser_take_screenshot",
+    "max_results": 3
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_take_screenshot",
+   "input": {
+    "scale": "css",
+    "filename": "login-check.png"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "element": "Login button",
+    "target": "f5e23"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure area|invalid|logged into/i"
+   }
+  },
+  {
+   "texto": "Username is accepted but password rejected consistently. Let me check what was actually POSTed."
+  },
+  {
+   "tool": "mcp__playwright__browser_network_requests",
+   "input": {
+    "static": false,
+    "filter": "/login|/secure"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_network_requests",
+   "input": {
+    "static": true,
+    "filter": "herokuapp.com/login"
+   }
+  },
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "playwright evaluate javascript input value",
+    "max_results": 5
+   }
+  },
+  {
+   "texto": "The password field appears to get overwritten by browser autofill on button-click blur. I'll re-fill only the password (leaving the already-accepted username untouched) and submit via Enter within the field to avoid the blur."
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "texto": "The page reloads empty each attempt. This looks like browser autofill overwriting the field I'm not focused on. Let me try filling password first, then username, and submit via Enter from the username field."
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Password field",
+    "target": "f6e22",
+    "text": "SuperSecretPassword!"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "element": "Username field",
+    "target": "f6e18",
+    "text": "tomsmith",
+    "submit": true
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "regex": "/secure area|invalid|logged into|Logout/i"
+   }
+  },
+  {
+   "texto": "Confirmed: whichever field I focus last stays correct and the other gets overwritten by Chrome autofill. I'll fill both quickly with fill_form then submit via keyboard Enter (avoiding the button-click blur that triggers autofill)."
+  },
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "select:mcp__playwright__browser_press_key",
+    "max_results": 2
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_fill_form",
+   "input": {
+    "fields": [
+     {
+      "target": "#username",
+      "name": "Username",
+      "type": "textbox",
+      "value": "tomsmith"
+     },
+     {
+      "target": "#password",
+      "name": "Password",
+      "type": "textbox",
+      "value": "SuperSecretPassword!"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_press_key",
+   "input": {
+    "key": "Enter"
+   }
+  }
+ ]
+}

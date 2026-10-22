@@ -1,0 +1,18 @@
+{
+ "n_steps": 1,
+ "tokens_input": 0,
+ "tokens_output": 0,
+ "tokens_cache_write": 0,
+ "tokens_cache_read": 0,
+ "cost_usd": 0,
+ "model": "claude-sonnet-5",
+ "preco_input_usd_por_mtok": 2.0,
+ "preco_output_usd_por_mtok": 10.0,
+ "stopped_reason": "rate_limit",
+ "error_message": "HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message",
+ "transcript": [
+  {
+   "texto": "You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message"
+  }
+ ]
+}

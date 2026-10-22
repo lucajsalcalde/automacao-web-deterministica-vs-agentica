@@ -1,0 +1,2 @@
+recorte,braco_a,sucessos_a,n_a,braco_b,sucessos_b,n_b,p_fisher,dif_risco,dif_ic_baixo,dif_ic_alto,razao_chances,razao_ic_baixo,razao_ic_alto,nnt
+semantico>=0.5,healing,18,48,agentic,39,48,0.00002341,0.4375,0.2616,0.6134,7.2222,2.8466,18.3237,2.29

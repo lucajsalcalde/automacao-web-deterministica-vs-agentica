@@ -1,0 +1,91 @@
+tipo_mudanca,cenario,execucoes_ano,mudancas_ano,abordagem,operacao_brl,manutencao_brl,desperdicio_brl,parada_brl,total_brl
+cosmetico,baixo volume,252,2,ID/CSS,0.00,222.66,0.00,0.00,222.66
+cosmetico,baixo volume,252,2,XPath,0.00,0.00,0.00,0.00,0.00
+cosmetico,baixo volume,252,2,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+cosmetico,baixo volume,252,2,self-healing,0.00,0.00,0.00,0.00,0.00
+cosmetico,baixo volume,252,2,agêntica,156.18,0.00,0.00,0.00,156.18
+cosmetico,baixo volume,252,12,ID/CSS,0.00,1335.94,0.00,0.00,1335.94
+cosmetico,baixo volume,252,12,XPath,0.00,0.00,0.00,0.00,0.00
+cosmetico,baixo volume,252,12,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+cosmetico,baixo volume,252,12,self-healing,0.00,0.00,0.00,0.00,0.00
+cosmetico,baixo volume,252,12,agêntica,156.18,0.00,0.00,0.00,156.18
+cosmetico,volume médio,5040,2,ID/CSS,0.00,222.66,0.00,0.00,222.66
+cosmetico,volume médio,5040,2,XPath,0.00,0.00,0.00,0.00,0.00
+cosmetico,volume médio,5040,2,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+cosmetico,volume médio,5040,2,self-healing,0.00,0.00,0.00,0.00,0.00
+cosmetico,volume médio,5040,2,agêntica,3123.58,0.00,0.00,0.00,3123.58
+cosmetico,volume médio,5040,12,ID/CSS,0.00,1335.94,0.00,0.00,1335.94
+cosmetico,volume médio,5040,12,XPath,0.00,0.00,0.00,0.00,0.00
+cosmetico,volume médio,5040,12,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+cosmetico,volume médio,5040,12,self-healing,0.00,0.00,0.00,0.00,0.00
+cosmetico,volume médio,5040,12,agêntica,3123.58,0.00,0.00,0.00,3123.58
+cosmetico,alto volume,50400,2,ID/CSS,0.00,222.66,0.00,0.00,222.66
+cosmetico,alto volume,50400,2,XPath,0.00,0.00,0.00,0.00,0.00
+cosmetico,alto volume,50400,2,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+cosmetico,alto volume,50400,2,self-healing,0.00,0.00,0.00,0.00,0.00
+cosmetico,alto volume,50400,2,agêntica,31235.83,0.00,0.00,0.00,31235.83
+cosmetico,alto volume,50400,12,ID/CSS,0.00,1335.94,0.00,0.00,1335.94
+cosmetico,alto volume,50400,12,XPath,0.00,0.00,0.00,0.00,0.00
+cosmetico,alto volume,50400,12,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+cosmetico,alto volume,50400,12,self-healing,0.00,0.00,0.00,0.00,0.00
+cosmetico,alto volume,50400,12,agêntica,31235.83,0.00,0.00,0.00,31235.83
+estrutural,baixo volume,252,2,ID/CSS,0.00,218.75,0.00,0.00,218.75
+estrutural,baixo volume,252,2,XPath,0.00,234.38,0.00,0.00,234.38
+estrutural,baixo volume,252,2,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+estrutural,baixo volume,252,2,self-healing,0.00,0.00,0.00,0.00,0.00
+estrutural,baixo volume,252,2,agêntica,156.18,0.00,0.00,0.00,156.18
+estrutural,baixo volume,252,12,ID/CSS,0.00,1312.50,0.00,0.00,1312.50
+estrutural,baixo volume,252,12,XPath,0.00,1406.25,0.00,0.00,1406.25
+estrutural,baixo volume,252,12,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+estrutural,baixo volume,252,12,self-healing,0.00,0.00,0.00,0.00,0.00
+estrutural,baixo volume,252,12,agêntica,156.18,0.00,0.00,0.00,156.18
+estrutural,volume médio,5040,2,ID/CSS,0.00,218.75,0.00,0.00,218.75
+estrutural,volume médio,5040,2,XPath,0.00,234.38,0.00,0.00,234.38
+estrutural,volume médio,5040,2,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+estrutural,volume médio,5040,2,self-healing,0.00,0.00,0.00,0.00,0.00
+estrutural,volume médio,5040,2,agêntica,3123.58,0.00,0.00,0.00,3123.58
+estrutural,volume médio,5040,12,ID/CSS,0.00,1312.50,0.00,0.00,1312.50
+estrutural,volume médio,5040,12,XPath,0.00,1406.25,0.00,0.00,1406.25
+estrutural,volume médio,5040,12,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+estrutural,volume médio,5040,12,self-healing,0.00,0.00,0.00,0.00,0.00
+estrutural,volume médio,5040,12,agêntica,3123.58,0.00,0.00,0.00,3123.58
+estrutural,alto volume,50400,2,ID/CSS,0.00,218.75,0.00,0.00,218.75
+estrutural,alto volume,50400,2,XPath,0.00,234.38,0.00,0.00,234.38
+estrutural,alto volume,50400,2,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+estrutural,alto volume,50400,2,self-healing,0.00,0.00,0.00,0.00,0.00
+estrutural,alto volume,50400,2,agêntica,31235.83,0.00,0.00,0.00,31235.83
+estrutural,alto volume,50400,12,ID/CSS,0.00,1312.50,0.00,0.00,1312.50
+estrutural,alto volume,50400,12,XPath,0.00,1406.25,0.00,0.00,1406.25
+estrutural,alto volume,50400,12,papel e rótulo,0.00,0.00,0.00,0.00,0.00
+estrutural,alto volume,50400,12,self-healing,0.00,0.00,0.00,0.00,0.00
+estrutural,alto volume,50400,12,agêntica,31235.83,0.00,0.00,0.00,31235.83
+semantico,baixo volume,252,2,ID/CSS,0.00,218.75,0.00,0.00,218.75
+semantico,baixo volume,252,2,XPath,0.00,234.38,0.00,0.00,234.38
+semantico,baixo volume,252,2,papel e rótulo,0.00,183.59,0.00,0.00,183.59
+semantico,baixo volume,252,2,self-healing,0.00,27.34,0.00,0.00,27.34
+semantico,baixo volume,252,2,agêntica,156.18,0.00,0.00,0.00,156.18
+semantico,baixo volume,252,12,ID/CSS,0.00,1312.50,0.00,0.00,1312.50
+semantico,baixo volume,252,12,XPath,0.00,1406.25,0.00,0.00,1406.25
+semantico,baixo volume,252,12,papel e rótulo,0.00,1101.56,0.00,0.00,1101.56
+semantico,baixo volume,252,12,self-healing,0.00,164.06,0.00,0.00,164.06
+semantico,baixo volume,252,12,agêntica,156.18,0.00,0.00,0.00,156.18
+semantico,volume médio,5040,2,ID/CSS,0.00,218.75,0.00,0.00,218.75
+semantico,volume médio,5040,2,XPath,0.00,234.38,0.00,0.00,234.38
+semantico,volume médio,5040,2,papel e rótulo,0.00,183.59,0.00,0.00,183.59
+semantico,volume médio,5040,2,self-healing,0.00,27.34,0.00,0.00,27.34
+semantico,volume médio,5040,2,agêntica,3123.58,0.00,0.00,0.00,3123.58
+semantico,volume médio,5040,12,ID/CSS,0.00,1312.50,0.00,0.00,1312.50
+semantico,volume médio,5040,12,XPath,0.00,1406.25,0.00,0.00,1406.25
+semantico,volume médio,5040,12,papel e rótulo,0.00,1101.56,0.00,0.00,1101.56
+semantico,volume médio,5040,12,self-healing,0.00,164.06,0.00,0.00,164.06
+semantico,volume médio,5040,12,agêntica,3123.58,0.00,0.00,0.00,3123.58
+semantico,alto volume,50400,2,ID/CSS,0.00,218.75,0.00,0.00,218.75
+semantico,alto volume,50400,2,XPath,0.00,234.38,0.00,0.00,234.38
+semantico,alto volume,50400,2,papel e rótulo,0.00,183.59,0.00,0.00,183.59
+semantico,alto volume,50400,2,self-healing,0.00,27.34,0.00,0.00,27.34
+semantico,alto volume,50400,2,agêntica,31235.83,0.00,0.00,0.00,31235.83
+semantico,alto volume,50400,12,ID/CSS,0.00,1312.50,0.00,0.00,1312.50
+semantico,alto volume,50400,12,XPath,0.00,1406.25,0.00,0.00,1406.25
+semantico,alto volume,50400,12,papel e rótulo,0.00,1101.56,0.00,0.00,1101.56
+semantico,alto volume,50400,12,self-healing,0.00,164.06,0.00,0.00,164.06
+semantico,alto volume,50400,12,agêntica,31235.83,0.00,0.00,0.00,31235.83

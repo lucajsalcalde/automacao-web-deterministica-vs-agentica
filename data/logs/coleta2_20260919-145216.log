@@ -1,0 +1,729 @@
+
+==============================================================================
+0. Conferência do ambiente   [19/09 14:52]
+==============================================================================
+Impressão do instrumento: 6c6c5aba5b39 (registrada: 6c6c5aba5b39)
+Execuções já gravadas na coleta 2: 962 de 1200
+Login do Claude: conectado (assinatura pro).
+
+1. Autotestes das análises: já feito em 2026-09-17T00:28:00, pulando.
+
+2. Matriz de validação do instrumento: já feito em 2026-09-17T00:32:08, pulando.
+
+3. Validação funcional (192 combinações): já feito em 2026-09-17T00:38:17, pulando.
+
+4. Conferência do limiar do self-healing: já feito em 2026-09-17T00:39:23, pulando.
+
+5. Teste do agente com o oráculo novo: já feito em 2026-09-17T00:42:16, pulando.
+
+==============================================================================
+6. Matriz de validação de novo, antes do bloco agêntico   [19/09 14:52]
+==============================================================================
+
+$ python validar_instrumento.py
+..............??..............??
+
+============================================================================================
+MATRIZ DE VALIDAÇÃO  (drift nível 1.0, 253s)
+============================================================================================
+site          braço       drift       obtido   esperado  status    heal    passos      US$  detalhe
+------------------------------------------------------------------------------------------------------------
+saucedemo     frágil      nenhum      sucesso  sucesso   OK                    15           
+saucedemo     frágil      cosmetico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     frágil      estrutural  falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     frágil      semantico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     xpath       nenhum      sucesso  sucesso   OK                    15           
+saucedemo     xpath       cosmetico   sucesso  sucesso   OK                    20           
+saucedemo     xpath       estrutural  falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     xpath       semantico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     semântico   nenhum      sucesso  sucesso   OK                    16           
+saucedemo     semântico   cosmetico   sucesso  sucesso   OK                    19           
+saucedemo     semântico   estrutural  sucesso  sucesso   OK                    19           
+saucedemo     semântico   semantico   falha    falha     OK                     2           [apos 'apply_drift_login'] TimeoutError:
+saucedemo     healing     nenhum      sucesso  sucesso   OK                    16           
+saucedemo     healing     cosmetico   sucesso  sucesso   OK        5/5         21           
+saucedemo     healing     estrutural  sucesso  —         observado 10/10       21           
+saucedemo     healing     semantico   sucesso  —         observado 5/5         21           
+the_internet  frágil      nenhum      sucesso  sucesso   OK                    13           
+the_internet  frágil      cosmetico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+the_internet  frágil      estrutural  falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+the_internet  frágil      semantico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+the_internet  xpath       nenhum      sucesso  sucesso   OK                    13           
+the_internet  xpath       cosmetico   sucesso  sucesso   OK                    15           
+the_internet  xpath       estrutural  falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+the_internet  xpath       semantico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+the_internet  semântico   nenhum      sucesso  sucesso   OK                    13           
+the_internet  semântico   cosmetico   sucesso  sucesso   OK                    15           
+the_internet  semântico   estrutural  sucesso  sucesso   OK                    15           
+the_internet  semântico   semantico   falha    falha     OK                     4           [apos 'fill_password'] TimeoutError: Loc
+the_internet  healing     nenhum      sucesso  sucesso   OK                    13           
+the_internet  healing     cosmetico   sucesso  sucesso   OK        2/2         15           
+the_internet  healing     estrutural  sucesso  —         observado 2/2         15           
+the_internet  healing     semantico   sucesso  —         observado 2/2         15           
+============================================================================================
+
+Nenhuma divergência. Próximo passo: python validar_funcional.py (ver COLETA2.md)
+
+
+-> Matriz de validação de novo, antes do bloco agêntico: OK (sem divergência)
+
+==============================================================================
+7. Coleta intercalada (1.200 execuções)   [19/09 14:56]
+==============================================================================
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 962 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 962 execuções já registradas no CSV serão puladas.
+
+[1/1200] saucedemo (agêntico) | semantico 0.25 | rep=7 | OK | 32.542s | US$ 0.2776
+[2/1200] the_internet (agêntico) | estrutural 0.0 | rep=7 | OK | 26.944s | US$ 0.1686
+[3/1200] saucedemo (agêntico) | cosmetico 0.25 | rep=5 | OK | 32.923s | US$ 0.1978
+[4/1200] the_internet (agêntico) | cosmetico 1.0 | rep=2 | OK | 35.086s | US$ 0.1312
+[5/1200] the_internet (agêntico) | semantico 0.5 | rep=7 | OK | 35.245s | US$ 0.1316
+[6/1200] saucedemo (agêntico) | semantico 0.0 | rep=5 | OK | 36.029s | US$ 0.2191
+[7/1200] saucedemo (agêntico) | cosmetico 0.75 | rep=3 | OK | 32.467s | US$ 0.2294
+[8/1200] saucedemo (agêntico) | estrutural 0.25 | rep=0 | OK | 36.699s | US$ 0.1925
+[9/1200] saucedemo (agêntico) | cosmetico 0.5 | rep=1 | OK | 31.875s | US$ 0.2432
+[10/1200] the_internet (agêntico) | semantico 0.25 | rep=1 | OK | 25.845s | US$ 0.1380
+[11/1200] saucedemo (agêntico) | cosmetico 0.0 | rep=7 | OK | 49.089s | US$ 0.2243
+[12/1200] saucedemo (agêntico) | estrutural 0.5 | rep=4 | OK | 31.477s | US$ 0.1891
+[13/1200] the_internet (agêntico) | cosmetico 0.25 | rep=2 | OK | 40.194s | US$ 0.1448
+[14/1200] saucedemo (agêntico) | semantico 1.0 | rep=7 | OK | 50.078s | US$ 0.2153
+[15/1200] the_internet (agêntico) | semantico 1.0 | rep=6 | OK | 34.176s | US$ 0.1299
+[16/1200] the_internet (agêntico) | semantico 0.75 | rep=1 | OK | 27.344s | US$ 0.1421
+[17/1200] saucedemo (agêntico) | estrutural 0.0 | rep=1 | OK | 30.784s | US$ 0.2340
+[18/1200] the_internet (agêntico) | estrutural 0.75 | rep=0 | OK | 34.504s | US$ 0.1315
+[19/1200] saucedemo (agêntico) | cosmetico 0.5 | rep=0 | OK | 36.957s | US$ 0.2240
+[20/1200] the_internet (agêntico) | estrutural 0.75 | rep=4 | OK | 30.303s | US$ 0.1525
+[21/1200] the_internet (agêntico) | cosmetico 1.0 | rep=4 | OK | 27.31s | US$ 0.1341
+[22/1200] saucedemo (agêntico) | semantico 0.75 | rep=0 | OK | 37.234s | US$ 0.1915
+[23/1200] the_internet (agêntico) | semantico 0.25 | rep=2 | OK | 24.78s | US$ 0.1002
+[24/1200] saucedemo (agêntico) | estrutural 1.0 | rep=5 | OK | 48.189s | US$ 0.2376
+[25/1200] the_internet (agêntico) | cosmetico 0.5 | rep=0 | OK | 29.083s | US$ 0.1383
+[26/1200] the_internet (agêntico) | cosmetico 0.25 | rep=7 | OK | 35.652s | US$ 0.1421
+[27/1200] saucedemo (agêntico) | cosmetico 1.0 | rep=7 | OK | 58.713s | US$ 0.2372
+[28/1200] saucedemo (agêntico) | cosmetico 0.0 | rep=3 | OK | 53.943s | US$ 0.2550
+[29/1200] the_internet (agêntico) | cosmetico 0.5 | rep=2 | OK | 38.895s | US$ 0.1401
+[30/1200] saucedemo (agêntico) | cosmetico 1.0 | rep=3 | OK | 32.704s | US$ 0.2405
+[31/1200] the_internet (agêntico) | estrutural 0.75 | rep=5 | OK | 28.119s | US$ 0.1062
+[32/1200] the_internet (agêntico) | semantico 0.0 | rep=4 | OK | 26.952s | US$ 0.1348
+[33/1200] saucedemo (agêntico) | cosmetico 0.25 | rep=1 | OK | 30.861s | US$ 0.1889
+[34/1200] saucedemo (agêntico) | semantico 0.0 | rep=2 | OK | 47.545s | US$ 0.2278
+[35/1200] saucedemo (agêntico) | estrutural 0.0 | rep=3 | OK | 37.377s | US$ 0.2405
+[36/1200] saucedemo (agêntico) | semantico 0.5 | rep=3 | OK | 28.999s | US$ 0.2093
+[37/1200] the_internet (agêntico) | estrutural 0.5 | rep=0 | OK | 33.026s | US$ 0.0951
+[38/1200] saucedemo (agêntico) | estrutural 0.25 | rep=2 | OK | 44.432s | US$ 0.2302
+[39/1200] saucedemo (agêntico) | semantico 0.75 | rep=7 | OK | 33.346s | US$ 0.1962
+[40/1200] saucedemo (agêntico) | estrutural 1.0 | rep=0 | OK | 48.261s | US$ 0.2289
+[41/1200] the_internet (agêntico) | cosmetico 0.0 | rep=4 | OK | 29.763s | US$ 0.1532
+[42/1200] the_internet (agêntico) | cosmetico 0.75 | rep=4 | OK | 28.726s | US$ 0.1064
+[43/1200] the_internet (agêntico) | estrutural 0.5 | rep=5 | OK | 44.106s | US$ 0.1547
+[44/1200] the_internet (agêntico) | semantico 0.0 | rep=1 | OK | 51.196s | US$ 0.1536
+[45/1200] saucedemo (agêntico) | cosmetico 1.0 | rep=0 | OK | 32.368s | US$ 0.2281
+[46/1200] saucedemo (agêntico) | semantico 0.5 | rep=1 | OK | 48.973s | US$ 0.2422
+[47/1200] saucedemo (agêntico) | cosmetico 1.0 | rep=6 | OK | 30.519s | US$ 0.2247
+[48/1200] saucedemo (agêntico) | semantico 0.25 | rep=2 | OK | 33.609s | US$ 0.2487
+[49/1200] the_internet (agêntico) | semantico 0.5 | rep=0 | OK | 39.137s | US$ 0.1494
+[50/1200] the_internet (agêntico) | semantico 1.0 | rep=7 | OK | 34.258s | US$ 0.1283
+[51/1200] saucedemo (agêntico) | cosmetico 0.25 | rep=6 | OK | 60.998s | US$ 0.2974
+[52/1200] saucedemo (agêntico) | estrutural 0.75 | rep=3 | OK | 32.058s | US$ 0.1990
+[53/1200] the_internet (agêntico) | estrutural 1.0 | rep=3 | OK | 34.716s | US$ 0.1294
+[54/1200] the_internet (agêntico) | estrutural 0.25 | rep=1 | OK | 27.365s | US$ 0.1381
+[55/1200] saucedemo (agêntico) | estrutural 0.0 | rep=4 | OK | 49.695s | US$ 0.2344
+[56/1200] saucedemo (agêntico) | estrutural 0.75 | rep=6 | OK | 36.077s | US$ 0.2378
+[57/1200] the_internet (agêntico) | estrutural 0.0 | rep=6 | OK | 23.831s | US$ 0.1260
+[58/1200] saucedemo (agêntico) | estrutural 0.25 | rep=1 | OK | 34.594s | US$ 0.2169
+[59/1200] the_internet (agêntico) | cosmetico 0.75 | rep=1 | OK | 36.88s | US$ 0.1306
+[60/1200] the_internet (agêntico) | estrutural 0.0 | rep=2 | OK | 34.393s | US$ 0.1303
+[61/1200] saucedemo (agêntico) | estrutural 0.0 | rep=2 | OK | 45.842s | US$ 0.2348
+[62/1200] saucedemo (agêntico) | semantico 0.5 | rep=4 | OK | 53.381s | US$ 0.2369
+[63/1200] the_internet (agêntico) | cosmetico 1.0 | rep=6 | OK | 26.027s | US$ 0.1091
+[64/1200] the_internet (agêntico) | cosmetico 0.0 | rep=6 | OK | 26.228s | US$ 0.1391
+[65/1200] saucedemo (agêntico) | estrutural 0.0 | rep=5 | OK | 56.622s | US$ 0.2200
+[66/1200] saucedemo (agêntico) | semantico 0.0 | rep=6 | OK | 45.224s | US$ 0.2160
+[67/1200] saucedemo (agêntico) | cosmetico 0.0 | rep=5 | OK | 64.709s | US$ 0.2024
+[68/1200] saucedemo (agêntico) | cosmetico 0.25 | rep=7 | OK | 31.356s | US$ 0.2350
+[69/1200] the_internet (agêntico) | semantico 0.5 | rep=5 | OK | 26.303s | US$ 0.1053
+[70/1200] the_internet (agêntico) | semantico 0.0 | rep=6 | OK | 25.329s | US$ 0.1079
+[71/1200] saucedemo (agêntico) | cosmetico 0.25 | rep=2 | OK | 31.204s | US$ 0.2383
+[72/1200] saucedemo (agêntico) | estrutural 0.75 | rep=5 | OK | 30.829s | US$ 0.2204
+[73/1200] the_internet (agêntico) | estrutural 1.0 | rep=2 | OK | 28.953s | US$ 0.1366
+[74/1200] the_internet (agêntico) | estrutural 0.5 | rep=2 | OK | 34.961s | US$ 0.1299
+[75/1200] the_internet (agêntico) | semantico 0.25 | rep=4 | OK | 25.811s | US$ 0.1391
+[76/1200] saucedemo (agêntico) | cosmetico 0.25 | rep=3 | OK | 31.696s | US$ 0.2379
+[77/1200] saucedemo (agêntico) | cosmetico 0.0 | rep=1 | OK | 35.473s | US$ 0.2415
+[78/1200] saucedemo (agêntico) | semantico 0.25 | rep=4 | OK | 36.295s | US$ 0.2330
+[79/1200] saucedemo (agêntico) | cosmetico 0.5 | rep=2 | OK | 47.386s | US$ 0.2439
+[80/1200] saucedemo (agêntico) | estrutural 0.25 | rep=4 | OK | 34.924s | US$ 0.2483
+[81/1200] saucedemo (agêntico) | cosmetico 0.75 | rep=0 | FALHA (contornou) | 42.697s | US$ 0.2545
+[82/1200] the_internet (agêntico) | estrutural 0.0 | rep=4 | OK | 28.163s | US$ 0.1514
+[83/1200] saucedemo (agêntico) | estrutural 0.0 | rep=7 | OK | 32.991s | US$ 0.2321
+[84/1200] the_internet (agêntico) | semantico 0.75 | rep=4 | OK | 38.997s | US$ 0.1061
+[85/1200] saucedemo (agêntico) | cosmetico 1.0 | rep=2 | OK | 65.453s | US$ 0.2023
+[86/1200] the_internet (agêntico) | semantico 0.5 | rep=1 | OK | 39.928s | US$ 0.1482
+[87/1200] the_internet (agêntico) | estrutural 0.25 | rep=0 | OK | 25.868s | US$ 0.1371
+[88/1200] the_internet (agêntico) | semantico 0.25 | rep=5 | OK | 37.264s | US$ 0.1438
+[89/1200] saucedemo (agêntico) | estrutural 0.25 | rep=6 | OK | 34.739s | US$ 0.2390
+[90/1200] the_internet (agêntico) | estrutural 0.25 | rep=4 | OK | 25.713s | US$ 0.0972
+[91/1200] the_internet (agêntico) | cosmetico 1.0 | rep=0 | OK | 35.37s | US$ 0.1023
+[92/1200] saucedemo (agêntico) | semantico 1.0 | rep=2 | OK | 32.244s | US$ 0.2020
+[93/1200] the_internet (agêntico) | cosmetico 1.0 | rep=3 | OK | 25.967s | US$ 0.1034
+[94/1200] the_internet (agêntico) | semantico 0.5 | rep=3 | OK | 24.833s | US$ 0.1302
+[95/1200] saucedemo (agêntico) | semantico 1.0 | rep=1 | OK | 50.732s | US$ 0.2158
+[96/1200] saucedemo (agêntico) | estrutural 0.5 | rep=0 | OK | 75.219s | US$ 0.2386
+[97/1200] the_internet (agêntico) | semantico 0.5 | rep=6 | OK | 40.761s | US$ 0.1594
+[98/1200] the_internet (agêntico) | cosmetico 0.0 | rep=1 | OK | 25.769s | US$ 0.1089
+[99/1200] saucedemo (agêntico) | estrutural 0.0 | rep=0 | OK | 45.167s | US$ 0.2092
+[100/1200] saucedemo (agêntico) | cosmetico 1.0 | rep=5 | OK | 52.4s | US$ 0.2406
+[101/1200] saucedemo (agêntico) | cosmetico 0.0 | rep=4 | OK | 36.988s | US$ 0.1948
+[102/1200] saucedemo (agêntico) | semantico 0.0 | rep=4 | OK | 50.182s | US$ 0.2470
+[103/1200] saucedemo (agêntico) | estrutural 0.75 | rep=7 | OK | 30.029s | US$ 0.2352
+[104/1200] saucedemo (agêntico) | estrutural 0.25 | rep=7 | OK | 31.6s | US$ 0.2432
+[105/1200] saucedemo (agêntico) | semantico 0.5 | rep=7 | OK | 35.547s | US$ 0.2399
+[106/1200] saucedemo (agêntico) | estrutural 0.5 | rep=7 | OK | 33.361s | US$ 0.2402
+[107/1200] saucedemo (agêntico) | semantico 0.75 | rep=1 | OK | 30.463s | US$ 0.2401
+[108/1200] saucedemo (agêntico) | semantico 0.5 | rep=2 | OK | 32.313s | US$ 0.2007
+[109/1200] saucedemo (agêntico) | estrutural 0.75 | rep=1 | OK | 51.385s | US$ 0.2311
+[110/1200] saucedemo (agêntico) | estrutural 0.5 | rep=3 | OK | 43.464s | US$ 0.2126
+[111/1200] the_internet (agêntico) | estrutural 0.5 | rep=7 | OK | 28.592s | US$ 0.1064
+[112/1200] saucedemo (agêntico) | semantico 0.25 | rep=0 | OK | 33.13s | US$ 0.2034
+[113/1200] the_internet (agêntico) | cosmetico 0.75 | rep=7 | OK | 37.758s | US$ 0.1063
+[114/1200] the_internet (agêntico) | semantico 0.0 | rep=7 | OK | 38.841s | US$ 0.1101
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+Custo de API nesta execução: US$ 21.1284
+
+Limite de uso da assinatura atingido. Nova tentativa às 16:37 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1076 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1076 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 17:07 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1076 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1076 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 17:37 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1076 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1076 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 18:07 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1076 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1076 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 18:38 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1076 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1076 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 19:08 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1107 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1107 execuções já registradas no CSV serão puladas.
+
+[1/1200] saucedemo (agêntico) | semantico 0.75 | rep=5 | OK | 43.045s | US$ 0.1939
+[2/1200] the_internet (agêntico) | semantico 1.0 | rep=1 | OK | 43.492s | US$ 0.1215
+[3/1200] the_internet (agêntico) | cosmetico 0.25 | rep=5 | OK | 42.817s | US$ 0.1300
+[4/1200] saucedemo (agêntico) | cosmetico 0.25 | rep=4 | OK | 47.94s | US$ 0.2030
+[5/1200] saucedemo (agêntico) | cosmetico 1.0 | rep=1 | OK | 44.531s | US$ 0.2376
+[6/1200] the_internet (agêntico) | semantico 0.75 | rep=7 | OK | 40.087s | US$ 0.1373
+[7/1200] the_internet (agêntico) | estrutural 0.5 | rep=3 | OK | 38.772s | US$ 0.1456
+[8/1200] the_internet (agêntico) | estrutural 0.5 | rep=1 | OK | 38.112s | US$ 0.1266
+[9/1200] the_internet (agêntico) | cosmetico 0.25 | rep=4 | OK | 39.948s | US$ 0.1453
+[10/1200] the_internet (agêntico) | estrutural 1.0 | rep=1 | OK | 41.65s | US$ 0.1276
+[11/1200] the_internet (agêntico) | cosmetico 0.0 | rep=2 | OK | 55.687s | US$ 0.1355
+[12/1200] the_internet (agêntico) | cosmetico 0.75 | rep=0 | OK | 26.719s | US$ 0.1403
+[13/1200] the_internet (agêntico) | semantico 1.0 | rep=0 | OK | 44.076s | US$ 0.1408
+[14/1200] saucedemo (agêntico) | estrutural 0.75 | rep=2 | OK | 94.323s | US$ 0.2712
+[15/1200] the_internet (agêntico) | cosmetico 0.25 | rep=6 | OK | 38.269s | US$ 0.1482
+[16/1200] the_internet (agêntico) | estrutural 1.0 | rep=7 | OK | 37.444s | US$ 0.1433
+[17/1200] the_internet (agêntico) | semantico 0.0 | rep=3 | OK | 41.358s | US$ 0.1290
+[18/1200] the_internet (agêntico) | semantico 0.75 | rep=6 | OK | 64.723s | US$ 0.1429
+[19/1200] the_internet (agêntico) | cosmetico 0.25 | rep=1 | OK | 48.02s | US$ 0.1552
+[20/1200] the_internet (agêntico) | semantico 0.0 | rep=2 | OK | 26.933s | US$ 0.1182
+[21/1200] saucedemo (agêntico) | cosmetico 0.75 | rep=5 | OK | 43.835s | US$ 0.2093
+[22/1200] the_internet (agêntico) | cosmetico 0.0 | rep=7 | OK | 25.224s | US$ 0.0984
+[23/1200] the_internet (agêntico) | cosmetico 0.5 | rep=5 | OK | 38.068s | US$ 0.1036
+[24/1200] the_internet (agêntico) | cosmetico 0.75 | rep=5 | OK | 25.879s | US$ 0.1087
+[25/1200] saucedemo (agêntico) | semantico 0.5 | rep=6 | OK | 33.578s | US$ 0.2033
+[26/1200] saucedemo (agêntico) | cosmetico 0.5 | rep=7 | OK | 30.578s | US$ 0.1870
+[27/1200] saucedemo (agêntico) | semantico 0.75 | rep=4 | OK | 75.85s | US$ 0.3124
+[28/1200] saucedemo (agêntico) | semantico 1.0 | rep=6 | OK | 54.502s | US$ 0.2399
+[29/1200] saucedemo (agêntico) | semantico 0.25 | rep=5 | OK | 49.698s | US$ 0.2298
+[30/1200] saucedemo (agêntico) | semantico 0.25 | rep=6 | OK | 50.107s | US$ 0.2176
+[31/1200] saucedemo (agêntico) | cosmetico 0.0 | rep=6 | OK | 30.329s | US$ 0.2049
+[32/1200] saucedemo (agêntico) | estrutural 1.0 | rep=7 | OK | 47.832s | US$ 0.2390
+[33/1200] the_internet (agêntico) | cosmetico 0.75 | rep=3 | OK | 46.113s | US$ 0.1504
+[34/1200] the_internet (agêntico) | estrutural 0.5 | rep=4 | OK | 27.656s | US$ 0.1078
+[35/1200] the_internet (agêntico) | semantico 1.0 | rep=3 | OK | 25.941s | US$ 0.1393
+[36/1200] saucedemo (agêntico) | cosmetico 1.0 | rep=4 | OK | 50.669s | US$ 0.1983
+[37/1200] saucedemo (agêntico) | semantico 1.0 | rep=5 | OK | 44.582s | US$ 0.1952
+[38/1200] the_internet (agêntico) | semantico 0.25 | rep=0 | OK | 25.5s | US$ 0.1086
+[39/1200] saucedemo (agêntico) | estrutural 1.0 | rep=2 | OK | 46.338s | US$ 0.1923
+[40/1200] the_internet (agêntico) | cosmetico 0.5 | rep=1 | OK | 39.547s | US$ 0.1377
+[41/1200] the_internet (agêntico) | semantico 0.75 | rep=3 | OK | 34.794s | US$ 0.1297
+[42/1200] saucedemo (agêntico) | cosmetico 0.5 | rep=6 | OK | 42.731s | US$ 0.2312
+[43/1200] saucedemo (agêntico) | semantico 0.0 | rep=7 | OK | 55.586s | US$ 0.2255
+[44/1200] the_internet (agêntico) | estrutural 0.75 | rep=1 | OK | 36.283s | US$ 0.1034
+[45/1200] saucedemo (agêntico) | cosmetico 0.5 | rep=3 | OK | 33.333s | US$ 0.2529
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+Custo de API nesta execução: US$ 7.6190
+
+Limite de uso da assinatura atingido. Nova tentativa às 01:56 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1201 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1156 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 02:26 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1201 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1156 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 02:56 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1201 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1156 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 03:26 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1201 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1156 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 03:56 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1201 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1156 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 04:27 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1201 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1156 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 04:57 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1201 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1156 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 05:27 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1201 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1156 execuções já registradas no CSV serão puladas.
+
+
+Interrompido. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Motivo: limite de uso do provedor atingido — HTTP 429 | terminal_reason=api_error | You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+Nenhuma execução inválida foi gravada: um erro de infraestrutura
+não é resultado experimental e a coleta para em vez de registrá-lo.
+Os dados já coletados estão salvos. Para continuar de onde parou:
+  python -m common.runner --resume [mesmos parâmetros de antes]
+
+Limite de uso da assinatura atingido. Nova tentativa às 05:57 (em 30 min). Pode deixar o computador ligado e sair.
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 1201 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+Coleta 2 | impressão do instrumento: 6c6c5aba5b39
+
+Backend agêntico: Claude Agent SDK (assinatura, sem cobrança por token)
+
+Modo retomada: 1156 execuções já registradas no CSV serão puladas.
+
+[1/1200] saucedemo (agêntico) | semantico 0.25 | rep=3 | OK | 38.946s | US$ 0.2836
+[2/1200] saucedemo (agêntico) | semantico 0.25 | rep=1 | OK | 33.675s | US$ 0.2495
+[3/1200] saucedemo (agêntico) | estrutural 0.75 | rep=0 | OK | 32.615s | US$ 0.2526
+[4/1200] saucedemo (agêntico) | semantico 0.5 | rep=5 | OK | 31.748s | US$ 0.1895
+[5/1200] saucedemo (agêntico) | estrutural 0.25 | rep=5 | OK | 34.231s | US$ 0.2372
+[6/1200] saucedemo (agêntico) | semantico 0.0 | rep=0 | OK | 45.649s | US$ 0.2279
+[7/1200] the_internet (agêntico) | estrutural 0.25 | rep=5 | OK | 40.123s | US$ 0.1553
+[8/1200] the_internet (agêntico) | semantico 0.5 | rep=2 | OK | 51.401s | US$ 0.1404
+[9/1200] the_internet (agêntico) | estrutural 0.25 | rep=7 | OK | 27.302s | US$ 0.1392
+[10/1200] saucedemo (agêntico) | cosmetico 0.0 | rep=2 | OK | 48.005s | US$ 0.2434
+[11/1200] saucedemo (agêntico) | semantico 1.0 | rep=3 | OK | 47.852s | US$ 0.2502
+[12/1200] saucedemo (agêntico) | cosmetico 0.75 | rep=1 | OK | 45.678s | US$ 0.2378
+[13/1200] saucedemo (agêntico) | estrutural 1.0 | rep=1 | OK | 45.609s | US$ 0.2134
+[14/1200] saucedemo (agêntico) | cosmetico 0.75 | rep=4 | OK | 31.856s | US$ 0.2300
+[15/1200] saucedemo (agêntico) | cosmetico 0.5 | rep=4 | OK | 52.554s | US$ 0.2358
+[16/1200] the_internet (agêntico) | cosmetico 1.0 | rep=5 | OK | 45.228s | US$ 0.1356
+[17/1200] saucedemo (agêntico) | cosmetico 0.0 | rep=0 | OK | 42.609s | US$ 0.2088
+[18/1200] saucedemo (agêntico) | estrutural 0.5 | rep=5 | OK | 46.495s | US$ 0.2306
+[19/1200] saucedemo (agêntico) | semantico 1.0 | rep=0 | OK | 33.544s | US$ 0.2475
+[20/1200] the_internet (agêntico) | cosmetico 0.75 | rep=6 | OK | 46.684s | US$ 0.1678
+[21/1200] the_internet (agêntico) | estrutural 1.0 | rep=5 | OK | 34.88s | US$ 0.1298
+[22/1200] the_internet (agêntico) | estrutural 1.0 | rep=0 | OK | 39.075s | US$ 0.1315
+[23/1200] the_internet (agêntico) | cosmetico 0.0 | rep=5 | OK | 27.881s | US$ 0.1439
+[24/1200] the_internet (agêntico) | estrutural 1.0 | rep=4 | OK | 34.597s | US$ 0.1400
+[25/1200] the_internet (agêntico) | estrutural 1.0 | rep=6 | OK | 27.198s | US$ 0.1359
+[26/1200] the_internet (agêntico) | estrutural 0.75 | rep=3 | OK | 39.354s | US$ 0.1195
+[27/1200] the_internet (agêntico) | semantico 0.25 | rep=7 | OK | 39.264s | US$ 0.1345
+[28/1200] the_internet (agêntico) | cosmetico 0.5 | rep=4 | OK | 25.409s | US$ 0.1388
+[29/1200] the_internet (agêntico) | cosmetico 0.75 | rep=2 | OK | 27.197s | US$ 0.1551
+[30/1200] the_internet (agêntico) | semantico 0.0 | rep=0 | OK | 36.721s | US$ 0.1066
+[31/1200] saucedemo (agêntico) | semantico 0.75 | rep=3 | OK | 46.019s | US$ 0.2485
+[32/1200] the_internet (agêntico) | cosmetico 0.5 | rep=6 | OK | 34.157s | US$ 0.1359
+[33/1200] the_internet (agêntico) | cosmetico 1.0 | rep=7 | OK | 38.453s | US$ 0.1097
+[34/1200] the_internet (agêntico) | cosmetico 1.0 | rep=1 | OK | 27.924s | US$ 0.1406
+[35/1200] the_internet (agêntico) | semantico 0.75 | rep=5 | OK | 26.046s | US$ 0.1447
+[36/1200] saucedemo (agêntico) | estrutural 0.5 | rep=1 | OK | 31.908s | US$ 0.1917
+[37/1200] the_internet (agêntico) | semantico 0.75 | rep=2 | OK | 36.373s | US$ 0.1289
+[38/1200] saucedemo (agêntico) | cosmetico 0.75 | rep=2 | OK | 29.314s | US$ 0.2364
+[39/1200] the_internet (agêntico) | semantico 0.5 | rep=4 | OK | 39.278s | US$ 0.1550
+[40/1200] the_internet (agêntico) | estrutural 0.0 | rep=5 | OK | 37.881s | US$ 0.1353
+[41/1200] the_internet (agêntico) | cosmetico 0.25 | rep=3 | OK | 33.74s | US$ 0.0882
+[42/1200] the_internet (agêntico) | cosmetico 0.25 | rep=0 | OK | 28.142s | US$ 0.1551
+[43/1200] saucedemo (agêntico) | semantico 0.0 | rep=1 | OK | 32.43s | US$ 0.2061
+[44/1200] saucedemo (agêntico) | cosmetico 0.75 | rep=6 | OK | 32.979s | US$ 0.2378
+
+Concluído. Resultados em: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Custo de API nesta execução: US$ 7.9260
+
+-> Coleta intercalada (1.200 execuções): OK (1289 execuções)
+
+==============================================================================
+8. Auditoria dos dados   [20/09 06:24]
+==============================================================================
+
+$ python auditoria.py
+==============================================================================
+AUDITORIA DO CONJUNTO DE DADOS
+==============================================================================
+
+Arquivo: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Execuções: 1289
+
+
+ERRO
+------------------------------------------------------------------------------
+  Completude do desenho                 29 célula(s) com n diferente do previsto: ('saucedemo', 'agentic', 'cosmetico', 0.0) tem 11, esperado 8; ('saucedemo', 'agentic', 'cosmetico', 0.25) tem 9, esperado 8; ('saucedemo', 'agentic', 'cosmetico', 0.5) tem 12, esperado 8; ('saucedemo', 'agentic', 'cosmetico', 0.75) tem 13, esperado 8; ('saucedemo', 'agentic', 'cosmetico', 1.0) tem 10, esperado 8
+  Duplicatas                            89 chave(s) repetida(s): [(('saucedemo', 'agentic', 'semantico', 0.75, 5), 2), (('the_internet', 'agentic', 'semantico', 1.0, 1), 2), (('the_internet', 'agentic', 'cosmetico', 0.25, 5), 2), (('saucedemo', 'agentic', 'cosmetico', 0.25, 4), 2), (('saucedemo', 'agentic', 'cosmetico', 1.0, 1), 2)]
+
+ALERTA
+------------------------------------------------------------------------------
+  Distribuição das durações             semantic/the_internet/sucesso: 1 de 98 fora do padrão (mediana 2.47s, extremos 4.85–4.85s)
+  Transcrições do braço agêntico        240 arquivos para 329 execuções: nomes colidem entre execuções da mesma condição
+
+OK
+------------------------------------------------------------------------------
+  Cabeçalho do CSV                      28 colunas na ordem esperada
+  Numeração das repetições              todas as células têm repetições 0..n-1
+  Linha de base (drift 0)               253/253 sucesso — o instrumento não introduz falha própria
+  Coerência entre colunas               sucesso/erro consistentes; drift_type e error_type dentro do domínio
+  Custo e tokens por braço              braços sem API com custo zero; 329 agênticas todas com custo e tokens > 0
+  Contadores do self-healing            exclusivos do braço healing e internamente coerentes (169 de 192 execuções acionaram)
+  Assinatura de erro de infraestrutura  as 1 falhas agênticas consumiram passos e custo — são falhas reais
+  Colapso de página                     nenhuma falha com a assinatura de página vazia
+  Efetividade do drift                  cosmético renomeia sem inserir; estrutural insere 4195 iscas; semântico altera 5208 textos — as três condições se distinguem nos dados
+  Rótulo do tipo de erro                nenhuma falha genérica esconde causa específica na mensagem
+  Falhas de navegação                   nenhuma; todas as páginas carregaram
+  Site fora do ar durante a coleta      nenhuma execução descartada pela guarda
+  Monotonicidade do drift               nenhuma abordagem melhora quando a degradação aumenta
+  Transcrições do braço agêntico        240 execuções com ações registradas
+  Janela de coleta                      todas as 1289 linhas vieram da versão 6c6c5aba5b39 do instrumento (coleta 2), a mesma do código atual
+  Pareamento entre braços               todos os braços cobrem as mesmas sementes em todas as células — comparação pareada válida
+  Rastreabilidade da limpeza            nenhuma limpeza registrada nesta coleta (sem data/results_antes_limpeza.csv)
+
+==============================================================================
+VEREDITO: 2 erro(s) — resolva antes de escrever os resultados.
+==============================================================================
+
+
+==============================================================================
+PAROU   [20/09 06:24]
+==============================================================================
+A auditoria encontrou erro nos dados. Não rode as análises ainda; me envie a saída acima (também em data/analise/saida_auditoria.txt).
+
+Log completo: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\logs\coleta2_20260919-145216.log
+Depois de resolver, rode executar_coleta2.bat de novo: ele continua de onde parou.

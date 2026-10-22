@@ -1,0 +1,320 @@
+{
+ "n_steps": 41,
+ "tokens_input": 826297,
+ "tokens_output": 8381,
+ "tokens_cache_write": 25452,
+ "tokens_cache_read": 800765,
+ "cost_usd": 0.519627,
+ "model": "claude-sonnet-5",
+ "preco_input_usd_por_mtok": 2.0,
+ "preco_output_usd_por_mtok": 10.0,
+ "stopped_reason": "max_steps",
+ "error_message": "Exception: Claude Code returned an error result: Reached maximum number of turns (40)",
+ "transcript": [
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "select:playwright",
+    "max_results": 30
+   }
+  },
+  {
+   "tool": "ToolSearch",
+   "input": {
+    "query": "browser snapshot navigate click",
+    "max_results": 30
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_fill_form",
+   "input": {
+    "fields": [
+     {
+      "name": "Username",
+      "target": "e16",
+      "type": "textbox",
+      "value": "tomsmith",
+      "element": "Username textbox"
+     },
+     {
+      "name": "Password",
+      "target": "e20",
+      "type": "textbox",
+      "value": "SuperSecretPassword!",
+      "element": "Password textbox"
+     }
+    ]
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "e21",
+    "element": "Login button"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "text": "secure"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f1e18",
+    "element": "Username textbox",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f1e22",
+    "element": "Password textbox",
+    "text": "SuperSecretPassword!"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f1e23",
+    "element": "Login button"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f2e18",
+    "element": "Username textbox"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_press_key",
+   "input": {
+    "key": "ControlOrMeta+a"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_press_key",
+   "input": {
+    "key": "Delete"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f2e18",
+    "element": "Username textbox",
+    "text": "tomsmith",
+    "slowly": true
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f2e22",
+    "element": "Password textbox"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_press_key",
+   "input": {
+    "key": "ControlOrMeta+a"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_press_key",
+   "input": {
+    "key": "Delete"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f2e22",
+    "element": "Password textbox",
+    "text": "SuperSecretPassword!",
+    "slowly": true
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_press_key",
+   "input": {
+    "key": "Enter"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_take_screenshot",
+   "input": {
+    "scale": "css",
+    "filename": "login.png"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_navigate",
+   "input": {
+    "url": "https://the-internet.herokuapp.com/login"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f4e16",
+    "element": "Username textbox"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f4e16",
+    "element": "Username textbox",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "f4e20",
+    "element": "Password textbox",
+    "text": "SuperSecretPassword!"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f4e28",
+    "element": "Login button"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "text": "secure area"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_find",
+   "input": {
+    "text": "invalid"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_network_requests",
+   "input": {
+    "static": false,
+    "filter": "login"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_network_requests",
+   "input": {
+    "static": false,
+    "filter": "herokuapp.com/(login|secure)"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_navigate",
+   "input": {
+    "url": "https://the-internet.herokuapp.com/login"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "input#username",
+    "element": "Username textbox",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "input#password",
+    "element": "Password textbox",
+    "text": "SuperSecretPassword!"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_take_screenshot",
+   "input": {
+    "scale": "css",
+    "filename": "login2.png"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "input[name=\"username\"]",
+    "element": "Username textbox",
+    "text": "tomsmith"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_type",
+   "input": {
+    "target": "input[name=\"password\"]",
+    "element": "Password textbox",
+    "text": "SuperSecretPassword!"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_network_requests",
+   "input": {
+    "static": true,
+    "filter": "herokuapp.com/login$"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_network_request",
+   "input": {
+    "index": 1,
+    "part": "response-body"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_snapshot",
+   "input": {}
+  },
+  {
+   "tool": "mcp__playwright__browser_click",
+   "input": {
+    "target": "f6e16",
+    "element": "Username textbox"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_press_key",
+   "input": {
+    "key": "t"
+   }
+  },
+  {
+   "tool": "mcp__playwright__browser_network_requests",
+   "input": {
+    "static": true,
+    "filter": "authenticate"
+   }
+  }
+ ]
+}

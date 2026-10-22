@@ -1,0 +1,6 @@
+braco,saucedemo_sucessos,saucedemo_n,the_internet_sucessos,the_internet_n,p_bruto,p_holm,significativo
+deterministic,1,24,2,24,1.00000000,1.00000000,False
+xpath,0,24,1,24,1.00000000,1.00000000,False
+semantic,3,24,4,24,1.00000000,1.00000000,False
+healing,17,24,24,24,0.00940129,0.04700643,True
+agentic,24,24,24,24,1.00000000,1.00000000,False

@@ -1,0 +1,255 @@
+Medidas extraídas de /sessions/rcw-018kbd9yanfjjs9mcbwt9h7n/mnt/TCC/tcc_automacao_web/data/results.csv
+Custo agêntico: preço público, recalculado pelos tokens das transcrições
+Custo por execução: média das execuções concluídas
+
+==============================================================================
+1. PARÂMETROS
+==============================================================================
+  MEDIDOS neste experimento (execuções que contornaram a interface ficam fora):
+  abordagem        quebra cosm.  estrut.  semânt.  US$ exec. OK  US$ exec. falha
+  ------------------------------------------------------------------------------
+  ID/CSS                  89.1%    87.5%    87.5%        0.0000           0.0000
+  XPath                    0.0%    93.8%    93.8%        0.0000           0.0000
+  papel e rótulo           0.0%     0.0%    73.4%        0.0000           0.0000
+  self-healing             0.0%     0.0%    10.9%        0.0000           0.0000
+  agêntica                 0.0%     0.0%     0.0%        0.1194           0.0000
+
+  O teto de US$ 0,60 por execução incide sobre a estimativa do SDK: é o limite
+  escolhido, não uma propriedade do agente. Pelo preço público, a execução
+  interrompida no teto custa menos que US$ 0,60.
+
+  PREMISSAS declaradas:
+    tempo de intervenção após uma quebra       0.50 h
+    valor da hora de manutenção                R$ 250.00
+    custo de uma intervenção                   R$ 125.00
+    câmbio                                     R$ 5.19 / US$ (premissa)
+    latência até detectar a quebra             1.0 dia(s) útil(eis)
+    custo de parada contabilizado              não
+    custo de intervenção igual para todas as abordagens (não medido)
+
+==============================================================================
+2. CUSTO ANUAL POR CENÁRIO — MUDANÇAS DO TIPO COSMÉTICA
+==============================================================================
+Valores em reais por ano.
+
+  BAIXO VOLUME — 252 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         223            0         0          223
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica                156           0            0         0          156
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 156 por ano)
+
+  BAIXO VOLUME — 252 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.336            0         0        1.336
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica                156           0            0         0          156
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 156 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         223            0         0          223
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica              3.124           0            0         0        3.124
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 223 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.336            0         0        1.336
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica              3.124           0            0         0        3.124
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 1.336 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         223            0         0          223
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica             31.236           0            0         0       31.236
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 223 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.336            0         0        1.336
+  XPath                     0           0            0         0            0
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica             31.236           0            0         0       31.236
+  -> mais barata(s): XPATH. PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 1.336 por ano)
+
+
+==============================================================================
+2. CUSTO ANUAL POR CENÁRIO — MUDANÇAS DO TIPO ESTRUTURAL
+==============================================================================
+Valores em reais por ano.
+
+  BAIXO VOLUME — 252 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0         0          219
+  XPath                     0         234            0         0          234
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica                156           0            0         0          156
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 156 por ano)
+
+  BAIXO VOLUME — 252 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0         0        1.312
+  XPath                     0       1.406            0         0        1.406
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica                156           0            0         0          156
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 156 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0         0          219
+  XPath                     0         234            0         0          234
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica              3.124           0            0         0        3.124
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 219 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0         0        1.312
+  XPath                     0       1.406            0         0        1.406
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica              3.124           0            0         0        3.124
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 1.312 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0         0          219
+  XPath                     0         234            0         0          234
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica             31.236           0            0         0       31.236
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 219 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0         0        1.312
+  XPath                     0       1.406            0         0        1.406
+  papel e rótulo            0           0            0         0            0
+  self-healing              0           0            0         0            0
+  agêntica             31.236           0            0         0       31.236
+  -> mais barata(s): PAPEL E RÓTULO. SELF-HEALING (diferença para a próxima: R$ 1.312 por ano)
+
+
+==============================================================================
+2. CUSTO ANUAL POR CENÁRIO — MUDANÇAS DO TIPO SEMÂNTICA
+==============================================================================
+Valores em reais por ano.
+
+  BAIXO VOLUME — 252 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0         0          219
+  XPath                     0         234            0         0          234
+  papel e rótulo            0         184            0         0          184
+  self-healing              0          27            0         0           27
+  agêntica                156           0            0         0          156
+  -> mais barata(s): SELF-HEALING (diferença para a próxima: R$ 129 por ano)
+
+  BAIXO VOLUME — 252 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0         0        1.312
+  XPath                     0       1.406            0         0        1.406
+  papel e rótulo            0       1.102            0         0        1.102
+  self-healing              0         164            0         0          164
+  agêntica                156           0            0         0          156
+  -> mais barata(s): AGÊNTICA (diferença para a próxima: R$ 8 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0         0          219
+  XPath                     0         234            0         0          234
+  papel e rótulo            0         184            0         0          184
+  self-healing              0          27            0         0           27
+  agêntica              3.124           0            0         0        3.124
+  -> mais barata(s): SELF-HEALING (diferença para a próxima: R$ 156 por ano)
+
+  VOLUME MÉDIO — 5.040 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0         0        1.312
+  XPath                     0       1.406            0         0        1.406
+  papel e rótulo            0       1.102            0         0        1.102
+  self-healing              0         164            0         0          164
+  agêntica              3.124           0            0         0        3.124
+  -> mais barata(s): SELF-HEALING (diferença para a próxima: R$ 938 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 2 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0         219            0         0          219
+  XPath                     0         234            0         0          234
+  papel e rótulo            0         184            0         0          184
+  self-healing              0          27            0         0           27
+  agêntica             31.236           0            0         0       31.236
+  -> mais barata(s): SELF-HEALING (diferença para a próxima: R$ 156 por ano)
+
+  ALTO VOLUME — 50.400 execuções/ano. 12 mudanças/ano
+  abordagem          operação  manutenção  desperdício    parada        TOTAL
+  ---------------------------------------------------------------------------
+  ID/CSS                    0       1.312            0         0        1.312
+  XPath                     0       1.406            0         0        1.406
+  papel e rótulo            0       1.102            0         0        1.102
+  self-healing              0         164            0         0          164
+  agêntica             31.236           0            0         0       31.236
+  -> mais barata(s): SELF-HEALING (diferença para a próxima: R$ 938 por ano)
+
+
+==============================================================================
+3. PONTO DE EQUILÍBRIO CONTRA O SELF-HEALING, POR TIPO DE MUDANÇA
+==============================================================================
+Mudanças por ano a partir das quais a agêntica passa a custar menos.
+
+  volume anual               cosmética    estrutural     semântica
+  ----------------------------------------------------------------
+  1 vez ao dia                   nunca         nunca      11.4/ano
+  20 vezes ao dia                nunca         nunca     228.5/ano
+  200 vezes ao dia               nunca         nunca         nunca
+
+  'nunca' = o self-healing custa menos mesmo com uma mudança por dia útil.
+
+==============================================================================
+4. SENSIBILIDADE — mudanças semânticas, volume de 1 execução por dia
+==============================================================================
+  hora R$   100   câmbio R$ 4.67   ->  equilíbrio: 25.7 mudanças/ano
+  hora R$   100   câmbio R$ 5.19   ->  equilíbrio: 28.6 mudanças/ano
+  hora R$   100   câmbio R$ 5.71   ->  equilíbrio: 31.4 mudanças/ano
+  hora R$   200   câmbio R$ 4.67   ->  equilíbrio: 12.9 mudanças/ano
+  hora R$   200   câmbio R$ 5.19   ->  equilíbrio: 14.3 mudanças/ano
+  hora R$   200   câmbio R$ 5.71   ->  equilíbrio: 15.7 mudanças/ano
+  hora R$   300   câmbio R$ 4.67   ->  equilíbrio: 8.6 mudanças/ano
+  hora R$   300   câmbio R$ 5.19   ->  equilíbrio: 9.5 mudanças/ano
+  hora R$   300   câmbio R$ 5.71   ->  equilíbrio: 10.5 mudanças/ano
+
+
+Tabela exportada para: /sessions/rcw-018kbd9yanfjjs9mcbwt9h7n/mnt/TCC/tcc_automacao_web/data/analise/modelo_economico.csv

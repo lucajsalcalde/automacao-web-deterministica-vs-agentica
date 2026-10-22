@@ -1,0 +1,202 @@
+site,task,approach,drift_level,repetition,success,duration_s,n_steps,drift_type,error_type,error_message,tokens_input,tokens_output,cost_usd,heal_acionamentos,heal_curados,heal_desistencias,heal_corretos,heal_errados,heal_indeterminados,drift_ids,drift_classes,drift_textos,drift_envolvidos,drift_iscas,timestamp,coleta,versao_instrumento
+saucedemo,transacional_checkout,xpath,0.5,5,True,0.991,20,cosmetico,,,0,0,0.0,0,0,0,0,0,0,18,150,0,0,0,2026-09-17T03:05:39.098007+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,deterministic,0.5,5,True,0.922,20,cosmetico,,,0,0,0.0,0,0,0,0,0,0,18,150,0,0,0,2026-09-17T03:05:40.110361+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,semantic,0.5,5,True,0.805,19,cosmetico,,,0,0,0.0,0,0,0,0,0,0,10,99,0,0,0,2026-09-17T03:05:41.015714+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,healing,0.5,5,False,0.509,9,cosmetico,assertion_failed,"[apos 'open_cart'] Carrinho deveria conter 1 item(ns), mas o estado da aplicação registra 0. A ação de adicionar ao carrinho não surtiu efeito — sem esta conferência, o fluxo seguiria e a página de confirmação apareceria mesmo assim.",0,0,0.0,1,1,0,0,1,0,0,20,0,0,0,2026-09-17T03:05:41.604939+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,agentic,0.5,5,True,37.88,19,cosmetico,,,376001,1599,0.242218,0,0,0,0,0,0,30,192,0,0,0,2026-09-17T03:06:19.704578+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,agentic,0.75,2,True,43.488,18,semantico,,,359946,1384,0.238831,0,0,0,0,0,0,47,253,73,0,58,2026-09-17T03:07:03.195631+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,healing,0.75,2,True,1.282,21,semantico,,,0,0,0.0,4,4,0,4,0,0,43,216,62,0,45,2026-09-17T03:07:05.030611+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,xpath,0.75,2,False,10.584,11,semantico,timeout,"[apos 'assert_cart_count'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""xpath=/html/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[2]"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task_xpath.py"", line 132, in <lambda>
+    fn=lamb",0,0,0.0,0,0,0,0,0,0,24,108,29,0,14,2026-09-17T03:07:15.724367+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,semantic,0.75,2,False,10.306,2,semantico,timeout,"[apos 'apply_drift_login'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for get_by_placeholder(""Username"", exact=True)
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task_semantic.py"", line 116, in <lambda>
+    fn=lambda counter: _steps(page, counter, drif",0,0,0.0,0,0,0,0,0,0,2,9,1,0,1,2026-09-17T03:07:26.166035+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,deterministic,0.75,2,False,10.302,2,semantico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 111, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, repetition, acumulador, dri",0,0,0.0,0,0,0,0,0,0,2,9,1,0,1,2026-09-17T03:07:36.563418+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,agentic,0.25,7,True,52.833,18,semantico,,,284846,1553,0.195058,0,0,0,0,0,0,14,140,19,0,11,2026-09-17T03:08:29.542913+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,healing,0.25,7,True,1.364,21,semantico,,,0,0,0.0,0,0,0,0,0,0,10,182,29,0,14,2026-09-17T03:08:31.463591+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,semantic,0.25,7,False,10.291,2,semantico,timeout,"[apos 'apply_drift_login'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for get_by_placeholder(""Username"", exact=True)
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task_semantic.py"", line 116, in <lambda>
+    fn=lambda counter: _steps(page, counter, drif",0,0,0.0,0,0,0,0,0,0,0,8,0,0,1,2026-09-17T03:08:41.857090+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,deterministic,0.25,7,True,1.049,20,semantico,,,0,0,0.0,0,0,0,0,0,0,10,182,29,0,14,2026-09-17T03:08:43.027899+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,xpath,0.25,7,False,10.286,2,semantico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""xpath=/html/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/input[1]"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task_xpath.py"", line 132, in <lambda>
+    ",0,0,0.0,0,0,0,0,0,0,0,8,0,0,1,2026-09-17T03:08:53.384889+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,agentic,0.0,7,True,40.8,14,estrutural,,,210911,1404,0.152408,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:09:34.330925+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,semantic,0.0,7,True,2.562,13,estrutural,,,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:09:37.474673+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,deterministic,0.0,7,True,2.399,13,estrutural,,,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:09:39.960788+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,healing,0.0,7,True,2.455,13,estrutural,,,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:09:42.490334+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,xpath,0.0,7,True,2.39,13,estrutural,,,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:09:44.957818+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,agentic,0.25,5,True,32.93,18,cosmetico,,,346895,1403,0.229391,0,0,0,0,0,0,7,127,0,0,0,2026-09-17T03:10:17.999501+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,healing,0.25,5,True,1.184,21,cosmetico,,,0,0,0.0,0,0,0,0,0,0,10,160,0,0,0,2026-09-17T03:10:19.740337+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,deterministic,0.25,5,True,0.949,20,cosmetico,,,0,0,0.0,0,0,0,0,0,0,5,100,0,0,0,2026-09-17T03:10:20.785501+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,semantic,0.25,5,True,0.768,19,cosmetico,,,0,0,0.0,0,0,0,0,0,0,0,27,0,0,0,2026-09-17T03:10:21.651723+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,xpath,0.25,5,True,1.012,20,cosmetico,,,0,0,0.0,0,0,0,0,0,0,10,160,0,0,0,2026-09-17T03:10:22.736264+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,agentic,1.0,2,True,26.918,13,cosmetico,,,200619,1185,0.139059,0,0,0,0,0,0,2,34,0,0,0,2026-09-17T03:10:49.850148+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,deterministic,1.0,2,False,11.835,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#username"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\the_internet\task.py"", line 98, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, repetition, acumulador, dr",0,0,0.0,0,0,0,0,0,0,2,14,0,0,0,2026-09-17T03:11:02.213028+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,semantic,1.0,2,True,2.47,15,cosmetico,,,0,0,0.0,0,0,0,0,0,0,2,21,0,0,0,2026-09-17T03:11:05.270708+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,healing,1.0,2,True,2.345,15,cosmetico,,,0,0,0.0,2,2,0,2,0,0,2,21,0,0,0,2026-09-17T03:11:07.687131+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,xpath,1.0,2,True,2.388,15,cosmetico,,,0,0,0.0,0,0,0,0,0,0,2,21,0,0,0,2026-09-17T03:11:10.152334+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,agentic,0.5,7,True,42.182,13,semantico,,,214154,1243,0.150957,0,0,0,0,0,0,2,30,3,2,3,2026-09-17T03:11:52.435705+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,semantic,0.5,7,False,11.886,4,semantico,timeout,"[apos 'fill_password'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for get_by_role(""button"", name=re.compile(r""Login\s*$""))
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\the_internet\task_semantic.py"", line 96, in <lambda>
+    fn=lambda counter: _steps(page, coun",0,0,0.0,0,0,0,0,0,0,2,12,1,0,1,2026-09-17T03:12:04.971902+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,xpath,0.5,7,False,11.712,2,semantico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""xpath=/html/body[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\the_internet\task_xpath.py"", line 104, in <lambda>
+    fn=lambda c",0,0,0.0,0,0,0,0,0,0,2,12,1,0,1,2026-09-17T03:12:17.277815+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,deterministic,0.5,7,False,11.706,2,semantico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#username"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\the_internet\task.py"", line 98, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, repetition, acumulador, dr",0,0,0.0,0,0,0,0,0,0,2,12,1,0,1,2026-09-17T03:12:29.620338+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,healing,0.5,7,True,2.365,15,semantico,,,0,0,0.0,2,2,0,2,0,0,2,19,1,0,2,2026-09-17T03:12:32.603798+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,agentic,0.0,5,True,54.277,18,semantico,,,344187,1461,0.228603,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:13:27.010024+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,healing,0.0,5,False,0.773,9,semantico,assertion_failed,[apos 'assert_cart_url'] healing falhou para 'botao_checkout': melhor pontuação 0.440 abaixo do limiar 0.620,0,0,0.0,2,1,1,1,0,0,0,0,0,0,0,2026-09-17T03:13:28.372955+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,xpath,0.0,5,True,0.715,15,semantico,,,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:13:29.337127+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,deterministic,0.0,5,True,0.659,15,semantico,,,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:13:30.107352+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,semantic,0.0,5,True,0.724,16,semantico,,,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:13:30.915953+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,agentic,0.75,3,True,34.447,21,cosmetico,,,361648,1654,0.245328,0,0,0,0,0,0,56,229,0,0,0,2026-09-17T03:14:05.500091+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,deterministic,0.75,3,False,10.852,2,cosmetico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#user-name"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 111, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, repetition, acumulador, dri",0,0,0.0,0,0,0,0,0,0,2,11,0,0,0,2026-09-17T03:14:16.909090+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,semantic,0.75,3,True,0.963,19,cosmetico,,,0,0,0.0,0,0,0,0,0,0,31,129,0,0,0,2026-09-17T03:14:18.011972+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,xpath,0.75,3,True,0.988,20,cosmetico,,,0,0,0.0,0,0,0,0,0,0,33,124,0,0,0,2026-09-17T03:14:19.107587+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,healing,0.75,3,True,1.38,21,cosmetico,,,0,0,0.0,9,9,0,9,0,0,49,203,0,0,0,2026-09-17T03:14:20.601547+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,semantic,0.25,0,True,0.994,19,estrutural,,,0,0,0.0,0,0,0,0,0,0,3,33,0,0,0,2026-09-17T03:14:22.330185+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,deterministic,0.25,0,False,10.306,4,estrutural,timeout,"[apos 'fill_password'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#login-button"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 111, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, repetition, acumulado",0,0,0.0,0,0,0,0,0,0,1,7,0,0,0,2026-09-17T03:14:32.739230+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,xpath,0.25,0,False,11.12,18,estrutural,timeout,"[apos 'apply_drift'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""xpath=/html/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[9]/button[2]"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task_xpath.py"", line 132, in <lambda>
+    fn=lam",0,0,0.0,0,0,0,0,0,0,12,138,0,0,11,2026-09-17T03:14:43.988414+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,healing,0.25,0,True,1.317,21,estrutural,,,0,0,0.0,4,4,0,4,0,0,8,72,0,0,5,2026-09-17T03:14:45.473309+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,agentic,0.25,0,True,51.735,19,estrutural,,,377124,1558,0.247149,0,0,0,0,0,0,14,154,0,0,12,2026-09-17T03:15:37.368000+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,agentic,0.5,1,True,30.805,18,cosmetico,,,282668,1483,0.191378,0,0,0,0,0,0,37,225,0,0,0,2026-09-17T03:16:08.175627+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,xpath,0.5,1,True,1.218,20,cosmetico,,,0,0,0.0,0,0,0,0,0,0,41,245,0,0,0,2026-09-17T03:16:09.956561+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,healing,0.5,1,False,0.562,9,cosmetico,assertion_failed,"[apos 'open_cart'] Carrinho deveria conter 1 item(ns), mas o estado da aplicação registra 0. A ação de adicionar ao carrinho não surtiu efeito — sem esta conferência, o fluxo seguiria e a página de confirmação apareceria mesmo assim.",0,0,0.0,3,3,0,2,1,0,4,22,0,0,0,2026-09-17T03:16:10.608290+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,deterministic,0.5,1,False,10.316,3,cosmetico,timeout,"[apos 'fill_username'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#password"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task.py"", line 111, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, repetition, acumulador, dr",0,0,0.0,0,0,0,0,0,0,2,11,0,0,0,2026-09-17T03:16:21.030281+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,semantic,0.5,1,True,1.103,19,cosmetico,,,0,0,0.0,0,0,0,0,0,0,18,126,0,0,0,2026-09-17T03:16:22.306276+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,agentic,0.25,1,True,27.404,13,semantico,,,200481,1181,0.138405,0,0,0,0,0,0,1,21,0,2,3,2026-09-17T03:16:50.020267+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,healing,0.25,1,True,2.793,15,semantico,,,0,0,0.0,1,1,0,1,0,0,1,15,0,1,2,2026-09-17T03:16:53.401105+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,semantic,0.25,1,True,2.597,15,semantico,,,0,0,0.0,0,0,0,0,0,0,1,15,0,1,2,2026-09-17T03:16:56.116881+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,xpath,0.25,1,False,11.765,2,semantico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""xpath=/html/body[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\the_internet\task_xpath.py"", line 104, in <lambda>
+    fn=lambda c",0,0,0.0,0,0,0,0,0,0,1,8,0,1,2,2026-09-17T03:17:07.975809+00:00,2,ec59440b286f
+the_internet,conteudo_dinamico,deterministic,0.25,1,False,11.762,2,semantico,timeout,"[apos 'apply_drift'] TimeoutError: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""#username"")
+
+Traceback (most recent call last):
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py"", line 240, in run_task_safely
+    fn(counter)
+    ~~^^^^^^^^^
+  File ""C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\the_internet\task.py"", line 98, in <lambda>
+    fn=lambda counter: _steps(page, counter, drift_level, repetition, acumulador, dr",0,0,0.0,0,0,0,0,0,0,1,8,0,1,2,2026-09-17T03:17:20.404837+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,semantic,0.0,7,True,0.871,16,cosmetico,,,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:17:22.614582+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,healing,0.0,7,False,0.603,10,cosmetico,assertion_failed,[apos 'click_checkout'] healing falhou para 'campo_nome': melhor pontuação 0.000 abaixo do limiar 0.620,0,0,0.0,2,1,1,1,0,0,0,0,0,0,0,2026-09-17T03:17:23.301841+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,deterministic,0.0,7,True,0.769,15,cosmetico,,,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:17:24.192298+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,xpath,0.0,7,True,0.713,15,cosmetico,,,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:17:24.991481+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,agentic,0.0,7,True,29.492,18,cosmetico,,,342941,1470,0.227779,0,0,0,0,0,0,0,0,0,0,0,2026-09-17T03:17:54.682249+00:00,2,ec59440b286f
+saucedemo,transacional_checkout,agentic,0.5,4,True,33.208,19,estrutural,,,382050,1614,0.250884,0,0,0,0,0,0,41,181,0,0,33,2026-09-17T03:18:27.893064+00:00,2,ec59440b286f

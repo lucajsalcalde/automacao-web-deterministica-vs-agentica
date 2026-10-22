@@ -1,0 +1,71 @@
+
+==============================================================================
+0. Conferência do ambiente   [17/09 00:03]
+==============================================================================
+Impressão do instrumento: ec59440b286f (registrada: ec59440b286f)
+Execuções já gravadas na coleta 2: 0 de 1200
+Login do Claude: conectado (assinatura pro).
+
+1. Autotestes das análises: já feito em 2026-09-16T19:18:23, pulando.
+
+2. Matriz de validação do instrumento: já feito em 2026-09-16T19:21:16, pulando.
+
+3. Validação funcional (192 combinações): já feito em 2026-09-16T19:27:03, pulando.
+
+4. Conferência do limiar do self-healing: já feito em 2026-09-16T19:28:21, pulando.
+
+==============================================================================
+5. Teste do agente com o oráculo novo   [17/09 00:03]
+==============================================================================
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+$ python validar_instrumento.py --com-agentico --bracos agentico --tipos nenhum,semantico
+.?.?
+
+============================================================================================
+MATRIZ DE VALIDAÇÃO  (drift nível 1.0, 151s)
+============================================================================================
+site          braço       drift       obtido   esperado  status    heal    passos      US$  detalhe
+------------------------------------------------------------------------------------------------------------
+saucedemo     agêntico    nenhum      sucesso  sucesso   OK                    19   0.2298  
+saucedemo     agêntico    semantico   sucesso  —         observado             18   0.2308  
+the_internet  agêntico    nenhum      sucesso  sucesso   OK                    13   0.1543  
+the_internet  agêntico    semantico   sucesso  —         observado             14   0.1484  
+------------------------------------------------------------------------------------------------------------
+
+BRAÇO AGÊNTICO — 4 execuções
+  custo total: US$ 0.7633  |  média por execução: US$ 0.1908
+  passos: mínimo 13, máximo 19, média 16.0
+
+  Projeção para a coleta (2 sites x 3 tipos x N níveis x R repetições):
+    3 níveis x 4 rep. =  72 execuções -> US$  13.74  (~R$   74.20)
+    3 níveis x 8 rep. = 144 execuções -> US$  27.48  (~R$  148.39)
+    5 níveis x 8 rep. = 240 execuções -> US$  45.80  (~R$  247.32)
+============================================================================================
+
+Nenhuma divergência. Próximo passo: python validar_funcional.py (ver COLETA2.md)
+
+
+-> Teste do agente com o oráculo novo: OK (sem degradação: sucesso nas duas; semântica 1,0: saucedemo sucesso, the_internet sucesso)
+
+==============================================================================
+6. Coleta intercalada (1.200 execuções)   [17/09 00:05]
+==============================================================================
+
+$ python coleta_com_guarda.py --conferir-site saucedemo,the_internet
+saucedemo: no ar (HTTP 200)
+the_internet: no ar (HTTP 200)
+
+Execuções gravadas até agora: 0 de 1200
+
+$ python coleta_com_guarda.py --approach all --intercalado --semente-ordem 2026 --repeats 8 --drift-levels 0,0.25,0.5,0.75,1.0 --drift-types cosmetico,estrutural,semantico --coleta 2 --resume
+Guarda de disponibilidade ligada: falha com o site fora do ar não é gravada (ver coleta_com_guarda.py).
+
+
+==============================================================================
+PAUSADO   [17/09 00:18]
+==============================================================================
+Você interrompeu. Rode executar_coleta2.bat de novo para continuar de onde parou.

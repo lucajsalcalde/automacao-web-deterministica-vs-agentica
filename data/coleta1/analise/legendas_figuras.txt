@@ -1,0 +1,61 @@
+LEGENDAS DAS FIGURAS — padrão RICT/Facens (NBR 6022)
+
+Regra do modelo: número e título ACIMA da figura, em Arial 12; fonte ABAIXO,
+centralizada, em Arial 10. A numeração é sequencial do início ao fim do trabalho.
+Toda figura precisa de fonte — inclusive as suas.
+
+--------------------------------------------------------------------------
+Figura 1 - Taxa de sucesso por abordagem, tipo e intensidade de degradação
+[figura]
+Fonte: elaborado pelo autor (2026).
+
+  Nota sugerida para o texto: as faixas sombreadas representam o intervalo de
+  confiança de Wilson a 95%, calculado sobre 16 observações por condição.
+
+--------------------------------------------------------------------------
+Figura 2 - Tempo de execução e compromisso entre confiabilidade e custo
+[figura]
+Fonte: elaborado pelo autor (2026).
+
+  Nota: o eixo do tempo está em escala logarítmica; as durações variam por duas
+  ordens de grandeza entre as abordagens. Considera apenas execuções sob
+  degradação.
+
+--------------------------------------------------------------------------
+Figura 3 - Desempenho dos classificadores por esquema de validação cruzada
+[figura gerada por modelo_falha.py]
+Fonte: elaborado pelo autor (2026).
+
+  Nota: a linha tracejada marca a acurácia de um classificador que sempre prevê
+  a classe majoritária (67,0%).
+
+--------------------------------------------------------------------------
+Figura 4 - Importância das variáveis na previsão de falha
+[figura gerada por modelo_falha.py]
+Fonte: elaborado pelo autor (2026).
+
+  Nota: queda de acurácia ao permutar cada variável, mantidas as demais.
+
+--------------------------------------------------------------------------
+Figura 5 - Custo anual por abordagem em função da frequência de mudança
+[figura]
+Fonte: elaborado pelo autor (2026).
+
+  Nota: premissas declaradas — 0,5 h por intervenção, R$ 250 a hora, 1 dia útil até
+  detectar a quebra, câmbio de R$ 5,19 por dólar em 20/08/2026. A linha pontilhada marca o ponto de
+  equilíbrio contra a abordagem self-healing.
+
+--------------------------------------------------------------------------
+LEMBRETE SOBRE QUADRO E TABELA
+
+Estas são FIGURAS (gráficos). O modelo trata de forma diferente:
+
+  QUADRO   conteúdo qualitativo, bordas fechadas, Arial 11.
+           Título ACIMA à esquerda, fonte ABAIXO à esquerda.
+           No seu artigo: descrição das 5 abordagens; descrição dos 3 tipos
+           de degradação.
+
+  TABELA   conteúdo quantitativo, laterais abertas, padrão IBGE.
+           Título no TOPO, fonte imediatamente ABAIXO.
+           No seu artigo: taxas de sucesso; custo e tempo; desempenho dos
+           classificadores; cenários do modelo econômico.

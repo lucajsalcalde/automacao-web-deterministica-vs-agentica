@@ -1,0 +1,170 @@
+
+==============================================================================
+0. Conferência do ambiente   [16/09 18:48]
+==============================================================================
+Impressão do instrumento: e9fb250bc0a9 (registrada: e9fb250bc0a9)
+Execuções já gravadas na coleta 2: 0 de 1200
+
+==============================================================================
+1. Autotestes das análises   [16/09 18:49]
+==============================================================================
+
+$ python analise.py --autoteste
+AUTOTESTE — implementação própria vs. valores derivados à mão
+
+  OK   Fisher [[8,0],[0,8]]       obtido    0.00016  esperado    0.00016
+  OK   Fisher [[3,5],[5,3]]       obtido    0.61927  esperado    0.61927
+  OK   Fisher [[1,9],[11,3]]      obtido    0.00276  esperado    0.00276
+  OK   Wilson 8/8 inf             obtido    0.67558  esperado    0.67558
+  OK   Wilson 0/8 sup             obtido    0.32442  esperado    0.32442
+  OK   Wilson 4/8 inf             obtido    0.21521  esperado    0.21521
+  OK   Cochran-Armitage z         obtido   -4.00000  esperado   -4.00000
+  OK   Mann-Whitney p (aprox.)    obtido    0.00902  esperado    0.00902
+  OK   efeito — diferença de risco obtido    0.50000  esperado    0.50000
+  OK   efeito — IC inferior       obtido    0.31022  esperado    0.31022
+  OK   efeito — razão de chances  obtido    9.00000  esperado    9.00000
+  OK   efeito — NNT               obtido    2.00000  esperado    2.00000
+  OK   efeito — casela vazia corrigida obtido  441.00000  esperado  441.00000
+  OK   qui2 cauda gl=1            obtido    0.05000  esperado    0.05000
+  OK   qui2 cauda gl=2            obtido    0.05000  esperado    0.05000
+  OK   qui2 cauda gl=4            obtido    0.05000  esperado    0.05000
+  OK   Kruskal-Wallis H (iguais)  obtido    0.00000  esperado    0.00000
+  OK   Kruskal-Wallis p (iguais)  obtido    1.00000  esperado    1.00000
+  OK   Kruskal-Wallis H (separados) obtido    7.20000  esperado    7.20000
+  OK   Kruskal-Wallis graus liberdade obtido    2.00000  esperado    2.00000
+  OK   KW com 2 grupos == Mann-Whitney obtido    0.00902  esperado    0.00902
+  OK   McNemar exato b=9 c=2      obtido    0.06543  esperado    0.06543
+  OK   McNemar sem discordantes   obtido    1.00000  esperado    1.00000
+  OK   Clopper-Pearson 9/11 inf   obtido    0.48224  esperado    0.48224
+  OK   Clopper-Pearson 9/11 sup   obtido    0.97717  esperado    0.97717
+  OK   RC condicional             obtido    4.50000  esperado    4.50000
+  OK   RC condicional IC inf      obtido    0.93141  esperado    0.93141
+  OK   Agresti-Min diferença      obtido    0.15909  esperado    0.15909
+  OK   Agresti-Min IC inf         obtido    0.01128  esperado    0.01128
+  OK   Agresti-Min IC sup         obtido    0.29307  esperado    0.29307
+
+Todos os testes passaram.
+
+$ python modelo_logistico.py --autoteste
+AUTOTESTE — regressão logística de Firth
+
+  [OK ] log RC Haldane, tabela 12,4,5,9              obtido    1.56819  esperado    1.56819
+  [OK ] intercepto, tabela 12,4,5,9                  obtido   -0.54654  esperado   -0.54654
+  [OK ] log RC Haldane, tabela 10,0,3,7              obtido    3.80666  esperado    3.80666
+  [OK ] intercepto, tabela 10,0,3,7                  obtido   -0.76214  esperado   -0.76214
+  [OK ] log RC Haldane, tabela 8,0,0,8               obtido    5.66643  esperado    5.66643
+  [OK ] intercepto, tabela 8,0,0,8                   obtido   -2.83321  esperado   -2.83321
+
+TODOS OS TESTES PASSARAM.
+
+$ python modelo_economico.py --autoteste
+AUTOTESTE — contas do modelo econômico
+
+  [OK ] degradadas — limitadas pela latência                 obtido    250.0000  esperado    250.0000
+  [OK ] degradadas — limitadas pelo intervalo                obtido    630.0000  esperado    630.0000
+  [OK ] sem descontinuidade perto de zero                    obtido      2.5000  esperado      2.5000
+  [OK ] agêntico — quebras                                   obtido      1.0000  esperado      1.0000
+  [OK ] agêntico — degradadas                                obtido     50.0000  esperado     50.0000
+  [OK ] agêntico — operação                                  obtido   2470.0000  esperado   2470.0000
+  [OK ] agêntico — manutenção NÃO é zero                     obtido    150.0000  esperado    150.0000
+  [OK ] agêntico — desperdício ao falhar caro                obtido    250.0000  esperado    250.0000
+  [OK ] agêntico — parada                                    obtido     50.0000  esperado     50.0000
+  [OK ] agêntico — total                                     obtido   2920.0000  esperado   2920.0000
+  [OK ] determinístico — quebras                             obtido      5.0000  esperado      5.0000
+  [OK ] determinístico — operação é zero                     obtido      0.0000  esperado      0.0000
+  [OK ] determinístico — manutenção                          obtido    750.0000  esperado    750.0000
+  [OK ] determinístico — desperdício é zero                  obtido      0.0000  esperado      0.0000
+  [OK ] determinístico — parada                              obtido    250.0000  esperado    250.0000
+  [OK ] determinístico — total                               obtido   1000.0000  esperado   1000.0000
+  [OK ] agêntico sem parada                                  obtido   2870.0000  esperado   2870.0000
+  [OK ] determinístico sem parada                            obtido    750.0000  esperado    750.0000
+  [OK ] zero mudanças — determinístico custa zero            obtido      0.0000  esperado      0.0000
+  [OK ] zero mudanças — agêntico paga a operação             obtido   2520.0000  esperado   2520.0000
+  [OK ] ponto de equilíbrio                                  obtido     42.0000  esperado     42.0000
+  [OK ] custo de deterministic cresce com as mudanças        obtido      0.0000  esperado      0.0000
+  [OK ] custo de agentic cresce com as mudanças              obtido      0.0000  esperado      0.0000
+  [OK ] cosmética — determinístico sem quebra custa zero     obtido      0.0000  esperado      0.0000
+  [OK ] cosmética — agêntica paga só a operação              obtido   2520.0000  esperado   2520.0000
+
+TODOS OS TESTES PASSARAM.
+
+-> Autotestes das análises: OK (3 de 3)
+
+==============================================================================
+2. Matriz de validação do instrumento   [16/09 18:49]
+==============================================================================
+
+$ python validar_instrumento.py
+....XX........??..............??
+
+============================================================================================
+MATRIZ DE VALIDAÇÃO  (drift nível 1.0, 197s)
+============================================================================================
+site          braço       drift       obtido   esperado  status    heal    passos      US$  detalhe
+------------------------------------------------------------------------------------------------------------
+saucedemo     frágil      nenhum      sucesso  sucesso   OK                    15           
+saucedemo     frágil      cosmetico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     frágil      estrutural  falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     frágil      semantico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     xpath       nenhum      falha    sucesso   DIVERGE                5           [apos 'assert_inventory_url'] TimeoutErr
+saucedemo     xpath       cosmetico   falha    sucesso   DIVERGE                7           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     xpath       estrutural  falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     xpath       semantico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+saucedemo     semântico   nenhum      sucesso  sucesso   OK                    16           
+saucedemo     semântico   cosmetico   sucesso  sucesso   OK                    19           
+saucedemo     semântico   estrutural  sucesso  sucesso   OK                    19           
+saucedemo     semântico   semantico   falha    falha     OK                     2           [apos 'apply_drift_login'] TimeoutError:
+saucedemo     healing     nenhum      sucesso  sucesso   OK                    16           
+saucedemo     healing     cosmetico   sucesso  sucesso   OK        9/9         21           
+saucedemo     healing     estrutural  falha    —         observado 5/6         15           [apos 'fill_first_name'] healing ambíguo
+saucedemo     healing     semantico   falha    —         observado 4/5         14           [apos 'apply_drift'] healing ambíguo par
+the_internet  frágil      nenhum      sucesso  sucesso   OK                    13           
+the_internet  frágil      cosmetico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+the_internet  frágil      estrutural  falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+the_internet  frágil      semantico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+the_internet  xpath       nenhum      sucesso  sucesso   OK                    13           
+the_internet  xpath       cosmetico   sucesso  sucesso   OK                    15           
+the_internet  xpath       estrutural  falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+the_internet  xpath       semantico   falha    falha     OK                     2           [apos 'apply_drift'] TimeoutError: Locat
+the_internet  semântico   nenhum      sucesso  sucesso   OK                    13           
+the_internet  semântico   cosmetico   sucesso  sucesso   OK                    15           
+the_internet  semântico   estrutural  sucesso  sucesso   OK                    15           
+the_internet  semântico   semantico   falha    falha     OK                     4           [apos 'fill_password'] TimeoutError: Loc
+the_internet  healing     nenhum      sucesso  sucesso   OK                    13           
+the_internet  healing     cosmetico   sucesso  sucesso   OK        2/2         15           
+the_internet  healing     estrutural  sucesso  —         observado 2/2         15           
+the_internet  healing     semantico   sucesso  —         observado 2/2         15           
+============================================================================================
+
+2 DIVERGÊNCIA(S) — o instrumento não está medindo o que se espera:
+  - saucedemo / xpath / drift nenhum: esperado sucesso, obtido falha
+      [apos 'assert_inventory_url'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+      Call log:
+        - waiting for locator("xpath=/html/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]")
+      
+      Traceback (most recent call last):
+        File "C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py", line 240, in run_task_safely
+          fn(counter)
+          ~~^^^^^^^^^
+        File "C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task_xpath.py", li
+  - saucedemo / xpath / drift cosmetico: esperado sucesso, obtido falha
+      [apos 'apply_drift'] TimeoutError: Locator.click: Timeout 10000ms exceeded.
+      Call log:
+        - waiting for locator("xpath=/html/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]")
+      
+      Traceback (most recent call last):
+        File "C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\common\oracle.py", line 240, in run_task_safely
+          fn(counter)
+          ~~^^^^^^^^^
+        File "C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\sites\saucedemo\task_xpath.py", line 132, i
+
+Copie este bloco e envie para análise.
+
+
+==============================================================================
+PAROU   [16/09 18:52]
+==============================================================================
+A matriz de validação encontrou divergência. Não comece a coleta; copie o bloco de divergências acima e me envie.
+
+Log completo: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\logs\coleta2_20260916-184857.log
+Depois de resolver, rode executar_coleta2.bat de novo: ele continua de onde parou.

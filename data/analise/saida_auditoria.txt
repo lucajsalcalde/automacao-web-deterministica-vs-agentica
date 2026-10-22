@@ -1,0 +1,39 @@
+==============================================================================
+AUDITORIA DO CONJUNTO DE DADOS
+==============================================================================
+
+Arquivo: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\results.csv
+Execuções: 1200
+
+
+ALERTA
+------------------------------------------------------------------------------
+  Distribuição das durações             semantic/the_internet/sucesso: 1 de 98 fora do padrão (mediana 2.47s, extremos 4.85–4.85s)
+
+OK
+------------------------------------------------------------------------------
+  Cabeçalho do CSV                      28 colunas na ordem esperada
+  Completude do desenho                 150 células, todas com o n previsto (8 sem API, 8 agênticas) — total 1200
+  Duplicatas                            1200 chaves únicas, nenhuma repetida
+  Numeração das repetições              todas as células têm repetições 0..n-1
+  Linha de base (drift 0)               240/240 sucesso — o instrumento não introduz falha própria
+  Coerência entre colunas               sucesso/erro consistentes; drift_type e error_type dentro do domínio
+  Custo e tokens por braço              braços sem API com custo zero; 240 agênticas todas com custo e tokens > 0
+  Contadores do self-healing            exclusivos do braço healing e internamente coerentes (169 de 192 execuções acionaram)
+  Assinatura de erro de infraestrutura  as 1 falhas agênticas consumiram passos e custo — são falhas reais
+  Colapso de página                     nenhuma falha com a assinatura de página vazia
+  Efetividade do drift                  cosmético renomeia sem inserir; estrutural insere 3740 iscas; semântico altera 4303 textos — as três condições se distinguem nos dados
+  Rótulo do tipo de erro                nenhuma falha genérica esconde causa específica na mensagem
+  Falhas de navegação                   nenhuma; todas as páginas carregaram
+  Site fora do ar durante a coleta      nenhuma execução descartada pela guarda
+  Monotonicidade do drift               nenhuma abordagem melhora quando a degradação aumenta
+  Transcrições do braço agêntico        240 execuções com ações registradas
+  Janela de coleta                      todas as 1200 linhas vieram da versão 6c6c5aba5b39 do instrumento (coleta 2), a mesma do código atual
+  Pareamento entre braços               todos os braços cobrem as mesmas sementes em todas as células — comparação pareada válida
+  Rastreabilidade da limpeza            89 linha(s) removida(s): 0 com assinatura de recusa do provedor e 89 duplicada(s) cuja condição continua no conjunto (custo de API descartado US$ 15.60); 89/89 condições presentes; backup preservado
+
+==============================================================================
+VEREDITO: nenhum erro. 1 alerta(s) a explicar no texto,
+mas os dados sustentam a análise.
+==============================================================================
+

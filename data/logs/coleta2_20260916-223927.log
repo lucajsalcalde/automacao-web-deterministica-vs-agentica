@@ -1,0 +1,59 @@
+
+==============================================================================
+0. Conferência do ambiente   [16/09 22:39]
+==============================================================================
+Impressão do instrumento: ec59440b286f (registrada: ec59440b286f)
+Execuções já gravadas na coleta 2: 0 de 1200
+Login do Claude: conectado (assinatura pro).
+
+1. Autotestes das análises: já feito em 2026-09-16T19:18:23, pulando.
+
+2. Matriz de validação do instrumento: já feito em 2026-09-16T19:21:16, pulando.
+
+3. Validação funcional (192 combinações): já feito em 2026-09-16T19:27:03, pulando.
+
+4. Conferência do limiar do self-healing: já feito em 2026-09-16T19:28:21, pulando.
+
+==============================================================================
+5. Teste do agente com o oráculo novo   [16/09 22:39]
+==============================================================================
+
+$ python validar_instrumento.py --com-agentico --bracos agentico --tipos nenhum,semantico
+.?X?
+
+============================================================================================
+MATRIZ DE VALIDAÇÃO  (drift nível 1.0, 302s)
+============================================================================================
+site          braço       drift       obtido   esperado  status    heal    passos      US$  detalhe
+------------------------------------------------------------------------------------------------------------
+saucedemo     agêntico    nenhum      sucesso  sucesso   OK                    18   0.2267  
+saucedemo     agêntico    semantico   sucesso  —         observado             18   0.2258  
+the_internet  agêntico    nenhum      falha    sucesso   DIVERGE               14   0.1260  login não confirmado: a página /secure c
+the_internet  agêntico    semantico   falha    —         observado              9   0.1141  login não confirmado: a página /secure c
+------------------------------------------------------------------------------------------------------------
+
+BRAÇO AGÊNTICO — 4 execuções
+  custo total: US$ 0.6926  |  média por execução: US$ 0.1732
+  passos: mínimo 9, máximo 18, média 14.8
+  nas FALHAS: média US$ 0.1201 e 11.5 passos (2 de 4)
+
+  Projeção para a coleta (2 sites x 3 tipos x N níveis x R repetições):
+    3 níveis x 4 rep. =  72 execuções -> US$  12.47  (~R$   67.33)
+    3 níveis x 8 rep. = 144 execuções -> US$  24.94  (~R$  134.65)
+    5 níveis x 8 rep. = 240 execuções -> US$  41.56  (~R$  224.42)
+============================================================================================
+
+1 DIVERGÊNCIA(S) — o instrumento não está medindo o que se espera:
+  - the_internet / agêntico / drift nenhum: esperado sucesso, obtido falha
+      login não confirmado: a página /secure com a mensagem de sucesso não foi exibida nesta aba
+
+Copie este bloco e envie para análise.
+
+
+==============================================================================
+PAROU   [16/09 22:44]
+==============================================================================
+Sem degradação, o agente precisa concluir as duas tarefas, e pelo menos uma falhou. Isso indica problema no oráculo novo ou na configuração do agente. Não comece a coleta; me envie a saída acima.
+
+Log completo: C:\Users\lucaj\Documents\Projetos\TCC\tcc_automacao_web\data\logs\coleta2_20260916-223927.log
+Depois de resolver, rode executar_coleta2.bat de novo: ele continua de onde parou.

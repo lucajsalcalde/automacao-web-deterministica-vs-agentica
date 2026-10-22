@@ -1,0 +1,5 @@
+analise,pares,ambos_acertam,so_agentica,so_self_healing,ambos_erram,descartados_contorno,taxa_agentica,taxa_self_healing,p_mcnemar,dif_pareada,dif_ic_inf,dif_ic_sup,rc_condicional,rc_ic_inf,rc_ic_sup
+PRINCIPAL — duas aplicações,48,41,7,0,0,0,1.0,0.8542,0.01562500,0.1458,0.0361,0.2439,inf,1.4413085188352384,inf
+POR APLICAÇÃO — saucedemo,24,17,7,0,0,0,1.0,0.7083,0.01562500,0.2917,0.0828,0.4557,inf,1.4413085188352384,inf
+POR APLICAÇÃO — the_internet,24,24,0,0,0,0,1.0,1.0,1.00000000,0.0,-0.0754,0.0754,nan,nan,nan
+SENSIBILIDADE — contorno contado como falha,48,41,7,0,0,0,1.0,0.8542,0.01562500,0.1458,0.0361,0.2439,inf,1.4413085188352384,inf

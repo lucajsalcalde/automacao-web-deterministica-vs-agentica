@@ -1,0 +1,14 @@
+{
+ "n_steps": 18,
+ "tokens_input": 245944,
+ "tokens_output": 1596,
+ "tokens_cache_write": 12942,
+ "tokens_cache_read": 232966,
+ "cost_usd": 0.172338,
+ "model": "claude-sonnet-5",
+ "preco_input_usd_por_mtok": 2.0,
+ "preco_output_usd_por_mtok": 10.0,
+ "stopped_reason": "finished",
+ "error_message": "",
+ "transcript": []
+}

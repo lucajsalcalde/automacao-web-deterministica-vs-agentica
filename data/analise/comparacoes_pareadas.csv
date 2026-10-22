@@ -1,0 +1,121 @@
+drift_type,drift_level,braco_a,braco_b,pares,ambos_acertam,so_a_acerta,so_b_acerta,ambos_erram,p_bruto,p_holm,significativo
+cosmetico,0.25,ID/CSS,XPath,16,4,0,12,0,0.000488,0.036133,True
+cosmetico,0.25,ID/CSS,papel e rótulo,16,4,0,12,0,0.000488,0.036133,True
+cosmetico,0.25,ID/CSS,self-healing,16,4,0,12,0,0.000488,0.036133,True
+cosmetico,0.25,ID/CSS,agêntica,16,4,0,12,0,0.000488,0.036133,True
+cosmetico,0.25,XPath,papel e rótulo,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.25,XPath,self-healing,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.25,XPath,agêntica,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.25,papel e rótulo,self-healing,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.25,papel e rótulo,agêntica,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.25,self-healing,agêntica,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.5,ID/CSS,XPath,16,3,0,13,0,0.000244,0.021729,True
+cosmetico,0.5,ID/CSS,papel e rótulo,16,3,0,13,0,0.000244,0.021729,True
+cosmetico,0.5,ID/CSS,self-healing,16,3,0,13,0,0.000244,0.021729,True
+cosmetico,0.5,ID/CSS,agêntica,16,3,0,13,0,0.000244,0.021729,True
+cosmetico,0.5,XPath,papel e rótulo,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.5,XPath,self-healing,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.5,XPath,agêntica,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.5,papel e rótulo,self-healing,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.5,papel e rótulo,agêntica,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.5,self-healing,agêntica,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.75,ID/CSS,XPath,16,0,0,16,0,3.1e-05,0.003662,True
+cosmetico,0.75,ID/CSS,papel e rótulo,16,0,0,16,0,3.1e-05,0.003662,True
+cosmetico,0.75,ID/CSS,self-healing,16,0,0,16,0,3.1e-05,0.003662,True
+cosmetico,0.75,ID/CSS,agêntica,15,0,0,15,0,6.1e-05,0.005859,True
+cosmetico,0.75,XPath,papel e rótulo,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.75,XPath,self-healing,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.75,XPath,agêntica,15,15,0,0,0,1.0,1.0,False
+cosmetico,0.75,papel e rótulo,self-healing,16,16,0,0,0,1.0,1.0,False
+cosmetico,0.75,papel e rótulo,agêntica,15,15,0,0,0,1.0,1.0,False
+cosmetico,0.75,self-healing,agêntica,15,15,0,0,0,1.0,1.0,False
+cosmetico,1.0,ID/CSS,XPath,16,0,0,16,0,3.1e-05,0.003662,True
+cosmetico,1.0,ID/CSS,papel e rótulo,16,0,0,16,0,3.1e-05,0.003662,True
+cosmetico,1.0,ID/CSS,self-healing,16,0,0,16,0,3.1e-05,0.003662,True
+cosmetico,1.0,ID/CSS,agêntica,16,0,0,16,0,3.1e-05,0.003662,True
+cosmetico,1.0,XPath,papel e rótulo,16,16,0,0,0,1.0,1.0,False
+cosmetico,1.0,XPath,self-healing,16,16,0,0,0,1.0,1.0,False
+cosmetico,1.0,XPath,agêntica,16,16,0,0,0,1.0,1.0,False
+cosmetico,1.0,papel e rótulo,self-healing,16,16,0,0,0,1.0,1.0,False
+cosmetico,1.0,papel e rótulo,agêntica,16,16,0,0,0,1.0,1.0,False
+cosmetico,1.0,self-healing,agêntica,16,16,0,0,0,1.0,1.0,False
+estrutural,0.25,ID/CSS,XPath,16,1,4,2,9,0.6875,1.0,False
+estrutural,0.25,ID/CSS,papel e rótulo,16,5,0,11,0,0.000977,0.063477,False
+estrutural,0.25,ID/CSS,self-healing,16,5,0,11,0,0.000977,0.063477,False
+estrutural,0.25,ID/CSS,agêntica,16,5,0,11,0,0.000977,0.063477,False
+estrutural,0.25,XPath,papel e rótulo,16,3,0,13,0,0.000244,0.021729,True
+estrutural,0.25,XPath,self-healing,16,3,0,13,0,0.000244,0.021729,True
+estrutural,0.25,XPath,agêntica,16,3,0,13,0,0.000244,0.021729,True
+estrutural,0.25,papel e rótulo,self-healing,16,16,0,0,0,1.0,1.0,False
+estrutural,0.25,papel e rótulo,agêntica,16,16,0,0,0,1.0,1.0,False
+estrutural,0.25,self-healing,agêntica,16,16,0,0,0,1.0,1.0,False
+estrutural,0.5,ID/CSS,XPath,16,0,3,1,12,0.625,1.0,False
+estrutural,0.5,ID/CSS,papel e rótulo,16,3,0,13,0,0.000244,0.021729,True
+estrutural,0.5,ID/CSS,self-healing,16,3,0,13,0,0.000244,0.021729,True
+estrutural,0.5,ID/CSS,agêntica,16,3,0,13,0,0.000244,0.021729,True
+estrutural,0.5,XPath,papel e rótulo,16,1,0,15,0,6.1e-05,0.005859,True
+estrutural,0.5,XPath,self-healing,16,1,0,15,0,6.1e-05,0.005859,True
+estrutural,0.5,XPath,agêntica,16,1,0,15,0,6.1e-05,0.005859,True
+estrutural,0.5,papel e rótulo,self-healing,16,16,0,0,0,1.0,1.0,False
+estrutural,0.5,papel e rótulo,agêntica,16,16,0,0,0,1.0,1.0,False
+estrutural,0.5,self-healing,agêntica,16,16,0,0,0,1.0,1.0,False
+estrutural,0.75,ID/CSS,XPath,16,0,0,0,16,1.0,1.0,False
+estrutural,0.75,ID/CSS,papel e rótulo,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,0.75,ID/CSS,self-healing,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,0.75,ID/CSS,agêntica,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,0.75,XPath,papel e rótulo,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,0.75,XPath,self-healing,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,0.75,XPath,agêntica,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,0.75,papel e rótulo,self-healing,16,16,0,0,0,1.0,1.0,False
+estrutural,0.75,papel e rótulo,agêntica,16,16,0,0,0,1.0,1.0,False
+estrutural,0.75,self-healing,agêntica,16,16,0,0,0,1.0,1.0,False
+estrutural,1.0,ID/CSS,XPath,16,0,0,0,16,1.0,1.0,False
+estrutural,1.0,ID/CSS,papel e rótulo,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,1.0,ID/CSS,self-healing,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,1.0,ID/CSS,agêntica,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,1.0,XPath,papel e rótulo,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,1.0,XPath,self-healing,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,1.0,XPath,agêntica,16,0,0,16,0,3.1e-05,0.003662,True
+estrutural,1.0,papel e rótulo,self-healing,16,16,0,0,0,1.0,1.0,False
+estrutural,1.0,papel e rótulo,agêntica,16,16,0,0,0,1.0,1.0,False
+estrutural,1.0,self-healing,agêntica,16,16,0,0,0,1.0,1.0,False
+semantico,0.25,ID/CSS,XPath,16,1,4,2,9,0.6875,1.0,False
+semantico,0.25,ID/CSS,papel e rótulo,16,2,3,8,3,0.226562,1.0,False
+semantico,0.25,ID/CSS,self-healing,16,5,0,11,0,0.000977,0.063477,False
+semantico,0.25,ID/CSS,agêntica,16,5,0,11,0,0.000977,0.063477,False
+semantico,0.25,XPath,papel e rótulo,16,2,1,8,5,0.039062,1.0,False
+semantico,0.25,XPath,self-healing,16,3,0,13,0,0.000244,0.021729,True
+semantico,0.25,XPath,agêntica,16,3,0,13,0,0.000244,0.021729,True
+semantico,0.25,papel e rótulo,self-healing,16,10,0,6,0,0.03125,1.0,False
+semantico,0.25,papel e rótulo,agêntica,16,10,0,6,0,0.03125,1.0,False
+semantico,0.25,self-healing,agêntica,16,16,0,0,0,1.0,1.0,False
+semantico,0.5,ID/CSS,XPath,16,0,3,1,12,0.625,1.0,False
+semantico,0.5,ID/CSS,papel e rótulo,16,0,3,4,9,1.0,1.0,False
+semantico,0.5,ID/CSS,self-healing,16,3,0,11,2,0.000977,0.063477,False
+semantico,0.5,ID/CSS,agêntica,16,3,0,13,0,0.000244,0.021729,True
+semantico,0.5,XPath,papel e rótulo,16,1,0,3,12,0.25,1.0,False
+semantico,0.5,XPath,self-healing,16,1,0,13,2,0.000244,0.021729,True
+semantico,0.5,XPath,agêntica,16,1,0,15,0,6.1e-05,0.005859,True
+semantico,0.5,papel e rótulo,self-healing,16,4,0,10,2,0.001953,0.115234,False
+semantico,0.5,papel e rótulo,agêntica,16,4,0,12,0,0.000488,0.036133,True
+semantico,0.5,self-healing,agêntica,16,14,0,2,0,0.5,1.0,False
+semantico,0.75,ID/CSS,XPath,16,0,0,0,16,1.0,1.0,False
+semantico,0.75,ID/CSS,papel e rótulo,16,0,0,3,13,0.25,1.0,False
+semantico,0.75,ID/CSS,self-healing,16,0,0,15,1,6.1e-05,0.005859,True
+semantico,0.75,ID/CSS,agêntica,16,0,0,16,0,3.1e-05,0.003662,True
+semantico,0.75,XPath,papel e rótulo,16,0,0,3,13,0.25,1.0,False
+semantico,0.75,XPath,self-healing,16,0,0,15,1,6.1e-05,0.005859,True
+semantico,0.75,XPath,agêntica,16,0,0,16,0,3.1e-05,0.003662,True
+semantico,0.75,papel e rótulo,self-healing,16,3,0,12,1,0.000488,0.036133,True
+semantico,0.75,papel e rótulo,agêntica,16,3,0,13,0,0.000244,0.021729,True
+semantico,0.75,self-healing,agêntica,16,15,0,1,0,1.0,1.0,False
+semantico,1.0,ID/CSS,XPath,16,0,0,0,16,1.0,1.0,False
+semantico,1.0,ID/CSS,papel e rótulo,16,0,0,0,16,1.0,1.0,False
+semantico,1.0,ID/CSS,self-healing,16,0,0,12,4,0.000488,0.036133,True
+semantico,1.0,ID/CSS,agêntica,16,0,0,16,0,3.1e-05,0.003662,True
+semantico,1.0,XPath,papel e rótulo,16,0,0,0,16,1.0,1.0,False
+semantico,1.0,XPath,self-healing,16,0,0,12,4,0.000488,0.036133,True
+semantico,1.0,XPath,agêntica,16,0,0,16,0,3.1e-05,0.003662,True
+semantico,1.0,papel e rótulo,self-healing,16,0,0,12,4,0.000488,0.036133,True
+semantico,1.0,papel e rótulo,agêntica,16,0,0,16,0,3.1e-05,0.003662,True
+semantico,1.0,self-healing,agêntica,16,12,0,4,0,0.125,1.0,False

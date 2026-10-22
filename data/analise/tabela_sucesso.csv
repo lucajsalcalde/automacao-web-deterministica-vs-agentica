@@ -1,0 +1,76 @@
+braco,drift_type,drift_level,n,sucessos,taxa,ic95_inf,ic95_sup
+ID/CSS,cosmetico,0.0,16,16,1.0,0.8064,1.0
+ID/CSS,cosmetico,0.25,16,4,0.25,0.1018,0.495
+ID/CSS,cosmetico,0.5,16,3,0.1875,0.0659,0.4301
+ID/CSS,cosmetico,0.75,16,0,0.0,0.0,0.1936
+ID/CSS,cosmetico,1.0,16,0,0.0,0.0,0.1936
+XPath,cosmetico,0.0,16,16,1.0,0.8064,1.0
+XPath,cosmetico,0.25,16,16,1.0,0.8064,1.0
+XPath,cosmetico,0.5,16,16,1.0,0.8064,1.0
+XPath,cosmetico,0.75,16,16,1.0,0.8064,1.0
+XPath,cosmetico,1.0,16,16,1.0,0.8064,1.0
+papel e rótulo,cosmetico,0.0,16,16,1.0,0.8064,1.0
+papel e rótulo,cosmetico,0.25,16,16,1.0,0.8064,1.0
+papel e rótulo,cosmetico,0.5,16,16,1.0,0.8064,1.0
+papel e rótulo,cosmetico,0.75,16,16,1.0,0.8064,1.0
+papel e rótulo,cosmetico,1.0,16,16,1.0,0.8064,1.0
+self-healing,cosmetico,0.0,16,16,1.0,0.8064,1.0
+self-healing,cosmetico,0.25,16,16,1.0,0.8064,1.0
+self-healing,cosmetico,0.5,16,16,1.0,0.8064,1.0
+self-healing,cosmetico,0.75,16,16,1.0,0.8064,1.0
+self-healing,cosmetico,1.0,16,16,1.0,0.8064,1.0
+agêntica,cosmetico,0.0,16,16,1.0,0.8064,1.0
+agêntica,cosmetico,0.25,16,16,1.0,0.8064,1.0
+agêntica,cosmetico,0.5,16,16,1.0,0.8064,1.0
+agêntica,cosmetico,0.75,15,15,1.0,0.7961,1.0
+agêntica,cosmetico,1.0,16,16,1.0,0.8064,1.0
+ID/CSS,estrutural,0.0,16,16,1.0,0.8064,1.0
+ID/CSS,estrutural,0.25,16,5,0.3125,0.1416,0.556
+ID/CSS,estrutural,0.5,16,3,0.1875,0.0659,0.4301
+ID/CSS,estrutural,0.75,16,0,0.0,0.0,0.1936
+ID/CSS,estrutural,1.0,16,0,0.0,0.0,0.1936
+XPath,estrutural,0.0,16,16,1.0,0.8064,1.0
+XPath,estrutural,0.25,16,3,0.1875,0.0659,0.4301
+XPath,estrutural,0.5,16,1,0.0625,0.0111,0.2833
+XPath,estrutural,0.75,16,0,0.0,0.0,0.1936
+XPath,estrutural,1.0,16,0,0.0,0.0,0.1936
+papel e rótulo,estrutural,0.0,16,16,1.0,0.8064,1.0
+papel e rótulo,estrutural,0.25,16,16,1.0,0.8064,1.0
+papel e rótulo,estrutural,0.5,16,16,1.0,0.8064,1.0
+papel e rótulo,estrutural,0.75,16,16,1.0,0.8064,1.0
+papel e rótulo,estrutural,1.0,16,16,1.0,0.8064,1.0
+self-healing,estrutural,0.0,16,16,1.0,0.8064,1.0
+self-healing,estrutural,0.25,16,16,1.0,0.8064,1.0
+self-healing,estrutural,0.5,16,16,1.0,0.8064,1.0
+self-healing,estrutural,0.75,16,16,1.0,0.8064,1.0
+self-healing,estrutural,1.0,16,16,1.0,0.8064,1.0
+agêntica,estrutural,0.0,16,16,1.0,0.8064,1.0
+agêntica,estrutural,0.25,16,16,1.0,0.8064,1.0
+agêntica,estrutural,0.5,16,16,1.0,0.8064,1.0
+agêntica,estrutural,0.75,16,16,1.0,0.8064,1.0
+agêntica,estrutural,1.0,16,16,1.0,0.8064,1.0
+ID/CSS,semantico,0.0,16,16,1.0,0.8064,1.0
+ID/CSS,semantico,0.25,16,5,0.3125,0.1416,0.556
+ID/CSS,semantico,0.5,16,3,0.1875,0.0659,0.4301
+ID/CSS,semantico,0.75,16,0,0.0,0.0,0.1936
+ID/CSS,semantico,1.0,16,0,0.0,0.0,0.1936
+XPath,semantico,0.0,16,16,1.0,0.8064,1.0
+XPath,semantico,0.25,16,3,0.1875,0.0659,0.4301
+XPath,semantico,0.5,16,1,0.0625,0.0111,0.2833
+XPath,semantico,0.75,16,0,0.0,0.0,0.1936
+XPath,semantico,1.0,16,0,0.0,0.0,0.1936
+papel e rótulo,semantico,0.0,16,16,1.0,0.8064,1.0
+papel e rótulo,semantico,0.25,16,10,0.625,0.3864,0.8152
+papel e rótulo,semantico,0.5,16,4,0.25,0.1018,0.495
+papel e rótulo,semantico,0.75,16,3,0.1875,0.0659,0.4301
+papel e rótulo,semantico,1.0,16,0,0.0,0.0,0.1936
+self-healing,semantico,0.0,16,16,1.0,0.8064,1.0
+self-healing,semantico,0.25,16,16,1.0,0.8064,1.0
+self-healing,semantico,0.5,16,14,0.875,0.6398,0.965
+self-healing,semantico,0.75,16,15,0.9375,0.7167,0.9889
+self-healing,semantico,1.0,16,12,0.75,0.505,0.8982
+agêntica,semantico,0.0,16,16,1.0,0.8064,1.0
+agêntica,semantico,0.25,16,16,1.0,0.8064,1.0
+agêntica,semantico,0.5,16,16,1.0,0.8064,1.0
+agêntica,semantico,0.75,16,16,1.0,0.8064,1.0
+agêntica,semantico,1.0,16,16,1.0,0.8064,1.0
