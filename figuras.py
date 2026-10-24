@@ -261,7 +261,7 @@ def figura_equilibrio(plt, cinza: bool, hora: float, conserto_h: float,
             if b not in medidas:
                 continue
             ys = [custo_anual(medidas, b, execs, f, custo_conserto,
-                              True, latencia, tipo)["total"]
+                              False, latencia, tipo)["total"]
                   for f in frequencias]
             e = ESTILO[b]
             eixo.plot(frequencias, ys, label=NOME[b], color=e["cor"],
@@ -269,7 +269,7 @@ def figura_equilibrio(plt, cinza: bool, hora: float, conserto_h: float,
         # Marca o cruzamento contra o self-healing, que é o comparador da
         # hipótese primária e a melhor alternativa determinística.
         pe = ponto_de_equilibrio(medidas, "healing", execs, custo_conserto,
-                                 True, latencia, tipo)
+                                 False, latencia, tipo)
         if pe is not None and 0 < pe <= frequencias[-1]:
             eixo.axvline(pe, color="black", ls=(0, (1, 2)), lw=1.2)
             eixo.annotate(f"equilíbrio\n{pe:.1f}/ano", (pe, eixo.get_ylim()[1]),
@@ -296,8 +296,11 @@ LEGENDAS = """LEGENDAS DAS FIGURAS — padrão RICT/Facens (NBR 6022)
 Regra do modelo: número e título ACIMA da figura, em Arial 12; fonte ABAIXO,
 centralizada, em Arial 10.
 
+Figuras complementares, fora do artigo. A Figura 1 do artigo é
+fig1_sucesso.png, gerada por figura1_sucesso.py.
+
 --------------------------------------------------------------------------
-Figura 1 - Taxa de sucesso por abordagem, tipo e intensidade de degradação
+Figura complementar A - Taxa de sucesso por abordagem, tipo e intensidade de degradação
 [figura]
 Fonte: elaborado pelo autor (2026). As barras verticais representam o intervalo
 de confiança de Wilson a 95%, com 16 execuções por ponto (menos na abordagem
@@ -305,15 +308,16 @@ agêntica quando houve exclusão). Os pontos de cada abordagem foram deslocados
 horizontalmente para não se sobreporem.
 
 --------------------------------------------------------------------------
-Figura 2 - Tempo de execução e compromisso entre confiabilidade e custo
+Figura complementar B - Tempo de execução e compromisso entre confiabilidade e custo
 [figura, uso opcional]
 Fonte: elaborado pelo autor (2026). Eixo do tempo em escala logarítmica.
 
 --------------------------------------------------------------------------
-Figura 5 - Custo anual por abordagem em função da frequência de mudanças semânticas
+Figura complementar C - Custo anual por abordagem em função da frequência de mudanças semânticas
 [figura, uso opcional]
-Fonte: elaborado pelo autor (2026). Premissas: 0,5 h por intervenção, R$ 250 a
-hora, 1 dia útil até detectar a quebra, câmbio de R$ 5,19 por dólar.
+Fonte: elaborado pelo autor (2026). Modelo da seção 3.9 do artigo: custo médio
+por execução concluída, 0,5 h por intervenção a R$ 250 a hora, câmbio de
+R$ 5,19 por dólar, sem o custo da automação parada.
 """
 
 

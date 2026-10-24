@@ -3,8 +3,11 @@ LEGENDAS DAS FIGURAS — padrão RICT/Facens (NBR 6022)
 Regra do modelo: número e título ACIMA da figura, em Arial 12; fonte ABAIXO,
 centralizada, em Arial 10.
 
+Figuras complementares, fora do artigo. A Figura 1 do artigo é
+fig1_sucesso.png, gerada por figura1_sucesso.py.
+
 --------------------------------------------------------------------------
-Figura 1 - Taxa de sucesso por abordagem, tipo e intensidade de degradação
+Figura complementar A - Taxa de sucesso por abordagem, tipo e intensidade de degradação
 [figura]
 Fonte: elaborado pelo autor (2026). As barras verticais representam o intervalo
 de confiança de Wilson a 95%, com 16 execuções por ponto (menos na abordagem
@@ -12,12 +15,13 @@ agêntica quando houve exclusão). Os pontos de cada abordagem foram deslocados
 horizontalmente para não se sobreporem.
 
 --------------------------------------------------------------------------
-Figura 2 - Tempo de execução e compromisso entre confiabilidade e custo
+Figura complementar B - Tempo de execução e compromisso entre confiabilidade e custo
 [figura, uso opcional]
 Fonte: elaborado pelo autor (2026). Eixo do tempo em escala logarítmica.
 
 --------------------------------------------------------------------------
-Figura 5 - Custo anual por abordagem em função da frequência de mudanças semânticas
+Figura complementar C - Custo anual por abordagem em função da frequência de mudanças semânticas
 [figura, uso opcional]
-Fonte: elaborado pelo autor (2026). Premissas: 0,5 h por intervenção, R$ 250 a
-hora, 1 dia útil até detectar a quebra, câmbio de R$ 5,19 por dólar.
+Fonte: elaborado pelo autor (2026). Modelo da seção 3.9 do artigo: custo médio
+por execução concluída, 0,5 h por intervenção a R$ 250 a hora, câmbio de
+R$ 5,19 por dólar, sem o custo da automação parada.
