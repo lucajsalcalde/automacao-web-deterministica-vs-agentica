@@ -78,7 +78,7 @@ Scripts na raiz:
 | `validar_funcional.py` | confirma que a degradação não impede a tarefa (192 combinações) |
 | `auditoria.py` | 20 verificações sobre `results.csv` |
 | `analise.py` | hipótese principal (McNemar), taxas com intervalo de Wilson, tendência, comparações, tempo e custo |
-| `modelo_logistico.py` | regressão logística com correção de Firth |
+| `modelo_logistico.py` | regressão logística com correção de Firth (prevista no plano de análise; saiu do texto do artigo na revisão da banca, para simplificar a parte estatística) |
 | `modelo_economico.py` | custo anual e ponto de equilíbrio (seção 3.9: custo médio por execução, sem parada; `--mediana` e `--com-perda` são variações) |
 | `figura1_sucesso.py` | Figura 1 do artigo |
 | `figuras.py` | figuras complementares |

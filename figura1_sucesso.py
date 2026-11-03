@@ -21,7 +21,7 @@ def taxa(a, t, n):
 M = [[taxa(a, t, n) for t, _ in TIPOS for n in NIVEIS] for a, _ in ARMS]
 
 cmap = LinearSegmentedColormap.from_list('azul', ['#ffffff', '#cde2fb', '#86b6ef', '#3987e5', '#1c5cab', '#0d366b'])
-fig, ax = plt.subplots(figsize=(6.3, 2.35), dpi=300)
+fig, ax = plt.subplots(figsize=(5.4, 2.05), dpi=300)
 gap = 0.35  # espaço entre os três grupos de tipo
 for i, linha in enumerate(M):
     for j, (v, n) in enumerate(linha):
@@ -49,7 +49,7 @@ for x, l in zip(xt, ['0,25', '0,50', '0,75', '1,0'] * 3):
     ax.text(x, -0.22, l, ha='center', va='center', fontsize=8.5)
 ax.tick_params(length=0)
 for k, (_, nome) in enumerate(TIPOS):
-    ax.text(k * (4 + gap) + 1.97, -0.75, f'Degradação {nome.lower()}', ha='center', va='center', fontsize=9.5, fontweight='bold')
+    ax.text(k * (4 + gap) + 1.97, -0.75, nome, ha='center', va='center', fontsize=9.5, fontweight='bold')
 for s in ax.spines.values():
     s.set_visible(False)
 ax.text(-0.15, -0.22, 'intensidade', ha='right', va='center', fontsize=8.5, color='#444444')

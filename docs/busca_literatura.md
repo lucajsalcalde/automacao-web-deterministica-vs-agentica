@@ -53,6 +53,8 @@ Doze trabalhos vieram da busca e dois da consulta às referências deles (marcad
 
 Van der Aalst, Bichler e Heinzl (2018), que definem RPA; Nass et al. (2023), Similo; Leotta
 et al. (2013) e Kapoor et al. (2025), base do modelo de custo; Kara, Faisal e Nath (2026),
-WAREX, no lugar dos preprints de testes de robustez de agentes. As estatísticas (Agresti e
-Min, 2005; Firth, 1993) e as documentações técnicas (Playwright e Anthropic) também não
-vêm da busca.
+WAREX, no lugar dos preprints de testes de robustez de agentes; Jin et al. (2025), que
+classificam as arquiteturas de automação, e González Enríquez et al. (2020), que mapeiam as
+plataformas comerciais de RPA, entraram na revisão pedida pela banca (seção 2.4). A
+estatística (Agresti e Min, 2005) e as documentações técnicas (Playwright e Anthropic)
+também não vêm da busca.
